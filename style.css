@@ -1,0 +1,27 @@
+/*
+Theme Name: Institucional 01
+Theme URI: https://fddev.com.br/
+Author: Hellston Linhares
+Author URI: https://fddev.com.br
+Description: Tema institucional 01, focado na proposta de valor para empresas diversas, utilizando Bootstrap 5, Dark Mode e opções de personalização de cores.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: pixgo-theme
+*/
+
+/* Reset e importações, se necessário. O Bootstrap cuidará da maior parte. */
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Estilos para o Dark Mode (fallback, Customizer gerará CSS dinâmico) */
+body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa; /* Cor clara para texto no modo escuro */
+}
+
+/* Estilo para links no modo dark */
+.dark-mode a {
+    color: #8ab4f8; /* Exemplo de cor de link acessível */
+}
