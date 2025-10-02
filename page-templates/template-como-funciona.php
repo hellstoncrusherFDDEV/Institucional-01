@@ -1,0 +1,1 @@
+template-como-funciona.php
