@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template part para exibir o conteúdo das páginas.
  *

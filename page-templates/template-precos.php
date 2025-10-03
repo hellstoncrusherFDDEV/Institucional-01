@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: Tabela de Preços
 Template Post Type: page

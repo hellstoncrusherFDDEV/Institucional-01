@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Sobre a Empresa
  * Template Post Type: page

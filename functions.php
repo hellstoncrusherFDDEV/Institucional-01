@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // 1. Configuração do Tema e Enqueue de Scripts
 function pixgo_theme_setup() {

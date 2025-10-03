@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: Programa de Afiliados
 Template Post Type: page

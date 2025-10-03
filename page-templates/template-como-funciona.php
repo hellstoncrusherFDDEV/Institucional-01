@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Como Funciona / Documentação
  * Template Post Type: page

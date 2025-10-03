@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: Contato
 Template Post Type: page

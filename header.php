@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Define a classe do body para suportar Dark Mode via JS/CSS
 $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
 ?>

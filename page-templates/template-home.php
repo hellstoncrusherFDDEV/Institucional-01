@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: PixGo: Home (Institucional)
  * Template Post Type: page

@@ -1,4 +1,4 @@
-</div> <!-- Fecha div.container aberta em header.php -->
+﻿</div> <!-- Fecha div.container aberta em header.php -->
 </main>
 
 <footer class="footer-custom mt-5">
