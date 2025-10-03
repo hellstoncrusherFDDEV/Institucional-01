@@ -26,6 +26,10 @@ body.dark-mode {
     color: #8ab4f8; /* Exemplo de cor de link acessível */
 }
 
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255,255,255,0.25); /* fundo branco transparente */
+}
+
 /* Ajusta o espaço da navbar quando a admin bar está ativa */
 .admin-bar .navbar.fixed-top {
 	margin-top: 32px; /* altura da admin bar no desktop */
