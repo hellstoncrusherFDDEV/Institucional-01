@@ -4,9 +4,22 @@
 function pixgo_theme_setup() {
     // Suporte a Título Dinâmico
     add_theme_support( 'title-tag' );
-    // Suporte a Miniaturas de Posts (se necessário)
-    add_theme_support( 'post-thumbnails' );
     
+    // Suporte a Miniaturas de Posts
+    add_theme_support( 'post-thumbnails' );
+
+    // Suporte a Logo Personalizada
+    add_theme_support( 'custom-logo', array(
+        'height'      => 100,
+        'width'       => 300,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
+    // Suporte ao Site Icon (Favicon)
+    add_theme_support( 'site-icon' );
+
     // Registra menus
     register_nav_menus( array(
         'primary' => __( 'Menu Principal', 'pixgo-theme' ),
@@ -29,6 +42,30 @@ function pixgo_scripts() {
     wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
+
+// Suporte a Logo Personalizada
+add_theme_support( 'custom-logo', array(
+    //'height'      => 150,
+    'width'       => 150,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+) );
+
+
+// Registrar menu
+function meu_tema_registrar_menus() {
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'textdomain' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'meu_tema_registrar_menus' );
+
+// Incluir Navwalker com segurança (ajuste o caminho se necessário)
+$navwalker_file = get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+if ( file_exists( $navwalker_file ) ) {
+    require_once $navwalker_file;
+}
 
 // 3. Registro dos Modelos de Página Personalizados
 // Inclui modelos para as páginas institucionais existentes e as novas solicitadas.

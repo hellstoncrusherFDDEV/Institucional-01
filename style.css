@@ -25,3 +25,24 @@ body.dark-mode {
 .dark-mode a {
     color: #8ab4f8; /* Exemplo de cor de link acessível */
 }
+
+/* Ajusta o espaço da navbar quando a admin bar está ativa */
+.admin-bar .navbar.fixed-top {
+	margin-top: 32px; /* altura da admin bar no desktop */
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .navbar.fixed-top {
+		margin-top: 46px; /* altura da admin bar em mobile/tablet */
+	}
+}
+
+/* Ajusta o conteúdo também */
+.admin-bar main {
+	margin-top: 32px;
+}
+@media screen and (max-width: 782px) {
+	.admin-bar main {
+		margin-top: 46px;
+	}
+}
+		

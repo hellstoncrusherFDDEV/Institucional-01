@@ -33,8 +33,8 @@ $pricingTiers = [
             </thead>
             <tbody>
                 <?php foreach ($pricingTiers as $tier): 
-                    $value = $tier[18];
-                    $cost = $tier[19];
+                    $value = $tier[1];
+                    $cost = $tier[3];
                     $calls = $value / $cost;
                 ?>
                 <tr>
