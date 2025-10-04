@@ -79,7 +79,7 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
 							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-afiliados.php') ) echo 'active'; ?>" href="/afiliados">Afiliados</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold ms-lg-3 <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato">Contato</a>
+							<a class="nav-link fw-bold p-3 <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato">Contato</a>
 						</li>
 						<li class="nav-item">
 							<a class="btn btn-warning ms-lg-3" href="/register">Começar Grátis</a>
