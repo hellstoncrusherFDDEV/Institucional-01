@@ -64,25 +64,25 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
                     ?>
                     <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_front_page() ) echo 'active'; ?>" href="/">Home</a>
+							<a class="nav-link fw-bold <?php if( is_front_page() ) echo 'active'; ?>" href="/"><i class="fas fa-home me-1"></i> Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-sobre.php') ) echo 'active'; ?>" href="/sobre">Sobre</a>
+							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-sobre.php') ) echo 'active'; ?>" href="/sobre"><i class="fas fa-info-circle me-1"></i> Sobre</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-precos.php') ) echo 'active'; ?>" href="/precos">Preços</a>
+							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-precos.php') ) echo 'active'; ?>" href="/precos"><i class="fas fa-tag me-1"></i> Preços</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-como-funciona.php') ) echo 'active'; ?>" href="/como-funciona">Docs API</a>
+							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-como-funciona.php') ) echo 'active'; ?>" href="/como-funciona"><i class="fas fa-question-circle me-1"></i> Docs API</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-afiliados.php') ) echo 'active'; ?>" href="/afiliados">Afiliados</a>
+							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-afiliados.php') ) echo 'active'; ?>" href="/afiliados"><i class="fas fa-handshake me-1"></i> Afiliados</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato">Contato</a>
+							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato"><i class="fas fa-envelope me-1"></i> Contato</a>
 						</li>
 						<li class="nav-item">
-							<a class="btn btn-warning ms-lg-3" href="/register">Começar Grátis</a>
+							<a class="btn btn-warning ms-lg-3" href="/register"><i class="fas fa-rocket me-1"></i> Começar Grátis</a>
 						</li>
 					</ul>
                     <?php
