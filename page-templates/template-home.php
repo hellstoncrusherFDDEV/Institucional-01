@@ -22,6 +22,11 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.
         </p>
 
+        <hr class="my-4">
+        <p>
+            Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.
+        </p>
+
         <!-- CTAs - Usamos os slugs definidos no sistema original, assumindo que as páginas foram criadas no WP -->
         <a href="/register" class="btn btn-primary btn-lg me-3">
             Comece Grátis Agora!
