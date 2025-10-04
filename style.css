@@ -1,4 +1,4 @@
-﻿/*
+/*
 Theme Name: Institucional 01
 Theme URI: https://fddev.com.br/
 Author: Hellston Linhares
@@ -49,4 +49,19 @@ body.dark-mode {
 		margin-top: 46px;
 	}
 }
+
+/* Padding na esquerda - Apenas no mobile (até lg) */
+@media (max-width: 991.98px) {
+    .navbar-nav .nav-link {
+        transition: all 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        padding-left: 0.75rem !important; /* equivale ao ps-3 */
+        background-color: rgba(255, 255, 255, 0.1); /* leve destaque opcional */
+        border-radius: 4px;
+    }
+}
+
 		
