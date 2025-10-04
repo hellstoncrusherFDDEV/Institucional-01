@@ -21,6 +21,12 @@ body.dark-mode {
     color: #f8f9fa; /* Cor clara para texto no modo escuro */
 }
 
+/* Brilho para a imagem do logo */
+.custom-logo {
+	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);
+	width: 150px;
+}
+
 /* Estilo para links no modo dark */
 .dark-mode a {
     color: #8ab4f8; /* Exemplo de cor de link acessível */

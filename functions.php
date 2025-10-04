@@ -49,7 +49,8 @@ add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
 // Suporte a Logo Personalizada
 add_theme_support( 'custom-logo', array(
     //'height'      => 150,
-    'width'       => 150,
+    //'width'      => 150,
+    'class'          => 'custom-logo',
     'flex-height' => true,
     'flex-width'  => true,
     'header-text' => array( 'site-title', 'site-description' ),
