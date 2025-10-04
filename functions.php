@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // 1. Configuração do Tema e Enqueue de Scripts
 function pixgo_theme_setup() {
@@ -31,6 +31,9 @@ add_action( 'after_setup_theme', 'pixgo_theme_setup' );
 function pixgo_scripts() {
     // Bootstrap 5 CSS (Via CDN para simplicidade)
     wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3' );
+
+    //Font Awesome Free
+    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
     
     // CSS do Tema
     wp_enqueue_style( 'pixgo-style', get_stylesheet_uri(), array( 'bootstrap-css' ), '1.0' );
