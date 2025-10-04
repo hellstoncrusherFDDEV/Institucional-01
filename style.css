@@ -52,7 +52,11 @@ body.dark-mode {
 
 /* Padding na esquerda - Apenas no mobile (até lg) */
 @media (max-width: 991.98px) {
-    .navbar-nav .nav-link {
+    .nav-item {
+		padding-bottom: 1px;
+	}
+	
+	.navbar-nav .nav-link {
         transition: all 0.2s ease;
     }
 
