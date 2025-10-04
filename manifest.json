@@ -1,0 +1,27 @@
+{
+  "name": "PixGo: API Pix Simples e Econ?mica",
+  "short_name": "PixGo",
+  "start_url": "/index.php",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0099ff",
+  "description": "Gere QR Codes Pix e links de pagamento em segundos.",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "https://pixgo.api.br/wp-content/themes/Institucional-01/img/Icone-PixGo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://pixgo.api.br/wp-content/themes/Institucional-01/img/Icone-PixGo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://pixgo.api.br/wp-content/themes/Institucional-01/img/Icone-PixGo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

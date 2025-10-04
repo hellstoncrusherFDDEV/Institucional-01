@@ -42,8 +42,8 @@ function pixgo_scripts() {
     // Bootstrap 5 JS Bundle
     wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '5.3.3', true );
     
-    // Script principal do tema (para a lógica do Dark Mode, por exemplo)
-    wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
+    // Script principal do tema
+    wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
 
