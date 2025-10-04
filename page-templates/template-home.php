@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: PixGo: Home (Institucional)
  * Template Post Type: page
@@ -15,7 +15,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <section class="hero-section py-5 text-center bg-light-subtle rounded-3 shadow-sm">
     <div class="container">
         <!-- Título principal baseado no conteúdo institucional -->
-        <h1 class="display-3 fw-bold">PixGo: Sua API Pix Simples e Econômica</h1>
+        <h1 class="display-4 fw-bold text-primary"><i class="fas fa-qrcode me-2"></i>PixGo: Sua API Pix Simples e Econômica</h1>
         
         <!-- Proposta de valor principal -->
         <p class="lead mt-3 mb-4">
