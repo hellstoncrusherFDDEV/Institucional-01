@@ -10,8 +10,9 @@ function pixgo_theme_setup() {
 
     // Suporte a Logo Personalizada
     add_theme_support( 'custom-logo', array(
-        'height'      => 100,
-        'width'       => 300,
+        //'height'      => 150,
+        //'width'      => 150,
+        'class'          => 'custom-logo',
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -45,17 +46,6 @@ function pixgo_scripts() {
     wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
-
-// Suporte a Logo Personalizada
-add_theme_support( 'custom-logo', array(
-    //'height'      => 150,
-    //'width'      => 150,
-    'class'          => 'custom-logo',
-    'flex-height' => true,
-    'flex-width'  => true,
-    'header-text' => array( 'site-title', 'site-description' ),
-) );
-
 
 // Registrar menu
 function meu_tema_registrar_menus() {
