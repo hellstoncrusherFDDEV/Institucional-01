@@ -16,7 +16,7 @@ $pricingTiers = [
 ?>
 
 <div class="container my-2">
-    <h1 class="display-4 text-primary text-center"><i class="fas fa-tags me-2"></i>Preços PixGo: Pague Apenas Pelo Uso</h1>
+    <h1 class="display-4 text-primary text-center"><i class="fas fa-tags me-2"></i>Pague Apenas Pelo Uso</h1>
     <p class="lead text-center mb-5">Nosso modelo é de <strong>créditos pré-pagos</strong>, permitindo total controle de custos sem mensalidades fixas.</p>
 
     <div class="row justify-content-center">
