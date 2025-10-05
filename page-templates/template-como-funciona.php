@@ -76,7 +76,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 				<div class="accordion-body">
 
 					<h5 class="mb-3">Detalhes do Endpoint</h5>
-					<p>Este endpoint é responsável por deduzir os créditos do seu saldo e acionar a API do Mercado Pago (usando sua chave cadastrada) para gerar o QR Code Pix e o link de pagamento [3, 4].</p>
+					<p>Este endpoint é responsável por deduzir os créditos do seu saldo e acionar a API do Mercado Pago (usando sua chave cadastrada) para gerar o QR Code Pix e o link de pagamento.</p>
 
 					<h6>URL</h6>
 					<pre class="bg-light p-2 rounded">POST https://pixgo.api.br/gerar-pix</pre>
@@ -91,8 +91,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 							<tr><th>Parâmetro</th><th>Tipo</th><th>Obrigatório</th><th>Descrição</th></tr>
 						</thead>
 						<tbody>
-							<tr><td><code>valor</code></td><td>Decimal</td><td>Sim</td><td>Valor total da transação. Formato decimal (ex: 15.50) [5].</td></tr>
-							<tr><td><code>descricao</code></td><td>String</td><td>Sim</td><td>Descrição da cobrança Pix (Será exibida no extrato do pagador) [5].</td></tr>
+							<tr><td><code>valor</code></td><td>Decimal</td><td>Sim</td><td>Valor total da transação. Formato decimal (ex: 15.50).</td></tr>
+							<tr><td><code>descricao</code></td><td>String</td><td>Sim</td><td>Descrição da cobrança Pix (Será exibida no extrato do pagador).</td></tr>
 						</tbody>
 					</table>
 
@@ -249,7 +249,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 							<tr><th>Parâmetro</th><th>Tipo</th><th>Obrigatório</th><th>Descrição</th></tr>
 						</thead>
 						<tbody>
-							<tr><td><code>reference</code></td><td>String</td><td>Sim</td><td>A referência externa (<code>external_reference</code>, ex: <code>PEDIDO_101</code>) retornada pelo endpoint <code>/gerar-pix</code> [3].</td></tr>
+							<tr><td><code>reference</code></td><td>String</td><td>Sim</td><td>A referência externa (<code>external_reference</code>, ex: <code>PEDIDO_101</code>) retornada pelo endpoint <code>/gerar-pix</code>.</td></tr>
 						</tbody>
 					</table>
 
@@ -263,7 +263,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 		"data_criacao": "2025-05-15 10:30:00"
 	}
 					</pre>
-					<p class="text-muted small">Possíveis status de retorno: <code>pendente</code>, <code>aprovado</code>, <code>recusado</code>, <code>cancelado</code>, <code>erro</code> [7].</p>
+					<p class="text-muted small">Possíveis status de retorno: <code>pendente</code>, <code>aprovado</code>, <code>recusado</code>, <code>cancelado</code>, <code>erro</code>.</p>
 
 					<h5 class="mt-4">Exemplos de Uso</h5>
 
