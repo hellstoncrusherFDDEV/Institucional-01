@@ -124,8 +124,11 @@ get_header();
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
-            As comissões são creditadas automaticamente em sua conta Pix cadastrada, sempre que um indicado realizar uma recarga aprovada.
-            <strong>Pagamento rápido e transparente!</strong>
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/mcp6fHu7x1Q?si=Pne5Gd1Cm8B7rz4C" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+            <p>As comissões são creditadas em sua conta Pix cadastrada ao solicitar um saque, sempre que atingir o valor de R$50,00 em comissões.
+            <strong>Pagamento rápido e transparente!</strong></p>
           </div>
         </div>
       </div>
