@@ -150,27 +150,32 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 </section>
 
 <!-- 4. Como Funciona (Mecanismo e Chamada Final para Registro) -->
-<section class="how-it-works py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-                <h2>Como Funciona?</h2>
-                <p class="lead">
-                    Com a PixGo, você cadastra sua chave do Mercado Pago na plataforma e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.
-                </p>
-                <div class="alert alert-warning mt-4">
-                    <h5 class="mb-2">Modelo de Créditos Pré-Pagos</h5>
-                    <p class="mb-1">
-                        Você carrega um valor (ex: R$ 10,00) e recebe um número correspondente de chamadas à API (ex: 500 chamadas a R$ 0,02 cada).
-                    </p>
-                    <a href="/topup_credits" class="alert-link">Ver Recarga de Créditos.</a>
-                </div>
-                <a href="/register" class="btn btn-success btn-lg mt-4">
-                    Quero Começar Agora!
-                </a>
-            </div>
+<section class="how-it-works py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <h2 class="fw-bold mb-3">
+          <i class="fas fa-cogs me-2 text-success"></i> Como Funciona?
+        </h2>
+        <p class="lead">
+          Com a <strong>PixGo</strong>, você cadastra sua chave do Mercado Pago na plataforma e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.
+        </p>
+        <div class="alert alert-warning shadow-sm mt-4">
+          <h5 class="mb-2">
+            <i class="fas fa-coins me-2"></i> Modelo de Créditos Pré-Pagos
+          </h5>
+          <p class="mb-1">
+            Você carrega um valor (ex: <strong>R$ 10,00</strong>) e recebe um número correspondente de chamadas à API (ex: <strong>500 chamadas</strong> a R$ 0,02 cada).
+          </p>
         </div>
+        <div class="d-flex justify-content-center">
+          <a href="/register" class="btn btn-success btn-lg mt-4 px-4 shadow">
+            <i class="fas fa-rocket me-2"></i> Quero Começar Agora!
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <?php
