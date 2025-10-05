@@ -104,14 +104,14 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 3. Quem se Beneficia? (Foco nas Personas) -->
 <section class="target-audience bg-light-subtle py-5">
     <div class="container">
-        <h2 class="text-center mb-5">Quem se Beneficia com PixGo?</h2>
+        <h2 class="text-center mb-5 text-primary"><i class="fas fa-users me-2"></i>Quem se Beneficia com PixGo?</h2>
         <div class="row">
 
             <!-- Desenvolvedores Freelancers -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
                     <div class="card-body">
-                        <h4 class="card-title">Desenvolvedores Freelancers</h4>
+                        <h3 class="h4 text-secondary"><i class="fas fa-laptop-code me-2"></i>Desenvolvedores Freelancers e Pequenos Times</h3>
                         <p class="card-text text-muted">
                             "Use esta API e gere QR Codes Pix com 3 linhas de código. Sem complicação."
                         </p>
@@ -124,7 +124,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
                     <div class="card-body">
-                        <h4 class="card-title">Pequenos E-commerces</h4>
+                        <h3 class="h4 text-secondary"><i class="fas fa-store me-2"></i>Pequenos E-commerces e Lojas Virtuais</h3>
                         <p class="card-text text-muted">
                             "Transforme pedidos em pagamentos Pix em segundos e pague só pelo que usar."
                         </p>
@@ -137,7 +137,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="col-md-12 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
                     <div class="card-body">
-                        <h4 class="card-title">Serviços Autônomos e Startups</h4>
+                        <h3 class="h4 text-secondary"><i class="fas fa-briefcase me-2"></i>Serviços Autônomos e Startups</h3>
                         <p class="card-text text-muted">
                             "Pare de gerar Pix manualmente." / "Integre Pix em minutos e foque no crescimento."
                         </p>
