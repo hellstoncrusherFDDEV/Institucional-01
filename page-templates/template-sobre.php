@@ -60,7 +60,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Para Quem é o PixGo? -->
     <section class="mb-5">
-        <h2 class="card-title text-success"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
+        <h2 class="card-title text-success mb-3"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
 
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light">
@@ -81,7 +81,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     <!-- CTA Final -->
     <section class="text-center mt-5">
         <a href="/register" class="btn btn-success btn-lg">
-            Comece a Integrar Agora!
+            <i class="fas fa-rocket me-2"></i> Comece a Integrar Agora!
         </a>
     </section>
 
