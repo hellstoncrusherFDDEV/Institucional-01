@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pixgo-pwa-cache-v6';
+const CACHE_NAME = 'pixgo-pwa-cache-v7';
 
 // Arquivos críticos do sistema, incluindo os assets listados na estrutura
 const urlsToCache = [
