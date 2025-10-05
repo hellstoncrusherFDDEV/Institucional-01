@@ -2,7 +2,7 @@ const CACHE_NAME = 'pixgo-pwa-cache-v2';
 
 // Arquivos críticos do sistema, incluindo os assets listados na estrutura
 const urlsToCache = [
-    'https://pixgo.api.br/'
+    //'https://pixgo.api.br/'
 ];
 
 // Evento de Instalação: Adiciona recursos ao cache
