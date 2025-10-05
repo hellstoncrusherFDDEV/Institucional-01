@@ -25,7 +25,7 @@ get_header();
         <ul class="list-unstyled">
           <li class="mb-3">
             <i class="fas fa-coins text-success me-2"></i>
-            <strong>Comissões Competitivas:</strong> Ganhe porcentagem em todas as requisições da API feitas pelos seus indicados.
+            <strong>Comissões Competitivas:</strong> Ganhe porcentagem de até 30% em todas as requisições da API feitas pelos seus indicados.
           </li>
           <li class="mb-3">
             <i class="fas fa-bolt text-danger me-2"></i>
