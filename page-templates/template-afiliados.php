@@ -83,8 +83,17 @@ get_header();
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
-            Você recebe <strong>comissões recorrentes</strong> a cada recarga feita pelos seus indicados.
-            Além disso, tem acesso a materiais prontos de divulgação.
+            <p>Você recebe <strong>comissões recorrentes</strong> a cada requisição feita na API pelos seus indicados.
+            Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados entre R$10,00 e R$30,00.</p>
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
+                <iframe
+                src="https://www.youtube.com/embed/BXEJ_diYqRc?si=b5vjjtZnuDv_ihfg"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+                </iframe>
+            </div>
           </div>
         </div>
       </div>
