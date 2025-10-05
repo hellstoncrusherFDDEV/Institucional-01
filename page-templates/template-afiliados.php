@@ -9,8 +9,8 @@ get_header();
 
 <div class="py-5 bg-light">
   <div class="container">
-    <h1 class="display-4 fw-bold mb-4 text-center">
-      <i class="fas fa-handshake text-success me-2"></i> Programa de Afiliados PixGo
+    <h1 class="display-4 fw-bold mb-4 text-center text-primary">
+      <i class="fas fa-handshake me-2"></i> Programa de Afiliados PixGo
     </h1>
     <div class="container my-4">
     <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
