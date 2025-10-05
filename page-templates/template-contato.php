@@ -12,7 +12,7 @@ get_header();
     <h1 class="display-4 mb-4 text-center text-primary fw-bold">
       <i class="fas fa-envelope-open-text me-2"></i> Entre em Contato com a PixGo
     </h1>
-    <p class="lead text-center mb-5">
+    <p class="lead mb-5">
       Tem dúvidas sobre integração, preços ou precisa de suporte? Fale conosco agora mesmo.
     </p>
 
