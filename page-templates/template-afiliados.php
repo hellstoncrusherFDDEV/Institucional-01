@@ -12,6 +12,17 @@ get_header();
     <h1 class="display-4 fw-bold mb-4 text-center">
       <i class="fas fa-handshake text-success me-2"></i> Programa de Afiliados PixGo
     </h1>
+    <div class="container my-4">
+    <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
+        <iframe
+        src="https://www.youtube.com/embed/JS9IETTXC1Q?si=Cp-xaQ7wzE2dYH9_"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+        </iframe>
+    </div>
+    </div>
     <p class="lead text-center">
       <i class="fas fa-bullhorn me-2 text-primary"></i> Ajude a promover a API Pix mais simples do mercado e <strong>ganhe comissões recorrentes</strong>!
     </p>
