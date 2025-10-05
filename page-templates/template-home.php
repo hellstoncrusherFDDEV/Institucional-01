@@ -44,7 +44,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 2. Por Que Escolher a PixGo? (Proposta de Valor) -->
 <section class="value-prop mt-5 py-5">
     <div class="container">
-        <h2 class="text-center mb-5">Por Que Escolher a PixGo?</h2>
+        <i class="fas fa-code fa-3x text-success mb-3"></i>
+        <h5 class="card-title text-success">Facilidade de Integração</h5>
         <div class="row text-center">
             
             <!-- Facilidade de Integração -->
