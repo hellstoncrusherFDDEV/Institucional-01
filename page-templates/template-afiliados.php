@@ -54,7 +54,7 @@ get_header();
         <h2 class="fw-semibold mb-3">
           <i class="fas fa-cogs text-secondary me-2"></i> Como Funciona?
         </h2>
-        <ol class="ps-3">
+        <ol class="ps-3 list-unstyled">
           <li><i class="fas fa-user-plus text-success me-1"></i> Cadastre-se no Programa.</li>
           <li><i class="fas fa-link text-primary me-1"></i> Receba seu link e materiais de divulgação.</li>
           <li><i class="fas fa-key text-warning me-1"></i> Seus indicados recebem a API Key inicial.</li>
