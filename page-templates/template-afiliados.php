@@ -84,7 +84,7 @@ get_header();
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
             <p>Você recebe <strong>comissões recorrentes</strong> a cada requisição feita na API pelos seus indicados.
-            Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados entre R$10,00 e R$30,00.</p>
+            Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados com valores entre R$10,00 e R$30,00.</p>
             <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
                 <iframe
                 src="https://www.youtube.com/embed/BXEJ_diYqRc?si=b5vjjtZnuDv_ihfg"
