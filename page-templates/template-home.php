@@ -44,15 +44,14 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 2. Por Que Escolher a PixGo? (Proposta de Valor) -->
 <section class="value-prop mt-5 py-5">
     <div class="container">
-        <i class="fas fa-code fa-3x text-success mb-3"></i>
-        <h5 class="card-title text-success">Facilidade de Integração</h5>
+        <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i>Por Que Escolher a PixGo?</h2>
         <div class="row text-center">
             
             <!-- Facilidade de Integração -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
-                    <i class="bi bi-code-slash text-primary display-4 mb-3"></i>
-                    <h3 class="h4">Facilidade de Integração</h3>
+                    <i class="fas fa-code fa-3x text-success mb-3"></i>
+                    <h5 class="card-title text-success">Facilidade de Integração</h5>
                     <p class="card-text">
                         Nossa API é simples, com documentação clara e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas, sem dor de cabeça.
                     </p>
