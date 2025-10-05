@@ -7,44 +7,44 @@ Template Post Type: page
 get_header();
 ?>
 
-<div class="py-2">
-    <h1 class="display-4 mb-4">Entre em Contato com a PixGo</h1>
-    <p class="lead">Tem dúvidas sobre a integração, preços ou precisa de suporte? Fale conosco.</p>
+<div class="py-2 bg-light">
+  <div class="container">
+    <h1 class="display-4 mb-4 text-center fw-bold">
+      <i class="fas fa-envelope-open-text text-primary me-2"></i> Entre em Contato com a PixGo
+    </h1>
+    <p class="lead text-center mb-5">
+      Tem dúvidas sobre integração, preços ou precisa de suporte? Fale conosco agora mesmo.
+    </p>
 
     <div class="row">
-        <div class="col-md-6">
-            <h2 class="mb-3">Informações de Contato</h2>
-            <ul class="list-unstyled">
-                <!-- Usamos o e-mail do ADM encontrado nas fontes [20, 21] como referência para contato -->
-                <li><strong>E-mail de Suporte:</strong> <a href="mailto:contato@fddev.com.br">contato@fddev.com.br</a></li>
-                <li><strong>Central de Ajuda:</strong> (Link para documentação interna/FAQ, use /como-funciona)</li>
-                <li><strong>Administração:</strong> contato@fddev.com.br</li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <h2 class="mb-3">Formulário de Contato</h2>
-            <!-- Form: Usaria a função contact form 7 ou um código customizado -->
-            <form action="#" method="POST">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="assunto" class="form-label">Assunto</label>
-                    <input type="text" class="form-control" id="assunto">
-                </div>
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </form>
-        </div>
+      <!-- Coluna de Informações -->
+      <div class="col-md-5 mb-4">
+        <h2 class="h4 fw-bold mb-3 text-primary">
+          <i class="fas fa-info-circle me-2"></i> Informações de Contato
+        </h2>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <i class="fas fa-envelope text-danger me-2"></i>
+            <strong>E-mail de Suporte:</strong>
+            <a href="mailto:contato@fddev.com.br" class="text-decoration-none">contato@fddev.com.br</a>
+          </li>
+          <li class="mb-3">
+            <i class="fas fa-headset text-success me-2"></i>
+            <strong>Atendimento:</strong> Segunda a Sexta, 9h às 18h
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna do Formulário -->
+      <div class="col-md-7">
+        <h2 class="h4 fw-bold mb-3 text-primary">
+          <i class="fas fa-paper-plane me-2"></i> Envie sua Mensagem
+        </h2>
+        <!-- Contact Form 7 shortcode -->
+        <?php echo do_shortcode('[contact-form-7 id="2184b1f" title="Formulário de contato"]'); ?>
+      </div>
     </div>
+  </div>
 </div>
 
 <?php get_footer(); ?>
