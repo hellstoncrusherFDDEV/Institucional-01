@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pixgo-pwa-cache-v3';
+const CACHE_NAME = 'pixgo-pwa-cache-v4';
 
 // Arquivos críticos do sistema, incluindo os assets listados na estrutura
 const urlsToCache = [
@@ -41,7 +41,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     // Apenas intercepta requisições GET (não POSTs de ações PHP como acoes/login.php)
     if (event.request.method !== 'GET') return;
-    
+
     event.respondWith(
         caches.match(event.request)
             .then(cachedResponse => {
