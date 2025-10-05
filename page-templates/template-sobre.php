@@ -60,7 +60,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Para Quem é o PixGo? -->
     <section class="mb-5">
-        <h2 class="card-title text-info"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
+        <h2 class="card-title text-success"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
 
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light">
