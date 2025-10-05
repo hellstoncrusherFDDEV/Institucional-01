@@ -33,7 +33,7 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
 			</a>
             
             <!-- Botão Hamburguer -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#pixgoNavbar" 
+            <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#pixgoNavbar" 
                     aria-controls="pixgoNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
