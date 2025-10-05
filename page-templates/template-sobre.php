@@ -43,7 +43,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Preço Justo -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-success">
-                    <h4 class="text-success">Preço Justo</h4>
+                    <h4 class="text-success"><i class="fas fa-tags me-2"></i>Preço Justo</h4>
                     <p>Adotamos um modelo de créditos pré-pagos, onde você paga por requisição (ex: R$ 0,02 ou R$ 0,05), eliminando assinaturas mensais caras.</p>
                 </div>
             </div>
@@ -51,7 +51,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Foco no Mercado Pago e Escalabilidade -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-info">
-                    <h4 class="text-info">Escalabilidade</h4>
+                    <h4 class="text-info"><i class="fas fa-chart-line me-2"></i>Escalabilidade</h4>
                     <p>Utilizamos a infraestrutura confiável do Mercado Pago para gerar os Pix. O sistema é ideal para pequenos sites e aplicativos que não querem manter um servidor próprio para a geração de QR Code Pix.</p>
                 </div>
             </div>
