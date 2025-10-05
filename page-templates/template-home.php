@@ -67,8 +67,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Preço Justo por Requisição -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
-                    <i class="bi bi-currency-dollar text-success display-4 mb-3"></i>
-                    <h3 class="h4">Preço Justo por Requisição</h3>
+                    <i class="fas fa-coins fa-3x text-info mb-3"></i>
+                    <h5 class="card-title text-info">Preço Justo por Requisição</h5>
                     <p class="card-text">
                         Você paga apenas R$ 0,02 ou R$ 0,05 por requisição, como um modelo de créditos pré-pagos, eliminando assinaturas mensais caras.
                     </p>
@@ -79,8 +79,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Escalabilidade e Confiabilidade -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
-                    <i class="bi bi-cloud-check text-info display-4 mb-3"></i>
-                    <h3 class="h4">Escalabilidade e Confiabilidade</h3>
+                    <i class="fas fa-rocket fa-3x text-warning mb-3"></i>
+                    <h5 class="card-title text-warning">Escalabilidade e Confiabilidade</h5>
                     <p class="card-text">
                         Construído com PHP 8 e MySQL, ideal para pequenos apps e e-commerces que precisam escalar sem manter um servidor próprio.
                     </p>
