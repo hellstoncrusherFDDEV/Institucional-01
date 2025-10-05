@@ -7,7 +7,7 @@ Template Post Type: page
 get_header();
 ?>
 
-<div class="py-5">
+<div class="py-2">
     <h1 class="display-4 mb-4">Entre em Contato com a PixGo</h1>
     <p class="lead">Tem dúvidas sobre a integração, preços ou precisa de suporte? Fale conosco.</p>
 

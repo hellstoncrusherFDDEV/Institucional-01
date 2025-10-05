@@ -15,7 +15,7 @@ $pricingTiers = [
 ];
 ?>
 
-<div class="container my-5">
+<div class="container my-2">
     <h1 class="display-4 text-primary text-center"><i class="fas fa-tags me-2"></i>Preços PixGo: Pague Apenas Pelo Uso</h1>
     <p class="lead text-center mb-5">Nosso modelo é de <strong>créditos pré-pagos</strong>, permitindo total controle de custos sem mensalidades fixas.</p>
 
@@ -55,7 +55,7 @@ $pricingTiers = [
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-2">
         <div class="col-md-12 text-center">
             <h2><i class="fas fa-question-circle me-2"></i>Por Que Créditos Pré-Pagos?</h2>
             <p>Este modelo é similar ao de APIs de SMS, garantindo que você pague <strong>somente quando vender ou usar</strong> a funcionalidade.</p>

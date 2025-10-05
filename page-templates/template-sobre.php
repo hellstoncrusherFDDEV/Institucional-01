@@ -13,7 +13,7 @@
 get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
-<div class="py-5">
+<div class="py-2">
     <h1 class="display-4 text-primary"><i class="fas fa-info-circle me-2"></i>API Pix Simples e Econômica</h1>
 
     <section class="mb-5">

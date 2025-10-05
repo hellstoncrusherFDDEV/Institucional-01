@@ -13,7 +13,7 @@
 get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
-<div class="container my-5">
+<div class="container my-2">
     <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i>Como Funciona o PixGo?</h1>
     <p class="lead text-center mb-5">Integre Pix em 3 passos e gere QR Codes em tempo real.</p>
 
@@ -60,7 +60,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         </div>
     </div>
 
-	<h2 class="mt-5 mb-4">Documentação Técnica da API PixGo</h2>
+	<h2 class="mt-2 mb-4">Documentação Técnica da API PixGo</h2>
 	<p class="lead">Nossa API foi desenhada para ser RESTful, segura (requer API Key no cabeçalho Authorization) e extremamente simples. Utilize os seguintes endpoints para integrar o Pix ao seu sistema.</p>
 
 	<div class="accordion" id="apiDocumentationAccordion">
@@ -360,7 +360,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 		</div>
 	</div>
 
-    <div class="row mt-4">
+    <div class="row mt-2">
         <div class="col-lg-12">
             <h2 class="mt-4"><i class="fas fa-server me-2"></i>Tecnologia e Escalabilidade</h2>
             <p><i class="fas fa-shield-alt me-1 text-muted"></i> O PixGo é desenvolvido usando as tecnologias mais avançadas sem abrir mão da segurança, robustez e confiabilidade para gerenciar clientes e transações. A arquitetura é preparada para futuras integrações (como Stripe e/ou PayPal) e para monitoramento de logs e métricas.</p>
