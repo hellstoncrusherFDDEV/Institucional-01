@@ -60,20 +60,20 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Para Quem é o PixGo? -->
     <section class="mb-5">
-        <h2 class="h3 mb-4">Para Quem é o PixGo?</h2>
+        <h2 class="card-title text-info"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
 
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light">
-                <strong>Desenvolvedores Freelancers:</strong> Que precisam integrar Pix em projetos em poucas horas, sem a complexidade da documentação oficial do Mercado Pago.
+                <strong><i class="fas fa-laptop-code me-2 text-info"></i> Desenvolvedores Freelancers:</strong> Que precisam integrar Pix em projetos em poucas horas, sem a complexidade da documentação oficial do Mercado Pago.
             </li>
             <li class="list-group-item">
-                <strong>Pequenos E-commerces:</strong> Que buscam automatizar pagamentos Pix sem plugins pesados ou mensalidades altas de gateways.
+                <strong><i class="fas fa-shopping-cart me-2 text-info"></i> Pequenos E-commerces:</strong> Que buscam automatizar pagamentos Pix sem plugins pesados ou mensalidades altas de gateways.
             </li>
             <li class="list-group-item bg-light">
-                <strong>Prestadores de Serviço Autônomos:</strong> Que precisam gerar cobranças avulsas de forma rápida e automatizada, como consultores ou criadores de conteúdo.
+                <strong><i class="fas fa-user-tie me-2 text-info"></i> Prestadores de Serviço Autônomos:</strong> Que precisam gerar cobranças avulsas de forma rápida e automatizada, como consultores ou criadores de conteúdo.
             </li>
             <li class="list-group-item">
-                <strong>Startups e MVPs:</strong> Que precisam validar o produto rapidamente e integrar pagamentos de forma confiável e barata, com foco na escalabilidade futura.
+                <strong><i class="fas fa-user-tie me-2 text-info"></i> Startups e MVPs:</strong> Que precisam validar o produto rapidamente e integrar pagamentos de forma confiável e barata, com foco na escalabilidade futura.
             </li>
         </ul>
     </section>
