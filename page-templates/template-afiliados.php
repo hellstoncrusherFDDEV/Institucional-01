@@ -67,6 +67,78 @@ get_header();
       </div>
     </div>
 
+    <div class="container my-5">
+  <h2 class="text-center mb-4">
+    <i class="fas fa-info-circle text-success me-2"></i> Dúvidas Frequentes - Programa de Afiliados
+  </h2>
+
+  <div class="accordion" id="accordionAfiliados">
+
+    <!-- Item 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <i class="fas fa-star text-warning me-2"></i> Quais são os benefícios de ser afiliado?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAfiliados">
+        <div class="accordion-body">
+          Você recebe <strong>comissões recorrentes</strong> a cada recarga feita pelos seus indicados.
+          Além disso, tem acesso a materiais prontos de divulgação.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="fas fa-play-circle text-danger me-2"></i> Vídeo: Como funciona o programa?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAfiliados">
+        <div class="accordion-body text-center">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/S86zAxbwa3k" title="YouTube video player" allowfullscreen></iframe>
+          </div>
+          <p class="mt-2">Nesse vídeo mostramos como o programa de afiliados PixGo funciona passo a passo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <i class="fas fa-question-circle text-primary me-2"></i> Como recebo minhas comissões?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAfiliados">
+        <div class="accordion-body">
+          As comissões são creditadas automaticamente em sua conta Pix cadastrada, sempre que um indicado realizar uma recarga aprovada.
+          <strong>Pagamento rápido e transparente!</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <i class="fas fa-bullhorn text-success me-2"></i> Dicas para divulgar melhor
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionAfiliados">
+        <div class="accordion-body">
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check-circle text-success me-2"></i> Compartilhe seu link em grupos dev no WhatsApp e Telegram.</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Produza conteúdo no YouTube ou blog sobre integração de pagamentos.</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Utilize banners prontos que disponibilizamos no painel.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- CTA central -->
     <div class="text-center mt-4">
       <a href="/register" class="btn btn-success btn-lg px-4 shadow">
