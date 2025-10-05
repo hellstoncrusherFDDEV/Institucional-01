@@ -25,11 +25,11 @@ get_header();
         <ul class="list-unstyled">
           <li class="mb-3">
             <i class="fas fa-coins text-success me-2"></i>
-            <strong>Comissões Competitivas:</strong> Ganhe porcentagem em todas as recargas de crédito feitas pelos seus indicados.
+            <strong>Comissões Competitivas:</strong> Ganhe porcentagem em todas as requisições da API feitas pelos seus indicados.
           </li>
           <li class="mb-3">
             <i class="fas fa-bolt text-danger me-2"></i>
-            <strong>Fácil de Promover:</strong> A PixGo simplifica a burocracia da API oficial do Mercado Pago.
+            <strong>Fácil de Promover:</strong> A PixGo simplifica a burocracia da API oficial do Mercado Pago, e outros gateways de pagamento.
           </li>
           <li>
             <i class="fas fa-users text-info me-2"></i>
@@ -48,7 +48,7 @@ get_header();
           <li><i class="fas fa-link text-primary me-1"></i> Receba seu link e materiais de divulgação.</li>
           <li><i class="fas fa-key text-warning me-1"></i> Seus indicados recebem a API Key inicial.</li>
           <li><i class="fas fa-wallet text-danger me-1"></i> Eles recarregam créditos para usar a API.</li>
-          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> Você ganha comissão sobre cada recarga aprovada.</li>
+          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> Você ganha comissão sobre cada consumo efetivado na API.</li>
         </ol>
         <p class="text-muted mt-3">
           <i class="fas fa-briefcase me-2"></i> Parcerias com freelancers e agências digitais são parte da estratégia da PixGo.
