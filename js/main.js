@@ -1,4 +1,4 @@
-// Registro do Service Worker (para PWA)
+﻿// Registro do Service Worker (para PWA)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('https://pixgo.api.br/wp-content/themes/Institucional-01/service-worker.js').then(function(registration) {
