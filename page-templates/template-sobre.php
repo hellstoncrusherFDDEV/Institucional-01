@@ -35,7 +35,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Facilidade de Integração -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-primary">
-                    <h4 class="text-primary"><i class="fas fa-plug me-2 text-success"></i> Facilidade de Integração</h4>
+                    <h4 class="text-primary"><i class="fas fa-plug me-2"></i> Facilidade de Integração</h4>
                     <p>Oferecemos uma API simples, com boa documentação e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas.</p>
                 </div>
             </div>
