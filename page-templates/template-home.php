@@ -56,7 +56,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
 <!-- 2. Por Que Escolher a PixGo? (Proposta de Valor) -->
-<section class="value-prop mt-1 py-2">
+<section class="value-prop mt-1 py-4">
     <div class="container">
         <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i>Por Que Escolher a PixGo?</h2>
         <div class="row text-center">
@@ -102,7 +102,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 </section>
 
 <!-- 3. Quem se Beneficia? (Foco nas Personas) -->
-<section class="target-audience bg-light-subtle py-2">
+<section class="target-audience bg-light-subtle py-4">
     <div class="container">
         <h2 class="text-center mb-5 text-primary"><i class="fas fa-users me-2"></i>Quem se Beneficia com PixGo?</h2>
         <div class="row">
@@ -150,7 +150,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 </section>
 
 <!-- 4. Como Funciona (Mecanismo e Chamada Final para Registro) -->
-<section class="how-it-works py-2 bg-light">
+<section class="how-it-works py-4 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2 text-center">
