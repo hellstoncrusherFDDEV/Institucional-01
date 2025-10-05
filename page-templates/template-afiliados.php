@@ -7,7 +7,7 @@ Template Post Type: page
 get_header();
 ?>
 
-<div class="py-5 bg-light">
+<div class="py-2 bg-light">
   <div class="container">
     <h1 class="display-4 fw-bold mb-4 text-center text-primary">
       <i class="fas fa-handshake me-2"></i> Programa de Afiliados PixGo
@@ -133,7 +133,7 @@ get_header();
           <ul class="list-unstyled">
             <li><i class="fas fa-check-circle text-success me-2"></i> Compartilhe seu link em grupos dev no WhatsApp e Telegram.</li>
             <li><i class="fas fa-check-circle text-success me-2"></i> Produza conteúdo no YouTube ou blog sobre integração de pagamentos.</li>
-            <li><i class="fas fa-check-circle text-success me-2"></i> Utilize banners prontos que disponibilizamos no painel.</li>
+            <li><i class="fas fa-check-circle text-success me-2"></i> Utilize o seu cupom que presenteia os indicados com valores entre R$10,00 e R$30,00 reais.</li>
           </ul>
         </div>
       </div>
