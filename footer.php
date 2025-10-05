@@ -4,7 +4,7 @@
 <footer class="footer-custom mt-5">
     <div class="container text-center">
         <p class="mb-0">
-            © Pix Go. Todos os direitos reservados.
+            © PixGo. Todos os direitos reservados.
             <small class="d-block mt-1">API simples e econômica de pagamentos Pix via Mercado Pago.</small>
         </p>
     </div>
