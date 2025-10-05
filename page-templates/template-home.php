@@ -16,21 +16,21 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     <div class="container">
         <!-- Título principal baseado no conteúdo institucional -->
         <h1 class="display-4 fw-bold text-primary"><i class="fas fa-qrcode me-2"></i>PixGo: Sua API Pix Simples e Econômica</h1>
-        
+
         <!-- Proposta de valor principal -->
         <p class="lead mt-3 mb-4">
             Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.
         </p>
 
-        <hr class="my-4"> 
+        <hr class="my-4">
 
         <div class="container my-4">
         <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
-            <iframe 
-            src="https://www.youtube.com/embed/S86zAxbwa3k?si=aOVK7a39DLm64gwY" 
-            title="YouTube video player" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
+            <iframe
+            src="https://www.youtube.com/embed/S86zAxbwa3k?si=aOVK7a39DLm64gwY"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
             </iframe>
         </div>
@@ -47,6 +47,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <a href="/login" class="btn btn-outline-secondary btn-lg">
             Já sou Cliente
         </a>
+        
     </div>
 </section>
 
@@ -59,7 +60,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     <div class="container">
         <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i>Por Que Escolher a PixGo?</h2>
         <div class="row text-center">
-            
+
             <!-- Facilidade de Integração -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
@@ -105,7 +106,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     <div class="container">
         <h2 class="text-center mb-5">Quem se Beneficia com PixGo?</h2>
         <div class="row">
-            
+
             <!-- Desenvolvedores Freelancers -->
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
@@ -131,7 +132,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                     </div>
                 </div>
             </div>
-            
+
             <!-- Prestadores de Serviço / Startups -->
             <div class="col-md-12 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
@@ -172,6 +173,6 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     </div>
 </section>
 
-<?php 
+<?php
 get_footer(); // Carrega o footer.php
 ?>
