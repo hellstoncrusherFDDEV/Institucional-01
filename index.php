@@ -16,10 +16,14 @@ get_header();
 
         <div class="col-lg-8">
             
+            <?php if ( !is_single() || !is_page() ) : ?>
+
             <header class="mb-4">
                 <h1 class="display-5">Conteúdo Principal</h1>
                 <p class="lead">Página padrão do tema. Para conteúdos específicos (Home, Preços, Contato), utilize os Modelos de Página.</p>
             </header>
+
+            <?php endif; ?>
             
             <?php
             // 2. O Loop do WordPress
