@@ -61,6 +61,17 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     </div>
 
 	<h2 class="mt-2 mb-4">Documentação Técnica da API PixGo</h2>
+
+  <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
+      <iframe
+      src="https://www.youtube.com/embed/S86zAxbwa3k?si=YJvbwiXoNz9xBxe8"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+      </iframe>
+  </div>
+
 	<p class="lead">Nossa API foi desenhada para ser RESTful, segura (requer API Key no cabeçalho Authorization) e extremamente simples. Utilize os seguintes endpoints para integrar o Pix ao seu sistema.</p>
 
 	<div class="accordion" id="apiDocumentationAccordion">
