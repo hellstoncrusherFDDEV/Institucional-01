@@ -37,11 +37,18 @@ get_header();
 
       <!-- Coluna do Formulário -->
       <div class="col-md-8">
+
         <h2 class="h4 fw-bold mb-3 text-primary">
           <i class="fas fa-paper-plane me-2"></i> Envie sua Mensagem
         </h2>
-        <!-- Contact Form 7 shortcode -->
-        <?php echo do_shortcode('[contact-form-7 id="2184b1f" title="Formulário de contato"]'); ?>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <!-- Contact Form 7 shortcode -->
+            <?php echo do_shortcode('[contact-form-7 id="2184b1f" title="Formulário de contato"]'); ?>
+          </div>
+        </div>
+
       </div>
     </div>
 

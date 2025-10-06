@@ -166,8 +166,13 @@ function pixgo_customizer_css() {
 }
 add_action( 'wp_head', 'pixgo_customizer_css' );
 
-// Força Contact Form 7 a aplicar classes do Bootstrap
+// Adiciona classes Bootstrap aos elementos do CF7
 add_filter('wpcf7_form_elements', function($content) {
-    $content = str_replace('class="wpcf7-form-control', 'class="wpcf7-form-control form-control', $content);
+    // Inputs e textarea
+    $content = preg_replace('/<(input|textarea|select)(.*?)class="(.*?)"/', '<$1$2class="$3 form-control"', $content);
+
+    // Botão de envio
+    $content = str_replace('wpcf7-submit', 'wpcf7-submit btn btn-primary btn-sm', $content);
+
     return $content;
 });

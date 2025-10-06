@@ -61,7 +61,7 @@ body.dark-mode {
     .nav-item {
 		padding-bottom: 2px;
 	}
-	
+
 	.navbar-nav .nav-link {
         transition: all 0.2s ease;
     }
@@ -74,4 +74,43 @@ body.dark-mode {
     }
 }
 
-		
+/* INÍCIO CONTACT FORM 7 */
+/* Mensagens de erro por campo */
+.wpcf7-not-valid-tip {
+    color: #dc3545; /* vermelho Bootstrap */
+    font-size: 0.875rem;
+    margin-top: .25rem;
+}
+
+/* Bordas vermelhas no input inválido */
+.wpcf7-form-control.wpcf7-not-valid {
+    border-color: #dc3545;
+}
+
+/* Mensagens globais */
+.wpcf7-response-output {
+    margin-top: 1rem;
+    padding: .75rem 1rem;
+    border-radius: .375rem;
+}
+
+/* Sucesso */
+.wpcf7-form.sent .wpcf7-response-output {
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+/* Erro */
+.wpcf7-form.invalid .wpcf7-response-output,
+.wpcf7-form.failed .wpcf7-response-output {
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+/* Mensagem em envio */
+.wpcf7-form .wpcf7-spinner {
+    margin-left: .5rem;
+}
+/* FIM CONTACT FORM 7 */
