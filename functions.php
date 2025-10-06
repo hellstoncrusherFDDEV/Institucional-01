@@ -176,3 +176,14 @@ add_filter('wpcf7_form_elements', function($content) {
 
     return $content;
 });
+
+// Máscaras para o Contact Form 7
+function cf7_enqueue_mask_script() {
+    wp_enqueue_script('jquery-mask', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['jquery'], '1.14.16', true);
+    wp_add_inline_script('jquery-mask', "
+        jQuery(function($){
+            $('input[name=\"tel-105\"]').mask('(00) 00000-0000');
+        });
+    ");
+}
+add_action('wp_enqueue_scripts', 'cf7_enqueue_mask_script');
