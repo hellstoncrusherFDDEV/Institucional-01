@@ -52,6 +52,16 @@ $post_type = get_post_type();
                     // Adiciona link para lightbox (Bootstrap modal)
                     if (preg_match('/src=["\'](.*?)["\']/', $img, $srcMatch)) {
                         $src = $srcMatch[1];
+
+                        // Tenta obter o ID da imagem a partir do src
+                        $attachment_id = attachment_url_to_postid($src);
+
+                        // Se encontrou, pega a URL da versão completa
+                        if ($attachment_id) {
+                            $full_src = wp_get_attachment_image_url($attachment_id, 'full');
+                            $src = $full_src ?: $src;
+                        }
+
                         $img = '<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="' . esc_url($src) . '">' . $img . '</a>';
                     }
 
