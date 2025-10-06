@@ -114,3 +114,24 @@ body.dark-mode {
     margin-left: .5rem;
 }
 /* FIM CONTACT FORM 7 */
+
+/* ==== Estilos Modernos para Cards ==== */
+.post-thumb img {
+    transition: transform .4s ease, filter .4s ease;
+    border-bottom: 3px solid #0d6efd20;
+}
+
+.post-thumb:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.post-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+

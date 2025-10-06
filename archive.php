@@ -41,23 +41,44 @@
             </header>
 
             <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <article class="mb-4 border-bottom pb-3">
-                        <h2 class="h4">
-                            <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                        <p class="text-muted small mb-2">
-                            <i class="fas fa-user me-1"></i> <?php the_author(); ?>
-                            <i class="fas fa-clock ms-3 me-1"></i> <?php echo get_the_date(); ?>
-                        </p>
-                        <p><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-arrow-right me-1"></i> Ler mais
-                        </a>
-                    </article>
-                <?php endwhile; ?>
+                <div class="row g-4">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm border-0 overflow-hidden post-card">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <div class="post-thumb overflow-hidden">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_post_thumbnail('medium_large', [
+                                                'class' => 'img-fluid w-100',
+                                                'loading' => 'lazy',
+                                                'alt' => get_the_title()
+                                            ]); ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">
+                                        <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h2>
+                                    <p class="text-muted small mb-2">
+                                        <i class="fas fa-user me-1"></i> <?php the_author(); ?>
+                                        <i class="fas fa-clock ms-3 me-1"></i> <?php echo get_the_date(); ?>
+                                    </p>
+                                    <p class="card-text"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+                                </div>
+
+                                <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-arrow-right me-1"></i> Ler mais
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
 
                 <div class="mt-4">
                     <?php
