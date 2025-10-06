@@ -1,4 +1,4 @@
-﻿<aside class="card p-4 shadow-sm mb-4">
+<aside class="card p-4 shadow-sm mb-4">
     <h4 class="mb-3 text-primary">
         <i class="fas fa-bolt me-2"></i> Foco do PixGo
     </h4>
@@ -33,25 +33,6 @@
         else :
             echo '<li class="text-muted">Nenhum post recente.</li>';
         endif;
-        ?>
-    </ul>
-</aside>
-
-<aside class="card p-4 shadow-sm mb-4">
-    <h5 class="mb-3 text-info">
-        <i class="fas fa-folder-open me-2"></i> Categorias
-    </h5>
-    <ul class="list-unstyled mb-0">
-        <?php
-        $categories = get_categories();
-        foreach ($categories as $category) {
-            echo '<li class="mb-2">
-                    <i class="fas fa-tag text-muted me-1"></i>
-                    <a href="' . get_category_link($category->term_id) . '" class="text-decoration-none">
-                        ' . esc_html($category->name) . ' (' . $category->count . ')
-                    </a>
-                  </li>';
-        }
         ?>
     </ul>
 </aside>
