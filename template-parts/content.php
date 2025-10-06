@@ -12,35 +12,33 @@ $post_type = get_post_type();
 <article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 card shadow-sm overflow-hidden'); ?>>
 
     <?php if ( has_post_thumbnail() ) : ?>
-        <div class="post-hero position-relative mb-4">
+        <div class="post-hero position-relative mb-3">
             <?php the_post_thumbnail('large', [
                 'class' => 'img-fluid w-100 rounded-0',
                 'loading' => 'lazy',
                 'alt' => get_the_title()
             ]); ?>
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50 text-white">
-                <h1 class="display-5 text-center px-3"><?php the_title(); ?></h1>
-            </div>
         </div>
-    <?php else : ?>
-        <header class="entry-header mb-4 px-4 pt-4">
-            <?php
-            the_title('<h1 class="entry-title display-5">', '</h1>');
-            if ( 'post' === $post_type ) {
-                echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
-            }
-            ?>
-        </header>
     <?php endif; ?>
+
+    <header class="entry-header mb-4 px-4 pt-3">
+        <?php
+        the_title('<h1 class="entry-title display-5 fw-bold">', '</h1>');
+        if ( 'post' === $post_type ) {
+            echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
+        }
+        ?>
+    </header>
 
     <div class="entry-content px-4 pb-4">
         <?php
-        // Filtro: adiciona lazy loading e classes modernas a todas as imagens do conteúdo
+        // Filtro para adicionar lazy loading e classes modernas a todas as imagens do conteúdo
         add_filter('the_content', function($content) {
             $content = preg_replace_callback(
                 '/<img(.*?)>/i',
                 function ($matches) {
                     $img = $matches[0];
+
                     // Adiciona atributos modernos
                     if (strpos($img, 'loading=') === false) {
                         $img = str_replace('<img', '<img loading="lazy"', $img);
@@ -87,7 +85,7 @@ $post_type = get_post_type();
 
 </article>
 
-<!-- Modal para visualizar imagens em destaque -->
+<!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content bg-transparent border-0">
