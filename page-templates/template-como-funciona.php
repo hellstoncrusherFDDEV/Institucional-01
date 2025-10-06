@@ -64,7 +64,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
   <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
       <iframe
-      src="https://www.youtube.com/embed/S86zAxbwa3k?si=YJvbwiXoNz9xBxe8"
+      src="https://www.youtube.com/embed/ogpV6boXtXs?si=NeGP8jxfTRvHyCX0"
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
