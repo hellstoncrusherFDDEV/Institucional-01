@@ -41,10 +41,10 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         </p>
 
         <!-- CTAs - Usamos os slugs definidos no sistema original, assumindo que as páginas foram criadas no WP -->
-        <a href="/register" class="btn btn-primary btn-lg me-3 pb-2">
+        <a href="/register" class="btn btn-primary btn-lg me-3 mb-2">
             Comece Grátis Agora!
         </a>
-        <a href="/login" class="btn btn-outline-secondary btn-lg">
+        <a href="/login" class="btn btn-outline-secondary btn-lg mb-2">
             Já sou Cliente
         </a>
 
