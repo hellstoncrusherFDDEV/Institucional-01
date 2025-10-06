@@ -135,3 +135,14 @@ body.dark-mode {
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
+/* Estilos para a modal das imagens ampliadas */
+#imageModal .modal-content {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+#imageModal img {
+  max-height: 90vh;
+  object-fit: contain;
+}
+
