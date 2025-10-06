@@ -1,59 +1,98 @@
 <?php
 /**
- * Template part para exibir o conteúdo das páginas.
- *
- * Usado em index.php e outros templates de loop.
+ * Template part para exibir o conteúdo das páginas e posts com foco em imagens modernas.
  *
  * Tema: Institutional 01
- *
  */
 
 // Obtém o tipo de post (post, page, custom post type)
 $post_type = get_post_type();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 card shadow-sm p-4 p-md-5'); ?>>
-    
-    <header class="entry-header mb-4">
-        <?php
-        // Exibe o título do post ou da página
-        the_title( '<h1 class="entry-title display-5">', '</h1>' );
-        
-        // Se fosse um blog, você incluiria metadados aqui:
-        if ( 'post' === $post_type ) {
-            echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
-        }
-        ?>
-    </header><!-- .entry-header -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 card shadow-sm overflow-hidden'); ?>>
 
-    <div class="entry-content">
+    <?php if ( has_post_thumbnail() ) : ?>
+        <div class="post-hero position-relative mb-4">
+            <?php the_post_thumbnail('large', [
+                'class' => 'img-fluid w-100 rounded-0',
+                'loading' => 'lazy',
+                'alt' => get_the_title()
+            ]); ?>
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50 text-white">
+                <h1 class="display-5 text-center px-3"><?php the_title(); ?></h1>
+            </div>
+        </div>
+    <?php else : ?>
+        <header class="entry-header mb-4 px-4 pt-4">
+            <?php
+            the_title('<h1 class="entry-title display-5">', '</h1>');
+            if ( 'post' === $post_type ) {
+                echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
+            }
+            ?>
+        </header>
+    <?php endif; ?>
+
+    <div class="entry-content px-4 pb-4">
         <?php
+        // Filtro: adiciona lazy loading e classes modernas a todas as imagens do conteúdo
+        add_filter('the_content', function($content) {
+            $content = preg_replace_callback(
+                '/<img(.*?)>/i',
+                function ($matches) {
+                    $img = $matches[0];
+                    // Adiciona atributos modernos
+                    if (strpos($img, 'loading=') === false) {
+                        $img = str_replace('<img', '<img loading="lazy"', $img);
+                    }
+                    if (strpos($img, 'class=') === false) {
+                        $img = str_replace('<img', '<img class="img-fluid rounded shadow-sm my-3"', $img);
+                    } else {
+                        $img = preg_replace('/class="(.*?)"/', 'class="$1 img-fluid rounded shadow-sm my-3"', $img);
+                    }
+
+                    // Adiciona link para lightbox (Bootstrap modal)
+                    if (preg_match('/src=["\'](.*?)["\']/', $img, $srcMatch)) {
+                        $src = $srcMatch[1];
+                        $img = '<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="' . esc_url($src) . '">' . $img . '</a>';
+                    }
+
+                    return $img;
+                },
+                $content
+            );
+            return $content;
+        });
+
         // Exibe o conteúdo principal do post/página
-        the_content( sprintf(
-            wp_kses(
-                // Link "Continue Lendo" (útil para listagens de blog)
-                __( 'Continue lendo %s <span class="meta-nav">&rarr;</span>', 'pixgo-theme' ),
-                array( 'span' => array( 'class' => array() ) )
-            ),
-            get_the_title()
-        ) );
+        the_content();
 
-        // Adiciona links de paginação para conteúdos longos
-        wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Páginas:', 'pixgo-theme' ),
+        // Links de paginação (caso o conteúdo tenha <!--nextpage-->)
+        wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pixgo-theme'),
             'after'  => '</div>',
-        ) );
+        ));
         ?>
     </div><!-- .entry-content -->
-    
-    <footer class="entry-footer mt-4">
-        <div class="alert alert-info" role="alert">
+
+    <footer class="entry-footer mt-4 p-4 bg-light border-top">
+        <div class="alert alert-info mb-0" role="alert">
             <h4 class="alert-heading">Pronto para Integrar?</h4>
             <p>A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.</p>
             <hr>
             <a href="/register" class="btn btn-success me-2">Começar Grátis</a>
             <a href="/como-funciona" class="btn btn-outline-info">Ver Documentação da API</a>
         </div>
-    </footer><!-- .entry-footer -->
+    </footer>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
+
+<!-- Modal para visualizar imagens em destaque -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img id="modalImage" src="" class="img-fluid rounded shadow" alt="Imagem ampliada">
+    </div>
+  </div>
+</div>
+

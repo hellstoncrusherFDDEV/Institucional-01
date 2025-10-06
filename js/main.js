@@ -10,3 +10,16 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+// Modal da imagens nos Posts
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const imageModal = document.getElementById('imageModal');
+    imageModal.addEventListener('show.bs.modal', function (event) {
+        const trigger = event.relatedTarget;
+        const imgSrc = trigger.getAttribute('data-img');
+        const modalImg = document.getElementById('modalImage');
+        modalImg.src = imgSrc;
+    });
+});
+</script>
