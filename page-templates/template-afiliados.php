@@ -31,7 +31,7 @@ get_header();
       <!-- Coluna 1: Benefícios -->
       <div class="col-md-6 mb-4">
         <h2 class="fw-semibold mb-3">
-          <i class="fas fa-star text-warning me-2"></i> Por que ser um Afiliado PixGo?
+          <i class="fas fa-star text-warning me-2"></i> Por que ser um Afiliado?
         </h2>
         <ul class="list-unstyled">
           <li class="mb-3">
