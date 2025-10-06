@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template part para exibir o conteúdo das páginas.
  *
@@ -20,9 +20,9 @@ $post_type = get_post_type();
         the_title( '<h1 class="entry-title display-5">', '</h1>' );
         
         // Se fosse um blog, você incluiria metadados aqui:
-        // if ( 'post' === $post_type ) {
-        //     echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
-        // }
+        if ( 'post' === $post_type ) {
+            echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
+        }
         ?>
     </header><!-- .entry-header -->
 
