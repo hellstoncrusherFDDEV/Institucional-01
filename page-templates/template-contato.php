@@ -4,6 +4,13 @@ Template Name: Contato
 Template Post Type: page
 */
 
+/*
+PROMPT para criar video
+Explique como funciona o processo de contato com a PixGo. Utilize 2 apresentadores para não haver alteração de sotaque. Existe a página de
+contato, que terá a resposta por email. E existe o contato por WhatsApp disponível para clientes da plataforma e afiliados, onde a resposta
+será dada em ordem temporal.
+*/
+
 get_header();
 ?>
 
