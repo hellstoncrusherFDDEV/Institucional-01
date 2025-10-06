@@ -13,21 +13,12 @@ if ('serviceWorker' in navigator) {
 
 // Modal da imagens nos Posts
 document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-
-  // Quando qualquer link com data-bs-target="#imageModal" for clicado
-  document.body.addEventListener('click', function (e) {
-    const link = e.target.closest('[data-bs-toggle="modal"][data-bs-target="#imageModal"]');
-    if (!link) return;
-
-    e.preventDefault(); // Evita subir pro topo
-    const imgSrc = link.getAttribute('data-img');
-    modalImg.src = imgSrc;
-
-    // Força abertura manual da modal (garantido em todos contextos)
-    const bsModal = new bootstrap.Modal(modal);
-    bsModal.show();
-  });
+    const imageModal = document.getElementById('imageModal');
+    imageModal.addEventListener('show.bs.modal', function (event) {
+        const trigger = event.relatedTarget;
+        const imgSrc = trigger.getAttribute('data-img');
+        const modalImg = document.getElementById('modalImage');
+        modalImg.src = imgSrc;
+    });
 });
 
