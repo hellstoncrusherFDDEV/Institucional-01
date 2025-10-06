@@ -141,8 +141,15 @@ body.dark-mode {
   border: none;
   text-align: center;
 }
+
+#imageModal .modal-dialog {
+  max-width: 95vw !important; /* ocupa quase toda a largura da tela */
+}
+
 #imageModal img {
-  max-height: 90vh;
+  width: 100%;
+  height: auto;
+  max-height: 90vh; /* altura máxima da tela */
   object-fit: contain;
 }
 
