@@ -9,7 +9,7 @@
 $post_type = get_post_type();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('mb-5 card shadow-sm overflow-hidden'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('mb-2 card shadow-sm overflow-hidden'); ?>>
 
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="post-hero position-relative mb-3">
