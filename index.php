@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * The main template file (Fallback)
  *
@@ -13,6 +13,7 @@ get_header();
 ?>
 
     <div class="row">
+
         <div class="col-lg-8">
             
             <header class="mb-4">
@@ -55,12 +56,7 @@ get_header();
         
         <!-- Sidebar Simples de Contexto -->
         <div class="col-lg-4 pt-5 pt-lg-0">
-            <aside class="card p-4 shadow">
-                <h4>Foco do PixGo</h4>
-                <p>Nossa proposta de valor é a facilidade de integração e o preço justo por requisição.</p>
-                <p>O modelo de créditos pré-pagos garante que você pague somente pelo uso.</p>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>page=register" class="btn btn-warning mt-3">Começar Grátis Agora</a>
-            </aside>
+            <?php get_sidebar(); ?>
         </div>
         
     </div>
