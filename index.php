@@ -16,7 +16,7 @@ get_header();
 
         <div class="col-lg-8">
             
-            <?php if ( !is_single() || !is_page() ) : ?>
+            <?php if ( !is_single() ) : ?>
 
             <header class="mb-4">
                 <h1 class="display-5">Conteúdo Principal</h1>
