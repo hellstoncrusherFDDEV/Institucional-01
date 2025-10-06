@@ -153,3 +153,21 @@ body.dark-mode {
   object-fit: contain;
 }
 
+/* Videos Youtube */
+.lazy-video {
+  position: relative;
+  cursor: pointer;
+}
+.lazy-video .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  background: url('https://www.gstatic.com/images/icons/material/system/1x/play_arrow_white_48dp.png') no-repeat center center / contain;
+  border: none;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+}
+

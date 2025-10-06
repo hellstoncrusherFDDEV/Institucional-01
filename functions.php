@@ -187,3 +187,26 @@ function cf7_enqueue_mask_script() {
     ");
 }
 add_action('wp_enqueue_scripts', 'cf7_enqueue_mask_script');
+
+// ============================================================================
+// Função para exibir vídeos do YouTube com lazy loading
+// ============================================================================
+function lazy_youtube_video($url) {
+    // Extrai o ID do vídeo do YouTube
+    preg_match('/(?:youtu\.be\/|v=)([^&]+)/', $url, $matches);
+    if (empty($matches[1])) return ''; // URL inválida
+    $video_id = $matches[1];
+
+    // Cria o HTML do vídeo
+    ob_start(); ?>
+    <div class="ratio ratio-16x9 mx-auto lazy-video my-4" 
+         data-src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?rel=0">
+        <img src="https://img.youtube.com/vi/<?php echo esc_attr($video_id); ?>/hqdefault.jpg"
+             class="img-fluid rounded shadow-sm" 
+             alt="Thumbnail do vídeo">
+        <button class="play-btn" aria-label="Reproduzir vídeo"></button>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+

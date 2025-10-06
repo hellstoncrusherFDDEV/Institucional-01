@@ -22,3 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Videos do Youtube
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.lazy-video').forEach(div => {
+    div.addEventListener('click', function () {
+      const iframe = document.createElement('iframe');
+      iframe.src = this.dataset.src + '&autoplay=1';
+      iframe.title = 'YouTube video player';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      iframe.className = 'w-100 h-100';
+      this.innerHTML = '';
+      this.appendChild(iframe);
+    });
+  });
+});
