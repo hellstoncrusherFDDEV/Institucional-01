@@ -19,6 +19,9 @@
                         <i class="fas fa-tags text-info me-2"></i>
                         Tag: <?php single_tag_title(); ?>
                     </h1>
+                    <?php if ( tag_description() ) : ?>
+                        <p class="lead text-muted"><?php echo tag_description(); ?></p>
+                    <?php endif; ?>
 
                 <?php elseif ( is_author() ) : ?>
                     <h1 class="display-5 mb-2">
