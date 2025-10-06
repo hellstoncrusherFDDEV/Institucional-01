@@ -4,7 +4,7 @@
 function pixgo_theme_setup() {
     // Suporte a Título Dinâmico
     add_theme_support( 'title-tag' );
-    
+
     // Suporte a Miniaturas de Posts
     add_theme_support( 'post-thumbnails' );
 
@@ -35,13 +35,13 @@ function pixgo_scripts() {
 
     //Font Awesome Free
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
-    
+
     // CSS do Tema
     wp_enqueue_style( 'pixgo-style', get_stylesheet_uri(), array( 'bootstrap-css' ), '1.0' );
 
     // Bootstrap 5 JS Bundle
     wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '5.3.3', true );
-    
+
     // Script principal do tema
     wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
 }
@@ -64,7 +64,7 @@ if ( file_exists( $navwalker_file ) ) {
 // 3. Registro dos Modelos de Página Personalizados
 // Inclui modelos para as páginas institucionais existentes e as novas solicitadas.
 function pixgo_register_page_templates( $templates ) {
-    
+
     $templates['page-templates/template-home.php'] = 'Home (Institucional)';
     $templates['page-templates/template-sobre.php'] = 'Sobre a Empresa';
     $templates['page-templates/template-precos.php'] = 'Tabela de Preços';
@@ -78,7 +78,7 @@ add_filter( 'theme_page_templates', 'pixgo_register_page_templates' );
 
 // 4. WordPress Customizer para Opções de Design
 function pixgo_customize_register( $wp_customize ) {
-    
+
     // --- Painel de Configurações ---
     $wp_customize->add_panel( 'pixgo_theme_settings', array(
         'title' => __( 'Opções de Design', 'pixgo-theme' ),
@@ -90,7 +90,7 @@ function pixgo_customize_register( $wp_customize ) {
         'title' => __( 'Cores do Header e Footer', 'pixgo-theme' ),
         'panel' => 'pixgo_theme_settings',
     ) );
-    
+
     // Configuração da Cor da Barra Superior (Header)
     $wp_customize->add_setting( 'header_bg_color', array(
         'default' => '#007bff', // Cor primária do Bootstrap como default
@@ -112,7 +112,7 @@ function pixgo_customize_register( $wp_customize ) {
         'section' => 'pixgo_color_settings',
         'settings' => 'footer_bg_color',
     ) ) );
-    
+
     // --- Seção de Modo Dark ---
     $wp_customize->add_section( 'pixgo_dark_mode_settings', array(
         'title' => __( 'Modo Dark', 'pixgo-theme' ),
@@ -135,23 +135,22 @@ function pixgo_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
 
-
 // 5. Gera CSS Dinâmico para as Cores
 function pixgo_customizer_css() {
     $header_bg_color = get_theme_mod( 'header_bg_color', '#007bff' );
     $footer_bg_color = get_theme_mod( 'footer_bg_color', '#343a40' );
     $dark_mode_enabled = get_theme_mod( 'enable_dark_mode', false );
-    
+
     $css = '';
-    
+
     // Cores dinâmicas do Bootstrap Navbar (Header)
     $css .= ".navbar-custom { background-color: {$header_bg_color} !important; }";
     $css .= ".navbar-custom .nav-link, .navbar-custom .navbar-brand { color: #fff; }";
-    
+
     // Cores dinâmicas do Footer
     $css .= ".footer-custom { background-color: {$footer_bg_color} !important; color: #f8f9fa; padding: 20px 0; }";
     $css .= ".footer-custom a { color: #ccc; }";
-    
+
     // Dark Mode
     if ( $dark_mode_enabled ) {
         $css .= "
@@ -166,3 +165,9 @@ function pixgo_customizer_css() {
     }
 }
 add_action( 'wp_head', 'pixgo_customizer_css' );
+
+// Força Contact Form 7 a aplicar classes do Bootstrap
+add_filter('wpcf7_form_elements', function($content) {
+    $content = str_replace('class="wpcf7-form-control', 'class="wpcf7-form-control form-control', $content);
+    return $content;
+});
