@@ -78,8 +78,8 @@ $post_type = get_post_type();
             <h4 class="alert-heading">Pronto para Integrar?</h4>
             <p>A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.</p>
             <hr>
-            <a href="/register" class="btn btn-success me-2">Começar Grátis</a>
-            <a href="/como-funciona" class="btn btn-outline-info">Ver Documentação da API</a>
+            <a href="/register" class="btn btn-success me-2 mb-2">Começar Grátis</a>
+            <a href="/como-funciona" class="btn btn-outline-info mb-2">Ver Documentação da API</a>
         </div>
     </footer>
 
