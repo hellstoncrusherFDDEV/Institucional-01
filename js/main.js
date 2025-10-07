@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Script para colapsar comentários filhos
 document.addEventListener('DOMContentLoaded', function() {
-	const toggles = document.querySelectorAll('.toggle-replies');
-	toggles.forEach(btn => {
-		btn.addEventListener('click', function() {
-			const card = btn.closest('.card');
-			const body = card.querySelector('.comment-body');
-			body.classList.toggle('collapse');
-			body.classList.toggle('show');
-			const icon = btn.querySelector('i');
-			icon.classList.toggle('fa-chevron-down');
-			icon.classList.toggle('fa-chevron-up');
-		});
-	});
+    const toggles = document.querySelectorAll('.toggle-replies');
+    toggles.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const card = btn.closest('.card');
+            const body = card.querySelector('.comment-body');
+            body.classList.toggle('collapse');
+            body.classList.toggle('show');
+            const icon = btn.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+    });
 });
