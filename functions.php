@@ -196,7 +196,7 @@ function cf7_enqueue_mask_script() {
 add_action('wp_enqueue_scripts', 'cf7_enqueue_mask_script');
 
 // ============================================================================
-// Função para exibir vídeos do YouTube com lazy loading e thumbnail em alta
+// Função para exibir vídeos do YouTube com lazy loading e thumbnail
 // ============================================================================
 function lazy_youtube_video($url) {
     // Extrai o ID do vídeo do YouTube
@@ -223,4 +223,20 @@ function lazy_youtube_video($url) {
     <?php
     return ob_get_clean();
 }
+
+// ============================================================================
+// Shortcode: [youtube_lazy url="https://youtu.be/abc123XYZ"]
+// ============================================================================
+function shortcode_lazy_youtube($atts) {
+    $atts = shortcode_atts(
+        array(
+            'url' => '',
+        ),
+        $atts,
+        'youtube_lazy'
+    );
+
+    return lazy_youtube_video($atts['url']);
+}
+add_shortcode('youtube_lazy', 'shortcode_lazy_youtube');
 
