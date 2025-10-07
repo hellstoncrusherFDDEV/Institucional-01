@@ -108,7 +108,12 @@ if (comments_open() || get_comments_number()) : ?>
 
                             <!-- Corpo do comentário -->
                             <div class="comment-body collapse show">
-                                <?php comment_text(); ?>
+                                <?php 
+                                    if (comments_open() || get_comments_number()) {
+                                        comments_template();
+                                    }
+                                    comment_text(); 
+                                ?>
                             </div>
 
                             <!-- Botão responder -->
