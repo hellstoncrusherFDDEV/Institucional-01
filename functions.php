@@ -37,7 +37,11 @@ function pixgo_scripts() {
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
 
     // CSS do Tema
-    wp_enqueue_style( 'pixgo-style', get_stylesheet_uri(), array( 'bootstrap-css' ), '1.0' );
+    //wp_enqueue_style( 'pixgo-style', get_stylesheet_uri(), array( 'bootstrap-css' ), '1.0' );
+    // sem cache - força atualizar a cada edição
+    wp_enqueue_style( 'theme-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css') 
+);
+
 
     // Bootstrap 5 JS Bundle
     wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '5.3.3', true );
