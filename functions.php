@@ -193,7 +193,7 @@ function cf7_enqueue_mask_script() {
 add_action('wp_enqueue_scripts', 'cf7_enqueue_mask_script');
 
 // ============================================================================
-// Função para exibir vídeos do YouTube com lazy loading
+// Função para exibir vídeos do YouTube com lazy loading e thumbnail em alta
 // ============================================================================
 function lazy_youtube_video($url) {
     // Extrai o ID do vídeo do YouTube
@@ -201,13 +201,20 @@ function lazy_youtube_video($url) {
     if (empty($matches[1])) return ''; // URL inválida
     $video_id = $matches[1];
 
-    // Cria o HTML do vídeo
+    // URLs de imagem
+    $thumb_hd = "https://img.youtube.com/vi/{$video_id}/maxresdefault.jpg";
+    $thumb_hq = "https://img.youtube.com/vi/{$video_id}/hqdefault.jpg";
+
     ob_start(); ?>
     <div class="ratio ratio-16x9 mx-auto lazy-video my-4" 
          data-src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?rel=0">
-        <img src="https://img.youtube.com/vi/<?php echo esc_attr($video_id); ?>/hqdefault.jpg"
-             class="img-fluid rounded shadow-sm" 
-             alt="Thumbnail do vídeo">
+        <picture>
+            <!-- Tenta carregar imagem HD, e se falhar, usa a HQ -->
+            <img loading="lazy" src="<?php echo esc_url($thumb_hd); ?>" 
+                 onerror="this.onerror=null;this.src='<?php echo esc_url($thumb_hq); ?>';"
+                 class="img-fluid rounded shadow-sm"
+                 alt="Thumbnail do vídeo">
+        </picture>
         <button class="play-btn" aria-label="Reproduzir vídeo"></button>
     </div>
     <?php
