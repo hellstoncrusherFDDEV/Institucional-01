@@ -57,14 +57,6 @@ $post_type = get_post_type();
 
 <?php get_template_part('content', 'comments'); ?>
 
-<?php
-// content-comments.php
-if (comments_open() || get_comments_number()) : ?>
-    <div id="comments" class="mt-5">
-        <?php comments_template(); ?>
-    </div>
-<?php endif; ?>
-
 <!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
