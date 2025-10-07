@@ -52,6 +52,49 @@
     </ul>
 </aside>
 
+<aside class="card p-4 shadow-sm mb-4">
+    <h5 class="mb-3 text-secondary">
+        <i class="fas fa-comments me-2"></i> Últimos Comentários
+    </h5>
+    <ul class="list-unstyled mb-0">
+        <?php
+        $recent_comments = get_comments([
+            'number'  => 5,
+            'status'  => 'approve',
+            'post_status' => 'publish'
+        ]);
+
+        if (!empty($recent_comments)) :
+            foreach ($recent_comments as $comment) :
+                $author_url = get_author_posts_url($comment->user_id);
+                $post_link = get_permalink($comment->comment_post_ID);
+                ?>
+                <li class="mb-3 d-flex align-items-start">
+                    <?php echo get_avatar($comment, 40, '', '', ['class'=>'rounded-circle me-2']); ?>
+                    <div class="flex-grow-1">
+                        <p class="mb-1 small">
+                            <strong>
+                                <a href="<?php echo esc_url($author_url); ?>" class="text-decoration-none text-dark fw-semibold hover-text-primary">
+                                    <?php echo esc_html($comment->comment_author); ?>
+                                </a>
+                            </strong>
+                            em
+                            <a href="<?php echo esc_url($post_link); ?>#comment-<?php echo $comment->comment_ID; ?>" class="text-decoration-none text-muted">
+                                <?php echo get_the_title($comment->comment_post_ID); ?>
+                            </a>
+                        </p>
+                        <small class="text-muted">
+                            <i class="fas fa-clock me-1"></i> <?php echo get_comment_date('', $comment); ?>
+                        </small>
+                    </div>
+                </li>
+            <?php endforeach;
+        else : ?>
+            <li class="text-muted">Nenhum comentário recente.</li>
+        <?php endif; ?>
+    </ul>
+</aside>
+
 <aside class="card p-4 shadow-sm">
     <h5 class="mb-3 text-secondary">
         <i class="fas fa-hashtag me-2"></i> Tags Populares

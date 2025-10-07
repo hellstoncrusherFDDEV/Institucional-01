@@ -86,11 +86,6 @@
                                         </span>
                                     </p>
 
-                                    <style>
-                                        .hover-text-primary:hover {
-                                            color: var(--bs-primary) !important;
-                                        }
-                                    </style>
                                     <p class="card-text"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
                                 </div>
 
