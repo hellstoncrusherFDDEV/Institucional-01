@@ -8,7 +8,7 @@
                 <?php if ( is_category() ) : ?>
                     <h1 class="display-5 mb-2">
                         <i class="fas fa-folder-open text-primary me-2"></i>
-                        Categoria: <?php single_cat_title(); ?>
+                        <?php single_cat_title(); ?>
                     </h1>
                     <?php if ( category_description() ) : ?>
                         <p class="lead text-muted"><?php echo category_description(); ?></p>
@@ -17,7 +17,7 @@
                 <?php elseif ( is_tag() ) : ?>
                     <h1 class="display-5 mb-2">
                         <i class="fas fa-tags text-info me-2"></i>
-                        Tag: <?php single_tag_title(); ?>
+                        <?php single_tag_title(); ?>
                     </h1>
                     <?php if ( tag_description() ) : ?>
                         <p class="lead text-muted"><?php echo tag_description(); ?></p>
