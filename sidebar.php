@@ -1,3 +1,18 @@
+<aside class="card p-3 shadow-sm mb-4">
+    <form role="search" method="get" class="d-flex" action="<?php echo esc_url(home_url('/')); ?>">
+        <input 
+            type="search" 
+            class="form-control me-2" 
+            placeholder="Pesquisar..." 
+            value="<?php echo get_search_query(); ?>" 
+            name="s"
+        >
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</aside>
+
 <aside class="card p-4 shadow-sm mb-4">
     <h4 class="mb-3 text-primary">
         <i class="fas fa-bolt me-2"></i> Foco do PixGo
