@@ -184,6 +184,46 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
+// Filtro para adicionar lazy loading e classes modernas a todas as imagens do conteúdo
+        add_filter('the_content', function($content) {
+            $content = preg_replace_callback(
+                '/<img(.*?)>/i',
+                function ($matches) {
+                    $img = $matches[0];
+
+                    // Adiciona atributos modernos
+                    if (strpos($img, 'loading=') === false) {
+                        $img = str_replace('<img', '<img loading="lazy"', $img);
+                    }
+                    if (strpos($img, 'class=') === false) {
+                        $img = str_replace('<img', '<img class="img-fluid rounded shadow-sm my-3"', $img);
+                    } else {
+                        $img = preg_replace('/class="(.*?)"/', 'class="$1 img-fluid rounded shadow-sm my-3"', $img);
+                    }
+
+                    // Adiciona link para lightbox (Bootstrap modal)
+                    if (preg_match('/src=["\'](.*?)["\']/', $img, $srcMatch)) {
+                        $src = $srcMatch[1];
+
+                        // Tenta obter o ID da imagem a partir do src
+                        $attachment_id = attachment_url_to_postid($src);
+
+                        // Se encontrou, pega a URL da versão completa
+                        if ($attachment_id) {
+                            $full_src = wp_get_attachment_image_url($attachment_id, 'full');
+                            $src = $full_src ?: $src;
+                        }
+
+                        $img = '<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="' . esc_url($src) . '">' . $img . '</a>';
+                    }
+
+                    return $img;
+                },
+                $content
+            );
+            return $content;
+        });
+
 // Máscaras para o Contact Form 7
 function cf7_enqueue_mask_script() {
     wp_enqueue_script('jquery-mask', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['jquery'], '1.14.16', true);
