@@ -24,17 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Videos do Youtube
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.lazy-video').forEach(div => {
-    div.addEventListener('click', function () {
+  document.querySelectorAll('.lazy-video .play-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const container = btn.closest('.lazy-video');
+      const videoSrc = container.getAttribute('data-src');
+      if (!videoSrc) return;
+
+      // Cria o iframe dinamicamente
       const iframe = document.createElement('iframe');
-      iframe.src = this.dataset.src + '&autoplay=1';
-      iframe.title = 'YouTube video player';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.allowFullscreen = true;
-      iframe.className = 'w-100 h-100';
-      this.innerHTML = '';
-      this.appendChild(iframe);
+      iframe.setAttribute('src', videoSrc);
+      iframe.setAttribute('title', 'YouTube video player');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.className = 'w-100 h-100 rounded shadow-sm';
+
+      // Substitui todo o conteúdo do container
+      container.innerHTML = '';
+      container.appendChild(iframe);
     });
   });
 });
