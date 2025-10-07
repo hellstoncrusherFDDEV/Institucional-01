@@ -43,8 +43,6 @@ $post_type = get_post_type();
         ?>
     </div><!-- .entry-content -->
 
-    <?php get_template_part('content', 'comments'); ?>
-
     <footer class="entry-footer mt-4 p-4 bg-light border-top">
         <div class="alert alert-info mb-0" role="alert">
             <h4 class="alert-heading">Pronto para Integrar?</h4>
@@ -56,6 +54,16 @@ $post_type = get_post_type();
     </footer>
 
 </article>
+
+<?php get_template_part('content', 'comments'); ?>
+
+<?php
+// content-comments.php
+if (comments_open() || get_comments_number()) : ?>
+    <div id="comments" class="mt-5">
+        <?php comments_template(); ?>
+    </div>
+<?php endif; ?>
 
 <!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
