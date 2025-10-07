@@ -66,13 +66,31 @@
                                             <?php the_title(); ?>
                                         </a>
                                     </h2>
-                                    <p class="text-muted small mb-2">
-                                        <i class="fas fa-user me-1"></i> 
-                                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                                            <?php the_author(); ?>
-                                        </a>
-                                        <i class="fas fa-clock ms-3 me-1"></i> <?php echo get_the_date(); ?>
+                                    <p class="text-muted small mb-2 d-flex align-items-center flex-wrap gap-2">
+                                        <span>
+                                            <i class="fas fa-user me-1 text-primary"></i>
+                                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" 
+                                            class="text-decoration-none text-muted fw-semibold hover-text-primary">
+                                                <?php the_author(); ?>
+                                            </a>
+                                        </span>
+
+                                        <span class="mx-2">•</span>
+
+                                        <span>
+                                            <i class="fas fa-clock me-1 text-primary"></i>
+                                            <a href="<?php echo esc_url(get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d'))); ?>" 
+                                            class="text-decoration-none text-muted fw-semibold hover-text-primary">
+                                                <?php echo get_the_date(); ?>
+                                            </a>
+                                        </span>
                                     </p>
+
+                                    <style>
+                                        .hover-text-primary:hover {
+                                            color: var(--bs-primary) !important;
+                                        }
+                                    </style>
                                     <p class="card-text"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
                                 </div>
 
