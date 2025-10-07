@@ -67,7 +67,9 @@
                                         </a>
                                     </h2>
                                     <p class="text-muted small mb-2">
-                                        <i class="fas fa-user me-1"></i> <?php the_author(); ?>
+                                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
+                                            <i class="fas fa-user me-1"></i> <?php the_author(); ?>
+                                        </a>
                                         <i class="fas fa-clock ms-3 me-1"></i> <?php echo get_the_date(); ?>
                                     </p>
                                     <p class="card-text"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
