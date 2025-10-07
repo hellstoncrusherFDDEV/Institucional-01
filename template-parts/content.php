@@ -32,7 +32,6 @@ $post_type = get_post_type();
 
     <div class="entry-content px-4 pb-4">
         <?php
-
         // Exibe o conteúdo principal do post/página
         the_content();
 
@@ -41,11 +40,10 @@ $post_type = get_post_type();
             'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pixgo-theme'),
             'after'  => '</div>',
         ));
-
-        get_template_part('content', 'comments');
-
         ?>
     </div><!-- .entry-content -->
+
+    <?php get_template_part('content', 'comments'); ?>
 
     <footer class="entry-footer mt-4 p-4 bg-light border-top">
         <div class="alert alert-info mb-0" role="alert">
@@ -67,4 +65,3 @@ $post_type = get_post_type();
     </div>
   </div>
 </div>
-
