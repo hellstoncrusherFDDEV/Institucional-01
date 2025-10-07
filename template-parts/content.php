@@ -1,11 +1,11 @@
 <?php
 /**
- * Template part para exibir o conteúdo das páginas e posts com foco em imagens modernas.
+ * Template part para exibir o conteúdo das páginas e posts com foco em imagens modernas e comentários.
  *
  * Tema: Institutional 01
  */
 
-// Obtém o tipo de post (post, page, custom post type)
+if (!defined('ABSPATH')) exit; // segurança
 $post_type = get_post_type();
 ?>
 
@@ -24,8 +24,8 @@ $post_type = get_post_type();
     <header class="entry-header mb-4 px-4 pt-3">
         <?php
         the_title('<h1 class="entry-title display-5 fw-bold">', '</h1>');
-        if ( 'post' === $post_type ) :
-        ?>
+
+        if ( 'post' === $post_type ) : ?>
             <p class="text-muted small mb-2">
                 <i class="fas fa-user me-1"></i>
                 <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-decoration-none text-muted">
@@ -41,10 +41,10 @@ $post_type = get_post_type();
 
     <div class="entry-content px-4 pb-4">
         <?php
-        // Exibe o conteúdo principal do post/página
+        // Exibe o conteúdo principal
         the_content();
 
-        // Links de paginação (caso o conteúdo tenha <!--nextpage-->)
+        // Paginação dentro do post
         wp_link_pages(array(
             'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pixgo-theme'),
             'after'  => '</div>',
@@ -65,9 +65,11 @@ $post_type = get_post_type();
 </article>
 
 <?php
-// Chama o arquivo de comentários (content-comments.php)
+// Comentários
 if (comments_open() || get_comments_number()) :
-    get_template_part('content', 'comments');
+    echo '<div id="comments" class="mt-5">';
+    comments_template(); // chama o arquivo comment.php ou o padrão do WP
+    echo '</div>';
 endif;
 ?>
 
