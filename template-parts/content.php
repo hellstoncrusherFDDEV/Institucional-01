@@ -34,7 +34,7 @@ $post_type = get_post_type();
         <?php
 
         // Exibe o conteúdo principal do post/página
-        the_content();
+        echo apply_filters('the_content', get_the_content());
 
         // Links de paginação (caso o conteúdo tenha <!--nextpage-->)
         wp_link_pages(array(

@@ -184,45 +184,53 @@ add_filter('wpcf7_form_elements', function($content) {
     return $content;
 });
 
-// Filtro para adicionar lazy loading e classes modernas a todas as imagens do conteúdo
+// ============================================================================
+// 🔧 Filtro global para imagens modernas e shortcodes em posts e páginas
+// ============================================================================
 add_filter('the_content', function($content) {
-	$content = preg_replace_callback(
-		'/<img(.*?)>/i',
-		function ($matches) {
-			$img = $matches[0];
+    // --- Executa shortcodes primeiro ---
+    $content = do_shortcode($content);
 
-			// Adiciona atributos modernos
-			if (strpos($img, 'loading=') === false) {
-				$img = str_replace('<img', '<img loading="lazy"', $img);
-			}
-			if (strpos($img, 'class=') === false) {
-				$img = str_replace('<img', '<img class="img-fluid rounded shadow-sm my-3"', $img);
-			} else {
-				$img = preg_replace('/class="(.*?)"/', 'class="$1 img-fluid rounded shadow-sm my-3"', $img);
-			}
+    // --- Melhora todas as imagens dentro do conteúdo ---
+    $content = preg_replace_callback(
+        '/<img(.*?)>/i',
+        function ($matches) {
+            $img = $matches[0];
 
-			// Adiciona link para lightbox (Bootstrap modal)
-			if (preg_match('/src=["\'](.*?)["\']/', $img, $srcMatch)) {
-				$src = $srcMatch[1];
+            // Adiciona lazy loading
+            if (strpos($img, 'loading=') === false) {
+                $img = str_replace('<img', '<img loading="lazy"', $img);
+            }
 
-				// Tenta obter o ID da imagem a partir do src
-				$attachment_id = attachment_url_to_postid($src);
+            // Adiciona classes modernas
+            if (strpos($img, 'class=') === false) {
+                $img = str_replace('<img', '<img class="img-fluid rounded shadow-sm my-3"', $img);
+            } else {
+                $img = preg_replace('/class="(.*?)"/', 'class="$1 img-fluid rounded shadow-sm my-3"', $img);
+            }
 
-				// Se encontrou, pega a URL da versão completa
-				if ($attachment_id) {
-					$full_src = wp_get_attachment_image_url($attachment_id, 'full');
-					$src = $full_src ?: $src;
-				}
+            // Obtém o src
+            if (preg_match('/src=["\'](.*?)["\']/', $img, $srcMatch)) {
+                $src = $srcMatch[1];
 
-				$img = '<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="' . esc_url($src) . '">' . $img . '</a>';
-			}
+                // Tenta obter a versão full da imagem
+                $attachment_id = attachment_url_to_postid($src);
+                if ($attachment_id) {
+                    $full_src = wp_get_attachment_image_url($attachment_id, 'full');
+                    $src = $full_src ?: $src;
+                }
 
-			return $img;
-		},
-		$content
-	);
-	return $content;
-});
+                // Envolve a imagem com link para modal (lightbox)
+                $img = '<a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="' . esc_url($src) . '">' . $img . '</a>';
+            }
+
+            return $img;
+        },
+        $content
+    );
+
+    return $content;
+}, 12);
 
 // Máscaras para o Contact Form 7
 function cf7_enqueue_mask_script() {
