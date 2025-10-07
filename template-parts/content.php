@@ -24,10 +24,19 @@ $post_type = get_post_type();
     <header class="entry-header mb-4 px-4 pt-3">
         <?php
         the_title('<h1 class="entry-title display-5 fw-bold">', '</h1>');
-        if ( 'post' === $post_type ) {
-            echo '<small class="text-muted">Publicado em: ' . get_the_date() . '</small>';
-        }
+        if ( 'post' === $post_type ) :
         ?>
+            <p class="text-muted small mb-2">
+                <i class="fas fa-user me-1"></i>
+                <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-decoration-none text-muted">
+                    <?php the_author(); ?>
+                </a>
+                <i class="fas fa-clock ms-3 me-1"></i>
+                <a href="<?php echo esc_url(get_permalink()); ?>" class="text-decoration-none text-muted">
+                    <?php echo get_the_date(); ?>
+                </a>
+            </p>
+        <?php endif; ?>
     </header>
 
     <div class="entry-content px-4 pb-4">
@@ -55,7 +64,12 @@ $post_type = get_post_type();
 
 </article>
 
-<?php get_template_part('content', 'comments'); ?>
+<?php
+// Chama o arquivo de comentários (content-comments.php)
+if (comments_open() || get_comments_number()) :
+    get_template_part('content', 'comments');
+endif;
+?>
 
 <!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
