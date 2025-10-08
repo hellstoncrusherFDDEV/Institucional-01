@@ -177,11 +177,19 @@ body.dark-mode {
 }
 
 /* Padronizando o tamanho das miniaturas na página de lista de posts */
+.post-thumb {
+  height: 250px;               /* altura padronizada */
+  display: flex;               
+  align-items: center;         /* centraliza verticalmente */
+  justify-content: center;     /* centraliza horizontalmente */
+  background-color: #f8f8f8;   /* fundo neutro (ajuste à paleta do seu tema) */
+  overflow: hidden;            /* evita vazamentos */
+  border-radius: 6px;          /* opcional */
+}
+
 .post-thumb img {
-  height: 250px;        /* defina a altura desejada */
-  width: 100%;          /* garante que ocupe toda a largura */
-  object-fit: cover;    /* corta o excesso e mantém a proporção */
-  object-position: center; /* centraliza o corte */
-  border-radius: 6px;   /* opcional: bordas suaves */
+  height: 100%;
+  width: auto;                 /* mantém proporção natural */
+  object-fit: contain;         /* exibe a imagem completa */
 }
 
