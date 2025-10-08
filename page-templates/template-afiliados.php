@@ -79,15 +79,9 @@ get_header();
           <div class="accordion-body">
             <p>Você recebe <strong>comissões recorrentes</strong> a cada requisição feita na API pelos seus indicados.
             Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados com valores entre R$10,00 e R$30,00.</p>
-            <div class="ratio ratio-16x9 mx-auto" style="max-width: 900px;">
-                <iframe
-                src="https://www.youtube.com/embed/BXEJ_diYqRc?si=b5vjjtZnuDv_ihfg"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-                </iframe>
-            </div>
+
+            <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=BXEJ_diYqRc'); ?>
+            
           </div>
         </div>
       </div>
@@ -102,9 +96,9 @@ get_header();
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
             <p class="mt-2">Nesse vídeo mostramos como o programa de afiliados PixGo funciona passo a passo.</p>
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/S86zAxbwa3k" title="YouTube video player" allowfullscreen></iframe>
-            </div>
+
+            <?php echo lazy_youtube_video('-https://www.youtube.com/watch?v=S86zAxbwa3k'); ?>
+            
           </div>
         </div>
       </div>
@@ -120,9 +114,9 @@ get_header();
           <div class="accordion-body">
             <p>As comissões são creditadas em sua conta Pix cadastrada ao solicitar um saque, sempre que atingir o valor de R$50,00 em comissões.
             <strong>Pagamento rápido e transparente!</strong></p>
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/mcp6fHu7x1Q?si=Pne5Gd1Cm8B7rz4C" title="YouTube video player" allowfullscreen></iframe>
-            </div>
+
+            <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=mcp6fHu7x1Q'); ?>
+            
           </div>
         </div>
       </div>
