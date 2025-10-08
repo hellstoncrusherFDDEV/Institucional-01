@@ -176,4 +176,12 @@ body.dark-mode {
   color: var(--bs-primary) !important;
 }
 
+/* Padronizando o tamanho das miniaturas na página de lista de posts */
+.post-thumb img {
+  height: 250px;        /* defina a altura desejada */
+  width: 100%;          /* garante que ocupe toda a largura */
+  object-fit: cover;    /* corta o excesso e mantém a proporção */
+  object-position: center; /* centraliza o corte */
+  border-radius: 6px;   /* opcional: bordas suaves */
+}
 
