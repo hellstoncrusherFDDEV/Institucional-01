@@ -54,6 +54,14 @@ function pixgo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
 
+function pixgo_enqueue_comment_reply() {
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'pixgo_enqueue_comment_reply' );
+
+
 // Registrar menu
 function meu_tema_registrar_menus() {
     register_nav_menus( array(

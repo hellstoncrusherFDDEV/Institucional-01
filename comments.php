@@ -20,9 +20,10 @@ if (!comments_open() && !get_comments_number()) return;
         ?>
     </h3>
 
-    <!-- Lista de comentários -->
-    <ul class="list-unstyled">
-        <?php
+    <?php
+    // Lista os comentários existentes
+    if ($num_comments > 0) {
+        echo '<ul class="list-unstyled">';
         wp_list_comments([
             'style'       => 'ul',
             'short_ping'  => true,
@@ -40,11 +41,10 @@ if (!comments_open() && !get_comments_number()) return;
                         <div class="d-flex align-items-center mb-2">
                             <?php echo get_avatar($comment, 48, '', '', ['class'=>'rounded-circle me-2', 'loading'=>'lazy']); ?>
                             <div class="flex-grow-1">
-                                <strong><?php comment_author(); ?></strong>
-                                <br>
+                                <strong><?php comment_author(); ?></strong><br>
                                 <small class="text-muted">
                                     <i class="fas fa-clock me-1"></i>
-                                    <a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>" class="text-decoration-none text-muted">
+                                    <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>" class="text-decoration-none text-muted">
                                         <?php printf('%1$s às %2$s', get_comment_date('', $comment), get_comment_time('', $comment)); ?>
                                     </a>
                                 </small>
@@ -61,18 +61,24 @@ if (!comments_open() && !get_comments_number()) return;
                         </div>
 
                         <div class="mt-2">
-                            <?php comment_reply_link(array_merge($args, [
+                            <?php
+                            comment_reply_link(array_merge($args, [
                                 'depth'     => $depth,
                                 'max_depth' => $args['max_depth'],
-                                'before'    => '<button class="btn btn-sm btn-outline-primary">',
-                                'after'     => '</button>'
-                            ])); ?>
+                                'before'    => '',
+                                'after'     => '',
+                                'reply_text'=> 'Responder'
+                            ]));
+                            ?>
                         </div>
                     </div>
                 </li>
-            <?php }
-        ]); ?>
-    </ul>
+                <?php
+            }
+        ]);
+        echo '</ul>';
+    }
+    ?>
 
     <!-- Formulário de comentários -->
     <?php
@@ -89,4 +95,5 @@ if (!comments_open() && !get_comments_number()) return;
         'label_submit' => 'Enviar Comentário'
     ]);
     ?>
+
 </div>
