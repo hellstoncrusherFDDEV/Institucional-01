@@ -64,14 +64,7 @@ $post_type = get_post_type();
 
 </article>
 
-<?php
-// Comentários
-if (comments_open() || get_comments_number()) :
-    echo '<div id="comments" class="mt-5">';
-    comments_template(); // chama o arquivo comment.php ou o padrão do WP
-    echo '</div>';
-endif;
-?>
+<?php get_template_part('comments'); ?>
 
 <!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
