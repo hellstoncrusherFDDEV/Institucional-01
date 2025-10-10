@@ -10,7 +10,7 @@ if (!get_comments_number() && !comments_open()) return;
     <h3 class="h5 text-primary mb-4">
         <i class="fas fa-comments me-2"></i>
         <?php
-        $num_comments = get_comments_number();
+        $num_comments = (int) get_comments_number();
         if ($num_comments === 0) {
             echo 'Seja o primeiro a comentar';
         } elseif ($num_comments === 1) {
