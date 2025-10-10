@@ -54,6 +54,7 @@ function pixgo_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
 
+// Scripts para comentários
 function pixgo_enqueue_comment_reply() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -61,6 +62,8 @@ function pixgo_enqueue_comment_reply() {
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_enqueue_comment_reply' );
 
+// Permite shortcodes nas descrições de tags e categorias
+add_filter('term_description', 'do_shortcode');
 
 // Registrar menu
 function meu_tema_registrar_menus() {
