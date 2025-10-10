@@ -64,7 +64,12 @@ $post_type = get_post_type();
 
 </article>
 
-<?php get_template_part('comments'); ?>
+<?php 
+// Exibe comentários apenas se houver ou se estiverem abertos
+if ( comments_open() || get_comments_number() ) :
+    comments_template();
+endif;
+?>
 
 <!-- Modal para visualizar imagens internas -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
