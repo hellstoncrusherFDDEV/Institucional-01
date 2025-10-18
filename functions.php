@@ -149,9 +149,39 @@ function pixgo_customize_register( $wp_customize ) {
         'type' => 'checkbox',
         'settings' => 'enable_dark_mode',
     ) );
+	
+	// --- Seção do Google AdSense ---
+    $wp_customize->add_section( 'pixgo_adsense_settings', array(
+        'title' => __( 'Google AdSense', 'pixgo-theme' ),
+        'panel' => 'pixgo_theme_settings',
+    ) );
+
+    // Campo para inserir o ID do AdSense (ca-pub-xxxxx)
+    $wp_customize->add_setting( 'adsense_account_id', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'adsense_account_id_control', array(
+        'label' => __( 'ID da conta AdSense (ex: ca-pub-1234567890)', 'pixgo-theme' ),
+        'section' => 'pixgo_adsense_settings',
+        'settings' => 'adsense_account_id',
+        'type' => 'text',
+    ) );
 
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
+
+// Insere a meta tag do AdSense no <head>
+function pixgo_add_adsense_meta_tag() {
+    $adsense_id = get_theme_mod( 'adsense_account_id' );
+
+    if ( ! empty( $adsense_id ) ) {
+        echo '<meta name="google-adsense-account" content="' . esc_attr( $adsense_id ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'pixgo_add_adsense_meta_tag' );
 
 // 5. Gera CSS Dinâmico para as Cores
 function pixgo_customizer_css() {
