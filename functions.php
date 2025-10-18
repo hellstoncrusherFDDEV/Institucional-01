@@ -1,5 +1,14 @@
 <?php
 
+/*********************************************************************************************************
+TO DO LIST
+--------------------
+1 - EXIBIR AS TAGS DOS POSTS/PÁGINAS INDIVIDUAIS
+2 - VER A QUANTIDADE DE TAGS EXIBIDAS NA BARRA LATERAL
+3 - ACIMA DOS COMENTÁRIOS, EXIBIR O PERFIL COMPLETO DO AUTOR, COM LINKS E FOTO
+4 - NO TOPO DA PÁGINA DE AUTOR, EXIBIR O PERFIL COMPLETO DO AUTOR, COM LINKS E FOTO
+**********************************************************************************************************/
+
 // 1. Configuração do Tema e Enqueue de Scripts
 function pixgo_theme_setup() {
     // Suporte a Título Dinâmico
