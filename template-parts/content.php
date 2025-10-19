@@ -138,7 +138,7 @@ $linkedin = get_the_author_meta('linkedin');
                         <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
                             <div class="card-body py-2">
                                 <i class="fas fa-globe mb-1 text-secondary"></i>
-                                <div class="small text-muted">Site pessoal</div>
+                                <div class="small text-muted text-start">Site pessoal</div>
                             </div>
                         </a>
                     </div>
@@ -149,7 +149,7 @@ $linkedin = get_the_author_meta('linkedin');
                         <a href="https://twitter.com/<?php echo esc_attr($twitter); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
                             <div class="card-body py-2">
                                 <i class="fab fa-twitter mb-1 text-info"></i>
-                                <div class="small text-muted">Twitter</div>
+                                <div class="small text-muted text-start">Twitter</div>
                             </div>
                         </a>
                     </div>
@@ -160,7 +160,7 @@ $linkedin = get_the_author_meta('linkedin');
                         <a href="<?php echo esc_url($facebook); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
                             <div class="card-body py-2">
                                 <i class="fab fa-facebook-f mb-1 text-primary"></i>
-                                <div class="small text-muted">Facebook</div>
+                                <div class="small text-muted text-start">Facebook</div>
                             </div>
                         </a>
                     </div>
@@ -171,7 +171,7 @@ $linkedin = get_the_author_meta('linkedin');
                         <a href="<?php echo esc_url($linkedin); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
                             <div class="card-body py-2">
                                 <i class="fab fa-linkedin-in mb-1 text-primary"></i>
-                                <div class="small text-muted">LinkedIn</div>
+                                <div class="small text-muted text-start">LinkedIn</div>
                             </div>
                         </a>
                     </div>
