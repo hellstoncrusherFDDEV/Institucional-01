@@ -117,7 +117,7 @@ $linkedin = get_the_author_meta('linkedin');
             </h5>
 
             <?php if ($author_bio) : ?>
-                <p class="text-muted mb-3"><?php echo wp_kses_post($author_bio); ?></p>
+                <p class="text-muted mb-3 fs-5"><?php echo wp_kses_post($author_bio); ?></p>
             <?php else : ?>
                 <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
             <?php endif; ?>
@@ -128,7 +128,7 @@ $linkedin = get_the_author_meta('linkedin');
                     <a href="<?php echo esc_url($author_url); ?>" class="card text-center border-0 shadow-sm text-decoration-none h-100">
                         <div class="card-body py-2">
                             <i class="fas fa-user mb-1 text-primary"></i>
-                            <div class="small text-muted">Mais posts</div>
+                            <div class="small text-muted text-start">Mais posts</div>
                         </div>
                     </a>
                 </div>
