@@ -175,6 +175,51 @@ function pixgo_customize_register( $wp_customize ) {
         'settings' => 'adsense_account_id',
         'type' => 'text',
     ) );
+	
+	// Título BARRA LATERAL CHAMADA PRA AÇÃO
+    $wp_customize->add_setting('pixgo_focus_title', array(
+        'default' => 'Foco do PixGo',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('pixgo_focus_title', array(
+        'label' => 'Título do Card',
+        'section' => 'title_tagline', // você pode criar uma seção custom
+        'type' => 'text',
+    ));
+
+    // Primeiro parágrafo
+    $wp_customize->add_setting('pixgo_focus_text1', array(
+        'default' => 'Nossa proposta de valor é a <strong>facilidade de integração</strong> e o <strong>preço justo por requisição</strong>.',
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+    $wp_customize->add_control('pixgo_focus_text1', array(
+        'label' => 'Texto 1 do Card',
+        'section' => 'title_tagline',
+        'type' => 'textarea',
+    ));
+
+    // Segundo parágrafo
+    $wp_customize->add_setting('pixgo_focus_text2', array(
+        'default' => 'Com o modelo de <strong>créditos pré-pagos</strong>, você paga apenas pelo uso real da API.',
+        'sanitize_callback' => 'wp_kses_post',
+    ));
+    $wp_customize->add_control('pixgo_focus_text2', array(
+        'label' => 'Texto 2 do Card',
+        'section' => 'title_tagline',
+        'type' => 'textarea',
+    ));
+
+    // Texto do botão
+    $wp_customize->add_setting('pixgo_focus_button', array(
+        'default' => 'Começar Grátis Agora',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('pixgo_focus_button', array(
+        'label' => 'Texto do Botão',
+        'section' => 'title_tagline',
+        'type' => 'text',
+    ));
+	// FIM BARRA LATERAL CHAMADA PRA AÇÃO
 
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
@@ -514,49 +559,3 @@ function pixgo_sidebar_focus_card($register_url = null) {
     <?php
 }
 
-function pixgo_customize_register2($wp_customize) {
-    // Título
-    $wp_customize->add_setting('pixgo_focus_title', array(
-        'default' => 'Foco do PixGo',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('pixgo_focus_title', array(
-        'label' => 'Título do Card',
-        'section' => 'title_tagline', // você pode criar uma seção custom
-        'type' => 'text',
-    ));
-
-    // Primeiro parágrafo
-    $wp_customize->add_setting('pixgo_focus_text1', array(
-        'default' => 'Nossa proposta de valor é a <strong>facilidade de integração</strong> e o <strong>preço justo por requisição</strong>.',
-        'sanitize_callback' => 'wp_kses_post',
-    ));
-    $wp_customize->add_control('pixgo_focus_text1', array(
-        'label' => 'Texto 1 do Card',
-        'section' => 'title_tagline',
-        'type' => 'textarea',
-    ));
-
-    // Segundo parágrafo
-    $wp_customize->add_setting('pixgo_focus_text2', array(
-        'default' => 'Com o modelo de <strong>créditos pré-pagos</strong>, você paga apenas pelo uso real da API.',
-        'sanitize_callback' => 'wp_kses_post',
-    ));
-    $wp_customize->add_control('pixgo_focus_text2', array(
-        'label' => 'Texto 2 do Card',
-        'section' => 'title_tagline',
-        'type' => 'textarea',
-    ));
-
-    // Texto do botão
-    $wp_customize->add_setting('pixgo_focus_button', array(
-        'default' => 'Começar Grátis Agora',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('pixgo_focus_button', array(
-        'label' => 'Texto do Botão',
-        'section' => 'title_tagline',
-        'type' => 'text',
-    ));
-}
-add_action('customize_register', 'pixgo_customize_register2');
