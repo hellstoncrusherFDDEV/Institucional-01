@@ -397,7 +397,7 @@ function pixgo_author_box($author_id = null) {
                 </h5>
 
                 <?php if ($author_bio) : ?>
-                    <p class="text-muted mb-3 fs-6"><?php echo wp_kses_post( wp_trim_words( $author_bio, 250, '...' ) );  ?></p>
+                    <p class="text-muted mb-3 fs-6"><?php echo wp_kses_post( wp_trim_words( $author_bio, 150, '...' ) );  ?></p>
                 <?php else : ?>
                     <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
                 <?php endif; ?>
