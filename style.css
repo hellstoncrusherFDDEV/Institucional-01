@@ -23,7 +23,7 @@ body.dark-mode {
 
 /* Ajusta o logo para layout horizontal */
 .logo-horizontal {
-    height: 50px;      /* define altura fixa */
+    height: 30px;      /* define altura fixa */
     width: auto;       /* mantém proporção */
     max-width: 200px;  /* evita que quebre o layout em telas grandes */
     display: block;
