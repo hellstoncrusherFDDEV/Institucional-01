@@ -514,7 +514,7 @@ function pixgo_sidebar_focus_card($register_url = null) {
     <?php
 }
 
-function pixgo_customize_register($wp_customize) {
+function pixgo_customize_register2($wp_customize) {
     // Título
     $wp_customize->add_setting('pixgo_focus_title', array(
         'default' => 'Foco do PixGo',
@@ -559,4 +559,4 @@ function pixgo_customize_register($wp_customize) {
         'type' => 'text',
     ));
 }
-add_action('customize_register', 'pixgo_customize_register');
+add_action('customize_register', 'pixgo_customize_register2');
