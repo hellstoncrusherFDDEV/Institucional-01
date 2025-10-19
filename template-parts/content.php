@@ -25,7 +25,7 @@ $post_type = get_post_type();
         <?php
         the_title('<h1 class="entry-title display-5 fw-bold">', '</h1>');
 
-        if ( 'post' === $post_type ) : ?>
+        if ( 'post' === get_post_type() ) : ?>
             <p class="text-muted small mb-2">
                 <i class="fas fa-user me-1"></i>
                 <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-decoration-none text-muted">
@@ -51,6 +51,26 @@ $post_type = get_post_type();
         ));
         ?>
     </div><!-- .entry-content -->
+
+
+    <!-- 🔽 BLOCO DE TAGS (NOVO) -->
+    <?php
+    $post_tags = get_the_tags();
+    if ( $post_tags ) : ?>
+        <div class="post-tags px-4 pb-4">
+            <h5 class="fw-semibold mb-3">
+                <i class="fas fa-tags me-2 text-primary"></i>Tags relacionadas:
+            </h5>
+            <?php foreach ( $post_tags as $tag ) : ?>
+                <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"
+                   class="badge rounded-pill bg-secondary text-decoration-none me-1 mb-1 p-2">
+                    <i class="fa-solid fa-hashtag me-1"></i><?php echo esc_html( $tag->name ); ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <!-- 🔼 FIM BLOCO DE TAGS -->
+
 
     <footer class="entry-footer mt-4 p-4 bg-light border-top">
         <div class="alert alert-info mb-0" role="alert">
