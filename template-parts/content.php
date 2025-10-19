@@ -94,25 +94,33 @@ $author_url = get_author_posts_url($author_id);
 $author_website = get_the_author_meta('user_url');
 ?>
 
-<section class="author-box card mt-4 shadow-sm border-0">
+<section class="author-box card mt-5 border-0 shadow-sm">
     <div class="card-body d-flex flex-wrap align-items-center">
-        <div class="author-avatar me-3 mb-3">
-            <img src="<?php echo esc_url($author_avatar); ?>" alt="<?php echo esc_attr($author_name); ?>" class="rounded-circle shadow-sm" width="96" height="96">
+        
+        <!-- Foto do autor -->
+        <div class="author-avatar me-4 mb-3 mb-md-0">
+            <img src="<?php echo esc_url($author_avatar); ?>" 
+                 alt="<?php echo esc_attr($author_name); ?>" 
+                 class="rounded-circle shadow-sm border border-light" 
+                 width="110" height="110">
         </div>
 
+        <!-- Informações -->
         <div class="author-info flex-grow-1">
-            <h5 class="fw-bold mb-1">
-                <a href="<?php echo esc_url($author_url); ?>" class="text-decoration-none text-dark">
+            <h5 class="fw-bold mb-2">
+                <a href="<?php echo esc_url($author_url); ?>" 
+                   class="text-decoration-none text-dark">
                     <?php echo esc_html($author_name); ?>
                 </a>
             </h5>
 
             <?php if ($author_bio) : ?>
-                <p class="mb-2 text-muted"><?php echo wp_kses_post($author_bio); ?></p>
+                <p class="mb-3 text-muted" style="line-height: 1.5;"><?php echo wp_kses_post($author_bio); ?></p>
             <?php else : ?>
-                <p class="text-muted mb-2">Autor deste artigo no blog PixGo.</p>
+                <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
             <?php endif; ?>
 
+            <!-- Links sociais -->
             <div class="author-links d-flex flex-wrap gap-2">
                 <a href="<?php echo esc_url($author_url); ?>" class="btn btn-outline-primary btn-sm">
                     <i class="fas fa-user me-1"></i> Mais posts
