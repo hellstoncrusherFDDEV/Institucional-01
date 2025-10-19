@@ -335,7 +335,116 @@ function shortcode_lazy_youtube($atts) {
 }
 add_shortcode('youtube_lazy', 'shortcode_lazy_youtube');
 
+// Função para exibir o perfil do autor
+function pixgo_author_box($author_id = null) {
+    if (!$author_id) {
+        $author_id = get_the_author_meta('ID');
+    }
 
+    $author_name = get_the_author_meta('display_name', $author_id);
+    $author_bio = get_the_author_meta('description', $author_id);
+    $author_avatar = get_avatar_url($author_id, array('size' => 220));
+    $author_url = get_author_posts_url($author_id);
+    $author_website = get_the_author_meta('user_url', $author_id);
+
+    // Redes sociais e outros links
+    $socials = array(
+        'twitter'   => get_the_author_meta('twitter', $author_id),
+        'facebook'  => get_the_author_meta('facebook', $author_id),
+        'linkedin'  => get_the_author_meta('linkedin', $author_id),
+        'email'     => get_the_author_meta('user_email', $author_id),
+        'instagram' => get_the_author_meta('instagram', $author_id),
+        'pinterest' => get_the_author_meta('pinterest', $author_id),
+        'myspace'   => get_the_author_meta('myspace', $author_id),
+        'soundcloud'=> get_the_author_meta('soundcloud', $author_id),
+        'tumblr'    => get_the_author_meta('tumblr', $author_id),
+        'wikipedia' => get_the_author_meta('wikipedia', $author_id),
+        'youtube'   => get_the_author_meta('youtube', $author_id),
+    );
+
+    // Ícones correspondentes
+    $icons = array(
+        'twitter'   => 'fab fa-twitter text-info',
+        'facebook'  => 'fab fa-facebook-f text-primary',
+        'linkedin'  => 'fab fa-linkedin-in text-primary',
+        'email'     => 'fas fa-envelope text-danger',
+        'instagram' => 'fab fa-instagram text-danger',
+        'pinterest' => 'fab fa-pinterest text-danger',
+        'myspace'   => 'fab fa-myspace text-secondary',
+        'soundcloud'=> 'fab fa-soundcloud text-warning',
+        'tumblr'    => 'fab fa-tumblr text-primary',
+        'wikipedia' => 'fab fa-wikipedia-w text-dark',
+        'youtube'   => 'fab fa-youtube text-danger',
+    );
+
+    ?>
+    <section class="author-box card border-0 shadow-sm mt-1">
+        <div class="card-body d-flex flex-wrap align-items-center">
+
+            <!-- Avatar -->
+            <div class="author-avatar me-4 mb-3 mb-md-0">
+                <img src="<?php echo esc_url($author_avatar); ?>" 
+                     alt="<?php echo esc_attr($author_name); ?>" 
+                     class="rounded-circle shadow-sm border border-light">
+            </div>
+
+            <!-- Infos -->
+            <div class="author-info flex-grow-1">
+                <h5 class="fw-bold mb-2">
+                    <a href="<?php echo esc_url($author_url); ?>" class="text-decoration-none text-dark">
+                        <?php echo esc_html($author_name); ?>
+                    </a>
+                </h5>
+
+                <?php if ($author_bio) : ?>
+                    <p class="text-muted mb-3 fs-6"><?php echo wp_kses_post( wp_trim_words( $author_bio, 50, '...' ) );  ?></p>
+                <?php else : ?>
+                    <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
+                <?php endif; ?>
+
+                <!-- Botões de Links -->
+                <div class="d-flex flex-wrap gap-2 author-buttons">
+
+                    <!-- Sempre mostrar "Mais posts" -->
+                    <a href="<?php echo esc_url($author_url); ?>" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
+                        <i class="fas fa-user"></i> Mais posts
+                    </a>
+
+                    <?php if ($author_website) : ?>
+                        <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1">
+                            <i class="fas fa-globe"></i> Site pessoal
+                        </a>
+                    <?php endif; ?>
+
+                    <?php
+                    // Loop para redes sociais adicionais
+                    foreach ($socials as $key => $link) {
+                        if ($link) {
+                            $url = $link;
+                            if ($key === 'twitter') $url = "https://twitter.com/" . esc_attr($link);
+                            if ($key === 'email') $url = "mailto:" . esc_attr($link);
+                            if ($key === 'instagram') $url = "https://instagram.com/" . esc_attr($link);
+                            if ($key === 'pinterest') $url = "https://pinterest.com/" . esc_attr($link);
+                            if ($key === 'myspace') $url = "https://myspace.com/" . esc_attr($link);
+                            if ($key === 'soundcloud') $url = "https://soundcloud.com/" . esc_attr($link);
+                            if ($key === 'tumblr') $url = "https://" . esc_attr($link) . ".tumblr.com/";
+                            if ($key === 'wikipedia') $url = esc_url($link); // Espera link completo
+                            if ($key === 'youtube') $url = "https://youtube.com/" . esc_attr($link);
+                            ?>
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
+                                <i class="<?php echo esc_attr($icons[$key]); ?>"></i> <?php echo ucfirst($key); ?>
+                            </a>
+                            <?php
+                        }
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php
+}
 
 
 
