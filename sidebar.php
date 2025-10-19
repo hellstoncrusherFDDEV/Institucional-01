@@ -99,15 +99,45 @@
     <h5 class="mb-3 text-secondary">
         <i class="fas fa-hashtag me-2"></i> Tags Populares
     </h5>
-    <div class="d-flex flex-wrap gap-2">
+
+    <div class="tag-cloud d-flex flex-wrap gap-2">
         <?php
-        $tags = get_tags(array('number' => 10));
-        if ($tags) :
-            foreach ($tags as $tag) :
-                echo '<a href="' . get_tag_link($tag->term_id) . '" class="badge bg-light text-dark border">
-                        #' . esc_html($tag->name) . '
-                      </a>';
-            endforeach;
+        // Obtém todas as tags, limitando a 30 para performance
+        $tags = get_tags(array(
+            'orderby' => 'count',
+            'order'   => 'DESC',
+            'number'  => 30
+        ));
+
+        if ( $tags ) :
+            // Descobre os limites mínimo e máximo de posts
+            $min_count = min( wp_list_pluck( $tags, 'count' ) );
+            $max_count = max( wp_list_pluck( $tags, 'count' ) );
+
+            // Define tamanho mínimo e máximo da fonte (em px)
+            $min_font = 12;
+            $max_font = 28;
+
+            foreach ( $tags as $tag ) :
+                $count = $tag->count;
+
+                // Calcula o tamanho da fonte proporcional ao número de posts
+                if ( $max_count > $min_count ) {
+                    $font_size = $min_font + ( ( $count - $min_count ) / ( $max_count - $min_count ) ) * ( $max_font - $min_font );
+                } else {
+                    $font_size = ($min_font + $max_font) / 2;
+                }
+
+                // Cor levemente ajustada para dar dinamismo
+                $opacity = 0.6 + ( ( $count - $min_count ) / max( 1, ( $max_count - $min_count ) ) ) * 0.4;
+                $color = 'rgba(33,37,41,' . number_format($opacity, 2) . ')'; // tom de cinza Bootstrap
+                ?>
+                <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>"
+                   class="fw-semibold text-decoration-none"
+                   style="font-size: <?php echo round($font_size, 1); ?>px; color: <?php echo esc_attr( $color ); ?>;">
+                    #<?php echo esc_html( $tag->name ); ?>
+                </a>
+            <?php endforeach;
         else :
             echo '<span class="text-muted">Nenhuma tag disponível.</span>';
         endif;

@@ -193,3 +193,8 @@ body.dark-mode {
   object-fit: contain;         /* exibe a imagem completa */
 }
 
+.tag-cloud a:hover {
+    color: #0d6efd !important; /* Cor primária do Bootstrap */
+    text-decoration: underline;
+}
+
