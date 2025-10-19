@@ -446,3 +446,50 @@ function pixgo_author_box($author_id = null) {
     <?php
 }
 
+<?php
+// Função para exibir botões de compartilhamento social
+function pixgo_share_buttons($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+
+    $post_url = urlencode(get_permalink($post_id));
+    $post_title = urlencode(get_the_title($post_id));
+
+    // Lista de redes sociais e sites de compartilhamento
+    $social_sites = array(
+        'facebook' => "https://www.facebook.com/sharer/sharer.php?u={$post_url}",
+        'twitter'  => "https://twitter.com/intent/tweet?text={$post_title}&url={$post_url}",
+        'linkedin' => "https://www.linkedin.com/sharing/share-offsite/?url={$post_url}",
+        'reddit'   => "https://www.reddit.com/submit?url={$post_url}&title={$post_title}",
+        'pinterest'=> "https://pinterest.com/pin/create/button/?url={$post_url}&description={$post_title}",
+        'tumblr'   => "https://www.tumblr.com/widgets/share/tool?canonicalUrl={$post_url}&title={$post_title}",
+        'whatsapp' => "https://api.whatsapp.com/send?text={$post_title}%20{$post_url}",
+        'telegram' => "https://t.me/share/url?url={$post_url}&text={$post_title}",
+        'email'    => "mailto:?subject={$post_title}&body={$post_url}",
+        'hackernews' => "https://news.ycombinator.com/submitlink?u={$post_url}&t={$post_title}",
+    );
+
+    // Ícones Font Awesome correspondentes
+    $icons = array(
+        'facebook'   => 'fab fa-facebook-f text-primary',
+        'twitter'    => 'fab fa-twitter text-info',
+        'linkedin'   => 'fab fa-linkedin-in text-primary',
+        'reddit'     => 'fab fa-reddit-alien text-danger',
+        'pinterest'  => 'fab fa-pinterest-p text-danger',
+        'tumblr'     => 'fab fa-tumblr text-primary',
+        'whatsapp'   => 'fab fa-whatsapp text-success',
+        'telegram'   => 'fab fa-telegram-plane text-info',
+        'email'      => 'fas fa-envelope text-secondary',
+        'hackernews' => 'fab fa-hacker-news text-warning',
+    );
+
+    echo '<div class="pixgo-share-buttons d-flex flex-wrap gap-2 mt-3">';
+    foreach ($social_sites as $key => $link) {
+        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">';
+        echo '<i class="' . esc_attr($icons[$key]) . '"></i> ' . ucfirst($key);
+        echo '</a>';
+    }
+    echo '</div>';
+}
+
