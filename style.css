@@ -21,6 +21,22 @@ body.dark-mode {
     color: #f8f9fa; /* Cor clara para texto no modo escuro */
 }
 
+/* Ajusta o logo para layout horizontal */
+.logo-horizontal {
+    height: 50px;      /* define altura fixa */
+    width: auto;       /* mantém proporção */
+    max-width: 200px;  /* evita que quebre o layout em telas grandes */
+    display: block;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 576px) {
+    .logo-horizontal {
+        height: 40px;   /* reduz o tamanho em mobile */
+        max-width: 150px;
+    }
+}
+
 /* Brilho para a imagem do logo */
 .custom-logo {
 	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);

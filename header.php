@@ -18,15 +18,17 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
         <div class="container">
             
             <!-- Logo -->
-			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<a class="navbar-brand d-flex align-items-center" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
 				if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-					the_custom_logo();
+					the_custom_logo(); // Mostra o logo definido no Personalizar
 				} else {
 					// Fallback caso não tenha logo definida
 					?>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/Logo-PixGo.png" alt="<?php bloginfo( 'name' ); ?>" height="30">
-					<?php bloginfo( 'name' ); ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/img/Logo-PixGo.png" 
+						 alt="<?php bloginfo( 'name' ); ?>" 
+						 class="logo-horizontal">
+					<span class="ms-2"><?php bloginfo( 'name' ); ?></span>
 					<?php
 				}
 				?>
