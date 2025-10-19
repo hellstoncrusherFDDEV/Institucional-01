@@ -13,18 +13,10 @@
     </form>
 </aside>
 
-<aside class="card p-4 shadow-sm mb-4">
-    <h4 class="mb-3 text-primary">
-        <i class="fas fa-bolt me-2"></i> Foco do PixGo
-    </h4>
-    <p>Nossa proposta de valor é a <strong>facilidade de integração</strong> e o <strong>preço justo por requisição</strong>.</p>
-    <p>Com o modelo de <strong>créditos pré-pagos</strong>, você paga apenas pelo uso real da API.</p>
-    <div class="text-center mt-3">
-        <a href="<?php echo esc_url( home_url( '/register' ) ); ?>" class="btn btn-warning btn-sm px-4">
-            <i class="fas fa-rocket me-2"></i> Começar Grátis Agora
-        </a>
-    </div>
-</aside>
+<?php
+	// Exibe o card na sidebar
+	pixgo_sidebar_focus_card();
+?>
 
 <aside class="card p-4 shadow-sm mb-4">
     <h5 class="mb-3 text-success">
