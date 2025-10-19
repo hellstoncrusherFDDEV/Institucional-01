@@ -446,7 +446,6 @@ function pixgo_author_box($author_id = null) {
     <?php
 }
 
-<?php
 // Função para exibir botões de compartilhamento social
 function pixgo_share_buttons($post_id = null) {
     if (!$post_id) {
@@ -467,7 +466,7 @@ function pixgo_share_buttons($post_id = null) {
         'whatsapp' => "https://api.whatsapp.com/send?text={$post_title}%20{$post_url}",
         'telegram' => "https://t.me/share/url?url={$post_url}&text={$post_title}",
         'email'    => "mailto:?subject={$post_title}&body={$post_url}",
-        'hackernews' => "https://news.ycombinator.com/submitlink?u={$post_url}&t={$post_title}",
+        'hackernews' => "https://news.ycombinator.com/submitlink?u={$post_url}&t={$post_title}"
     );
 
     // Ícones Font Awesome correspondentes
@@ -481,7 +480,7 @@ function pixgo_share_buttons($post_id = null) {
         'whatsapp'   => 'fab fa-whatsapp text-success',
         'telegram'   => 'fab fa-telegram-plane text-info',
         'email'      => 'fas fa-envelope text-secondary',
-        'hackernews' => 'fab fa-hacker-news text-warning',
+        'hackernews' => 'fab fa-hacker-news text-warning'
     );
 
     echo '<div class="pixgo-share-buttons d-flex flex-wrap gap-2 mt-3">';
