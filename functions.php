@@ -483,9 +483,9 @@ function pixgo_share_buttons($post_id = null) {
         'hackernews' => 'fab fa-hacker-news text-warning',
     );
 
-    echo '<div class="pixgo-share-buttons d-flex flex-wrap gap-2 mt-3">';
+    echo '<div class="pixgo-share-buttons d-flex flex-wrap gap-2 mt-3 ml-2 mr-2">';
     foreach ($social_sites as $key => $link) {
-        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1 pl-2">';
+        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">';
         echo '<i class="' . esc_attr($icons[$key]) . '"></i> ' . ucfirst($key);
         echo '</a>';
     }
