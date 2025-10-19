@@ -28,6 +28,7 @@
                         <i class="fas fa-user-edit text-secondary me-2"></i>
                         Publicações de <?php the_author(); ?>
                     </h1>
+					<?php pixgo_author_box(); ?>
 
                 <?php elseif ( is_date() ) : ?>
                     <h1 class="display-5 mb-2">
