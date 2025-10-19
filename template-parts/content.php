@@ -84,6 +84,69 @@ $post_type = get_post_type();
 
 </article>
 
+<!-- 🔽 BLOCO DE PERFIL DO AUTOR -->
+<?php
+$author_id = get_the_author_meta('ID');
+$author_name = get_the_author();
+$author_bio = get_the_author_meta('description');
+$author_avatar = get_avatar_url($author_id, array('size' => 128));
+$author_url = get_author_posts_url($author_id);
+$author_website = get_the_author_meta('user_url');
+?>
+
+<section class="author-box card mt-4 shadow-sm border-0">
+    <div class="card-body d-flex flex-wrap align-items-center">
+        <div class="author-avatar me-3 mb-3">
+            <img src="<?php echo esc_url($author_avatar); ?>" alt="<?php echo esc_attr($author_name); ?>" class="rounded-circle shadow-sm" width="96" height="96">
+        </div>
+
+        <div class="author-info flex-grow-1">
+            <h5 class="fw-bold mb-1">
+                <a href="<?php echo esc_url($author_url); ?>" class="text-decoration-none text-dark">
+                    <?php echo esc_html($author_name); ?>
+                </a>
+            </h5>
+
+            <?php if ($author_bio) : ?>
+                <p class="mb-2 text-muted"><?php echo wp_kses_post($author_bio); ?></p>
+            <?php else : ?>
+                <p class="text-muted mb-2">Autor deste artigo no blog PixGo.</p>
+            <?php endif; ?>
+
+            <div class="author-links d-flex flex-wrap gap-2">
+                <a href="<?php echo esc_url($author_url); ?>" class="btn btn-outline-primary btn-sm">
+                    <i class="fas fa-user me-1"></i> Mais posts
+                </a>
+
+                <?php if ($author_website) : ?>
+                    <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-globe me-1"></i> Site pessoal
+                    </a>
+                <?php endif; ?>
+
+                <?php if (get_the_author_meta('twitter')) : ?>
+                    <a href="https://twitter.com/<?php echo esc_attr(get_the_author_meta('twitter')); ?>" target="_blank" class="btn btn-outline-info btn-sm">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                <?php endif; ?>
+
+                <?php if (get_the_author_meta('facebook')) : ?>
+                    <a href="<?php echo esc_url(get_the_author_meta('facebook')); ?>" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                <?php endif; ?>
+
+                <?php if (get_the_author_meta('linkedin')) : ?>
+                    <a href="<?php echo esc_url(get_the_author_meta('linkedin')); ?>" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 🔼 FIM BLOCO DE PERFIL DO AUTOR -->
+
 <?php 
 // Exibe comentários apenas se houver ou se estiverem abertos
 if ( comments_open() || get_comments_number() ) :
