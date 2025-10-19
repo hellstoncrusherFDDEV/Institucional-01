@@ -26,7 +26,7 @@
                 <?php elseif ( is_author() ) : ?>
                     <h1 class="display-5 mb-2">
                         <i class="fas fa-user-edit text-secondary me-2"></i>
-                        Publicações de <?php the_author(); ?>
+                        Publicações
                     </h1>
 
                 <?php elseif ( is_date() ) : ?>

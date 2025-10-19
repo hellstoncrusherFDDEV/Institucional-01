@@ -378,7 +378,7 @@ function pixgo_author_box($author_id = null) {
     );
 
     ?>
-    <section class="author-box card border-0 shadow-sm mt-5">
+    <section class="author-box card border-0 shadow-sm mt-1">
         <div class="card-body d-flex flex-wrap align-items-center">
 
             <!-- Avatar -->
