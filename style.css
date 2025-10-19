@@ -25,7 +25,7 @@ body.dark-mode {
 /* Brilho para a imagem do logo */
 .custom-logo {
 	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);
-	height: 30px;      /* define altura fixa */
+	height: 35px;      /* define altura fixa */
     width: auto;       /* mantém proporção */
     max-width: 200px;  /* evita que quebre o layout em telas grandes */
     display: block;
@@ -34,7 +34,7 @@ body.dark-mode {
 /* Responsividade para telas pequenas */
 @media (max-width: 576px) {
     .custom-logo {
-        height: 20px;   /* reduz o tamanho em mobile */
+        height: 25px;   /* reduz o tamanho em mobile */
         max-width: 150px;
     }
 }
