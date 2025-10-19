@@ -343,7 +343,7 @@ function pixgo_author_box($author_id = null) {
 
     $author_name = get_the_author_meta('display_name', $author_id);
     $author_bio = get_the_author_meta('description', $author_id);
-    $author_avatar = get_avatar_url($author_id, array('size' => 128));
+    $author_avatar = get_avatar_url($author_id, array('size' => 220));
     $author_url = get_author_posts_url($author_id);
     $author_website = get_the_author_meta('user_url', $author_id);
 
@@ -385,8 +385,7 @@ function pixgo_author_box($author_id = null) {
             <div class="author-avatar me-4 mb-3 mb-md-0">
                 <img src="<?php echo esc_url($author_avatar); ?>" 
                      alt="<?php echo esc_attr($author_name); ?>" 
-                     class="rounded-circle shadow-sm border border-light" 
-                     width="220" height="220">
+                     class="rounded-circle shadow-sm border border-light">
             </div>
 
             <!-- Infos -->
