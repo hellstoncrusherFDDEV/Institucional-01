@@ -92,12 +92,15 @@ $author_bio = get_the_author_meta('description');
 $author_avatar = get_avatar_url($author_id, array('size' => 128));
 $author_url = get_author_posts_url($author_id);
 $author_website = get_the_author_meta('user_url');
+$twitter = get_the_author_meta('twitter');
+$facebook = get_the_author_meta('facebook');
+$linkedin = get_the_author_meta('linkedin');
 ?>
 
-<section class="author-box card mt-5 border-0 shadow-sm">
+<section class="author-box card border-0 shadow-sm mt-5">
     <div class="card-body d-flex flex-wrap align-items-center">
-        
-        <!-- Foto do autor -->
+
+        <!-- Avatar -->
         <div class="author-avatar me-4 mb-3 mb-md-0">
             <img src="<?php echo esc_url($author_avatar); ?>" 
                  alt="<?php echo esc_attr($author_name); ?>" 
@@ -105,49 +108,73 @@ $author_website = get_the_author_meta('user_url');
                  width="110" height="110">
         </div>
 
-        <!-- Informações -->
+        <!-- Infos -->
         <div class="author-info flex-grow-1">
             <h5 class="fw-bold mb-2">
-                <a href="<?php echo esc_url($author_url); ?>" 
-                   class="text-decoration-none text-dark">
+                <a href="<?php echo esc_url($author_url); ?>" class="text-decoration-none text-dark">
                     <?php echo esc_html($author_name); ?>
                 </a>
             </h5>
 
             <?php if ($author_bio) : ?>
-                <p class="mb-3 text-muted" style="line-height: 1.5;"><?php echo wp_kses_post($author_bio); ?></p>
+                <p class="text-muted mb-3"><?php echo wp_kses_post($author_bio); ?></p>
             <?php else : ?>
                 <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
             <?php endif; ?>
 
-            <!-- Links sociais -->
-            <div class="author-links d-flex flex-wrap gap-2">
-                <a href="<?php echo esc_url($author_url); ?>" class="btn btn-outline-primary btn-sm">
-                    <i class="fas fa-user me-1"></i> Mais posts
-                </a>
+            <!-- Mini Cards de Links -->
+            <div class="row g-2 author-cards">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <a href="<?php echo esc_url($author_url); ?>" class="card text-center border-0 shadow-sm text-decoration-none h-100">
+                        <div class="card-body py-2">
+                            <i class="fas fa-user mb-1 text-primary"></i>
+                            <div class="small text-muted">Mais posts</div>
+                        </div>
+                    </a>
+                </div>
 
                 <?php if ($author_website) : ?>
-                    <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-outline-secondary btn-sm">
-                        <i class="fas fa-globe me-1"></i> Site pessoal
-                    </a>
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
+                            <div class="card-body py-2">
+                                <i class="fas fa-globe mb-1 text-secondary"></i>
+                                <div class="small text-muted">Site pessoal</div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endif; ?>
 
-                <?php if (get_the_author_meta('twitter')) : ?>
-                    <a href="https://twitter.com/<?php echo esc_attr(get_the_author_meta('twitter')); ?>" target="_blank" class="btn btn-outline-info btn-sm">
-                        <i class="fab fa-twitter"></i> Twitter
-                    </a>
+                <?php if ($twitter) : ?>
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <a href="https://twitter.com/<?php echo esc_attr($twitter); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
+                            <div class="card-body py-2">
+                                <i class="fab fa-twitter mb-1 text-info"></i>
+                                <div class="small text-muted">Twitter</div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endif; ?>
 
-                <?php if (get_the_author_meta('facebook')) : ?>
-                    <a href="<?php echo esc_url(get_the_author_meta('facebook')); ?>" target="_blank" class="btn btn-outline-primary btn-sm">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
+                <?php if ($facebook) : ?>
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <a href="<?php echo esc_url($facebook); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
+                            <div class="card-body py-2">
+                                <i class="fab fa-facebook-f mb-1 text-primary"></i>
+                                <div class="small text-muted">Facebook</div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endif; ?>
 
-                <?php if (get_the_author_meta('linkedin')) : ?>
-                    <a href="<?php echo esc_url(get_the_author_meta('linkedin')); ?>" target="_blank" class="btn btn-outline-primary btn-sm">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
+                <?php if ($linkedin) : ?>
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <a href="<?php echo esc_url($linkedin); ?>" target="_blank" class="card text-center border-0 shadow-sm text-decoration-none h-100">
+                            <div class="card-body py-2">
+                                <i class="fab fa-linkedin-in mb-1 text-primary"></i>
+                                <div class="small text-muted">LinkedIn</div>
+                            </div>
+                        </a>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
