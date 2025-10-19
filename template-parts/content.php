@@ -117,7 +117,7 @@ $linkedin = get_the_author_meta('linkedin');
             </h5>
 
             <?php if ($author_bio) : ?>
-                <p class="text-muted mb-3 fs-5"><?php echo wp_kses_post($author_bio); ?></p>
+                <p class="text-muted mb-3 fs-6"><?php echo wp_kses_post($author_bio); ?></p>
             <?php else : ?>
                 <p class="text-muted mb-3">Autor deste artigo no blog PixGo.</p>
             <?php endif; ?>
