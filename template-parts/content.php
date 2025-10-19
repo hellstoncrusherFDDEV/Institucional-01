@@ -71,7 +71,7 @@ $post_type = get_post_type();
     <?php endif; ?>
     <!-- 🔼 FIM BLOCO DE TAGS -->
 	
-	<?php pixgo_share_buttons(); ?>
+	<?php //pixgo_share_buttons(); ?>
 
     <footer class="entry-footer mt-4 p-4 bg-light border-top">
         <div class="alert alert-info mb-0" role="alert">
