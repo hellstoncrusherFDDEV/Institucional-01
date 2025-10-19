@@ -32,7 +32,7 @@ body.dark-mode {
 /* Responsividade para telas pequenas */
 @media (max-width: 576px) {
     .logo-horizontal {
-        height: 40px;   /* reduz o tamanho em mobile */
+        height: 20px;   /* reduz o tamanho em mobile */
         max-width: 150px;
     }
 }
@@ -40,7 +40,7 @@ body.dark-mode {
 /* Brilho para a imagem do logo */
 .custom-logo {
 	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);
-	width: 150px;
+	#width: 150px;
 }
 
 /* Estilo para links no modo dark */
