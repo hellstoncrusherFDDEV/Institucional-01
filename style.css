@@ -22,8 +22,10 @@ body.dark-mode {
 }
 
 /* Ajusta o logo para layout horizontal */
-.logo-horizontal {
-    height: 30px;      /* define altura fixa */
+/* Brilho para a imagem do logo */
+.custom-logo {
+	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);
+	height: 30px;      /* define altura fixa */
     width: auto;       /* mantém proporção */
     max-width: 200px;  /* evita que quebre o layout em telas grandes */
     display: block;
@@ -31,16 +33,10 @@ body.dark-mode {
 
 /* Responsividade para telas pequenas */
 @media (max-width: 576px) {
-    .logo-horizontal {
+    .custom-logo {
         height: 20px;   /* reduz o tamanho em mobile */
         max-width: 150px;
     }
-}
-
-/* Brilho para a imagem do logo */
-.custom-logo {
-	filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #fff);
-	#width: 150px;
 }
 
 /* Estilo para links no modo dark */

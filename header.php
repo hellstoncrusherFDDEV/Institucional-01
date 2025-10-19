@@ -26,8 +26,7 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
 					// Fallback caso não tenha logo definida
 					?>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/Logo-PixGo.png" 
-						 alt="<?php bloginfo( 'name' ); ?>" 
-						 class="logo-horizontal">
+						 alt="<?php bloginfo( 'name' ); ?>">
 					<span class="ms-2"><?php bloginfo( 'name' ); ?></span>
 					<?php
 				}
