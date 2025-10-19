@@ -28,7 +28,6 @@
                         <i class="fas fa-user-edit text-secondary me-2"></i>
                         Publicações de <?php the_author(); ?>
                     </h1>
-					<?php pixgo_author_box(); ?>
 
                 <?php elseif ( is_date() ) : ?>
                     <h1 class="display-5 mb-2">
@@ -45,6 +44,9 @@
             </header>
 
             <?php if ( have_posts() ) : ?>
+			
+			<?php if ( is_author() ) : pixgo_author_box(); endif; ?>
+			
                 <div class="row g-4">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <div class="col-md-6">
