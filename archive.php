@@ -45,9 +45,8 @@
 
             <?php if ( have_posts() ) : ?>
 			
-			<?php if ( is_author() ) : pixgo_author_box(); endif; ?>
-			
                 <div class="row g-4">
+				<?php if ( is_author() ) : pixgo_author_box(); endif; ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                         <div class="col-md-6">
                             <article class="card h-100 shadow-sm border-0 overflow-hidden post-card">
