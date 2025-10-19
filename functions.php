@@ -386,7 +386,7 @@ function pixgo_author_box($author_id = null) {
                 <img src="<?php echo esc_url($author_avatar); ?>" 
                      alt="<?php echo esc_attr($author_name); ?>" 
                      class="rounded-circle shadow-sm border border-light" 
-                     width="110" height="110">
+                     width="220" height="220">
             </div>
 
             <!-- Infos -->
