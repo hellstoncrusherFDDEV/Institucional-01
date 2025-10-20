@@ -537,25 +537,5 @@ function pixgo_share_buttons($post_id = null) {
     echo '</div>';
 }
 
-// Função para exibir o card "Foco do PixGo"
-function pixgo_sidebar_focus_card($register_url = null) {
-    if (!$register_url) {
-        $register_url = esc_url(home_url('/register'));
-    }
 
-    ?>
-    <aside class="card p-4 shadow-sm mb-4">
-        <h4 class="mb-3 text-primary">
-            <i class="fas fa-bolt me-2"></i> <?php echo esc_html(get_theme_mod('pixgo_focus_title', 'Foco do PixGo')); ?>
-        </h4>
-        <p><?php echo wp_kses_post(get_theme_mod('pixgo_focus_text1', 'Nossa proposta de valor é a <strong>facilidade de integração</strong> e o <strong>preço justo por requisição</strong>.')); ?></p>
-        <p><?php echo wp_kses_post(get_theme_mod('pixgo_focus_text2', 'Com o modelo de <strong>créditos pré-pagos</strong>, você paga apenas pelo uso real da API.')); ?></p>
-        <div class="text-center mt-3">
-            <a href="<?php echo esc_url($register_url); ?>" class="btn btn-warning btn-sm px-4">
-                <i class="fas fa-rocket me-2"></i> <?php echo esc_html(get_theme_mod('pixgo_focus_button', 'Começar Grátis Agora')); ?>
-            </a>
-        </div>
-    </aside>
-    <?php
-}
 
