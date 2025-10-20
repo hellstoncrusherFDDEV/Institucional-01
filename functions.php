@@ -219,7 +219,7 @@ function pixgo_customize_register( $wp_customize ) {
         'section' => 'title_tagline',
         'type' => 'text',
     ));
-	// FIM BARRA LATERAL CHAMADA PRA AÇÃO 
+	// FIM BARRA LATERAL CHAMADA PRA AÇÃO
 
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
