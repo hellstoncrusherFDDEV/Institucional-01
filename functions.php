@@ -224,6 +224,27 @@ function pixgo_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
 
+// Garante que a categoria "Blog" exista
+function pixgo_ensure_blog_category_exists() {
+    $category_name = 'Blog';
+
+    // Verifica se a categoria já existe (não diferencia maiúsculas/minúsculas)
+    $category = get_term_by('name', $category_name, 'category');
+
+    // Caso não exista, cria a categoria
+    if (!$category) {
+        wp_insert_term(
+            $category_name,      // Nome da categoria
+            'category',          // Taxonomia
+            array(
+                'slug' => 'blog',
+                'description' => 'Publicações gerais do blog.'
+            )
+        );
+    }
+}
+add_action('after_setup_theme', 'pixgo_ensure_blog_category_exists');
+
 // Insere a meta tag do AdSense no <head>
 function pixgo_add_adsense_meta_tag() {
     $adsense_id = get_theme_mod( 'adsense_account_id' );

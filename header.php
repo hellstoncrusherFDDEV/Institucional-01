@@ -83,7 +83,9 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
 							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato"><i class="fas fa-envelope me-1"></i> Contato</a>
 						</li>
                         <li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_category('blog') ) echo 'active'; ?>" href="https://pixgo.api.br/c/blog/"><i class="fas fa-book me-1"></i> BLOG</a>
+							<a class="nav-link fw-bold <?php if( is_category('blog') ) echo 'active'; ?>" href="<?php echo esc_url(get_category_link(get_category_by_slug('blog')->term_id)); ?>">
+								<i class="fas fa-book me-1"></i> BLOG
+							</a>
 						</li>
 						<li class="nav-item">
 							<a class="btn btn-warning ms-lg-3 text-bold" href="/register"><i class="fas fa-rocket me-1"></i> Começar Grátis</a>
