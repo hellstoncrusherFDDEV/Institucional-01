@@ -472,8 +472,50 @@ function pixgo_customize_register( $wp_customize ) {
     ));
 	// FIM BARRA LATERAL CHAMADA PRA AÇÃO
 
+	// Scripts Personalizados
+	$wp_customize->add_section( 'pixgo_custom_code_settings', array(
+		'title' => __( 'Scripts Personalizados', 'pixgo-theme' ),
+		'panel' => 'pixgo_theme_settings',
+	) );
+
+	$wp_customize->add_setting( 'pixgo_footer_js', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'capability' => 'unfiltered_html',
+		'sanitize_callback' => function( $input ) {
+			if ( current_user_can( 'unfiltered_html' ) ) { return $input; }
+			return wp_kses_post( $input );
+		},
+	) );
+
+	if ( class_exists( 'WP_Customize_Code_Editor_Control' ) ) {
+		$wp_customize->add_control( new WP_Customize_Code_Editor_Control( $wp_customize, 'pixgo_footer_js', array(
+			'label' => __( 'JS no Rodapé (antes de </body>)', 'pixgo-theme' ),
+			'section' => 'pixgo_custom_code_settings',
+			'code_type' => 'text/javascript',
+		) ) );
+	} else {
+		$wp_customize->add_control( 'pixgo_footer_js', array(
+			'label' => __( 'JS no Rodapé (antes de </body>)', 'pixgo-theme' ),
+			'section' => 'pixgo_custom_code_settings',
+			'type' => 'textarea',
+		) );
+	}
+	
 }
 add_action( 'customize_register', 'pixgo_customize_register' );
+
+function pixgo_print_custom_footer_js() {
+	if ( is_admin() ) return;
+	$js = get_theme_mod( 'pixgo_footer_js', '' );
+	if ( empty( $js ) ) return;
+	if ( strpos( $js, '<script' ) !== false ) {
+		echo $js;
+	} else {
+		echo '<script>' . $js . '</script>';
+	}
+}
+add_action( 'wp_footer', 'pixgo_print_custom_footer_js', 100 );
 
 // Garante que a categoria "Blog" exista
 function pixgo_ensure_blog_category_exists() {

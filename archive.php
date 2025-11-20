@@ -60,6 +60,23 @@
                                             ]); ?>
                                         </a>
                                     </div>
+                                <?php else : ?>
+                                    <div class="post-thumb overflow-hidden text-center bg-light-subtle">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php
+                                                $logo_id = get_theme_mod('custom_logo');
+                                                $logo_src = '';
+                                                if ( $logo_id ) {
+                                                    $img = wp_get_attachment_image_src( $logo_id, 'medium_large' );
+                                                    if ( $img ) $logo_src = $img[0];
+                                                }
+                                                if ( ! $logo_src ) {
+                                                    $logo_src = get_template_directory_uri() . '/img/Logo-PixGo.png';
+                                                }
+                                            ?>
+                                            <img src="<?php echo esc_url( $logo_src ); ?>" class="img-fluid p-3" alt="<?php bloginfo('name'); ?>">
+                                        </a>
+                                    </div>
                                 <?php endif; ?>
 
                                 <div class="card-body">
@@ -101,13 +118,14 @@
                     <?php endwhile; ?>
                 </div>
 
-                <div class="mt-4">
-                    <?php
-                    the_posts_navigation([
-                        'prev_text' => '<i class="fas fa-arrow-left me-1"></i> Anterior',
-                        'next_text' => 'Próximo <i class="fas fa-arrow-right ms-1"></i>',
-                    ]);
-                    ?>
+                <?php $prev = get_previous_posts_link('<i class="fas fa-arrow-left me-1"></i> Anterior'); $next = get_next_posts_link('Próximo <i class="fas fa-arrow-right ms-1"></i>'); $justify_class = ($prev && $next) ? 'justify-content-center justify-content-md-between' : 'justify-content-center'; $center_single = ($prev && $next) ? '' : ' mx-auto'; ?>
+                <div class="mt-4 d-flex gap-2 <?php echo $justify_class; ?>">
+                    <?php if ( $prev ) : ?>
+                        <div><?php echo preg_replace('/<a /', '<a class="btn btn-outline-secondary btn-sm' . $center_single . '" ', $prev); ?></div>
+                    <?php endif; ?>
+                    <?php if ( $next ) : ?>
+                        <div><?php echo preg_replace('/<a /', '<a class="btn btn-outline-secondary btn-sm' . $center_single . '" ', $next); ?></div>
+                    <?php endif; ?>
                 </div>
 
             <?php else : ?>
