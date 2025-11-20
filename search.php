@@ -28,46 +28,53 @@ get_header();
                 </header>
 
                 <?php if (have_posts()) : ?>
+                    <div class="row g-4">
                     <?php while (have_posts()) : the_post(); ?>
-                        <div class="border-bottom py-4">
-                            <h2 class="h5 mb-2 fw-bold">
-                                <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h2>
-
-                            <p class="text-muted small mb-3">
-                                <i class="far fa-calendar-alt me-1"></i> <?php echo get_the_date(); ?>
-                                <?php if (has_category()) : ?>
-                                    &nbsp;|&nbsp;
-                                    <i class="fas fa-folder-open me-1"></i> <?php the_category(', '); ?>
+                        <div class="col-md-6">
+                            <article class="card h-100 shadow-sm border-0 overflow-hidden post-card">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <div class="post-thumb overflow-hidden">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_post_thumbnail('medium_large', [
+                                                'class' => 'img-fluid w-100',
+                                                'loading' => 'lazy',
+                                                'alt' => get_the_title()
+                                            ]); ?>
+                                        </a>
+                                    </div>
                                 <?php endif; ?>
-                            </p>
-
-                            <?php if (has_post_thumbnail()) : ?>
-                                <div class="mb-3">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('medium_large', [
-                                            'class' => 'img-fluid rounded shadow-sm',
-                                            'alt' => get_the_title()
-                                        ]); ?>
+                                <div class="card-body">
+                                    <h2 class="h5 card-title">
+                                        <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h2>
+                                    <p class="text-muted small mb-2 d-flex align-items-center flex-wrap gap-2">
+                                        <span>
+                                            <i class="fas fa-user me-1 text-primary"></i>
+                                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-decoration-none text-muted fw-semibold hover-text-primary">
+                                                <?php the_author(); ?>
+                                            </a>
+                                        </span>
+                                        <span class="mx-2">•</span>
+                                        <span>
+                                            <i class="fas fa-clock me-1 text-primary"></i>
+                                            <a href="<?php echo esc_url(get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d'))); ?>" class="text-decoration-none text-muted fw-semibold hover-text-primary">
+                                                <?php echo get_the_date(); ?>
+                                            </a>
+                                        </span>
+                                    </p>
+                                    <p class="card-text"><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 pb-3 px-3">
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-arrow-right me-1"></i> Ler mais
                                     </a>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php
-                            // Exibe o conteúdo processando shortcodes e vídeos
-                            $content = apply_filters('the_content', get_the_content());
-                            echo wp_kses_post(wp_trim_words($content, 50, '...'));
-                            ?>
-
-                            <div class="mt-3">
-                                <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-primary">
-                                    <i class="fas fa-arrow-right me-1"></i> Ler mais
-                                </a>
-                            </div>
+                            </article>
                         </div>
                     <?php endwhile; ?>
+                    </div>
 
                     <!-- Paginação -->
                     <div class="mt-4">

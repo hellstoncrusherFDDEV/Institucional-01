@@ -546,10 +546,11 @@ function pixgo_customizer_css() {
     $footer_overlay = ($footer_text_color === '#000000') ? 'linear-gradient(rgba(0,0,0,.03), rgba(0,0,0,.03))' : 'linear-gradient(rgba(255,255,255,.04), rgba(255,255,255,.04))';
     $footer_icon_color = $footer_text_color;
     $footer_hover_bg = ($footer_text_color === '#000000') ? 'rgba(0,0,0,.08)' : 'rgba(255,255,255,.15)';
-    $css .= ".footer-custom { background-color: {$footer_bg_color} !important; color: {$footer_text_color}; padding: 32px 0; box-shadow: {$footer_inset_shadow}; background-image: {$footer_overlay}; }";
-    $css .= ".footer-custom a { color: {$footer_link_color}; }";
+    $css .= ".footer-custom { background-color: {$footer_bg_color} !important; color: {$footer_text_color}; padding: 32px 0; box-shadow: {$footer_inset_shadow}; background-image: {$footer_overlay}; --footer-text: {$footer_text_color}; --footer-link: {$footer_link_color}; }";
+    $css .= ".footer-custom a { color: var(--footer-link); }";
     $css .= ".footer-custom a:hover { text-decoration: underline; }";
-    $css .= ".footer-custom small { opacity: .9; }";
+    $css .= ".footer-custom .footer-columns h5, .footer-custom p, .footer-custom li { color: var(--footer-text); }";
+    $css .= ".footer-custom small { color: var(--footer-text) !important; opacity: .9; }";
     $css .= ".footer-custom .footer-columns h5 { font-weight: 600; margin-bottom: .75rem; }";
     $css .= ".footer-custom .footer-links li { margin-bottom: .35rem; }";
     $css .= ".footer-custom .footer-social .social-btn { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border:1px solid {$footer_icon_color}; color: {$footer_icon_color}; border-radius:50%; margin-right:.4rem; background: transparent; }";
@@ -559,6 +560,9 @@ function pixgo_customizer_css() {
     // Share buttons (light mode)
     $css .= ".pixgo-share-buttons .share-btn { border-color: #212529; color: #212529; background-color: transparent; }";
     $css .= ".pixgo-share-buttons .share-btn:hover { background-color: #212529; color: #fff; }";
+    // Author social buttons (light mode)
+    $css .= ".author-box .author-btn { border-color: #212529; color: #212529; background-color: transparent; }";
+    $css .= ".author-box .author-btn:hover { background-color: #212529; color: #fff; }";
 
     $cta_bg_color = $header_bg_color;
     $cta_text_color = pixgo_contrast_color($cta_bg_color);
@@ -568,7 +572,7 @@ function pixgo_customizer_css() {
     $css .= ".cta-block hr { border-color: {$cta_hr_color}; }";
 
     // Dark Mode automático
-    $css .= "@media (prefers-color-scheme: dark) {\n        body { background-color: #121212; color: #f8f9fa; }\n        .card, .bg-light { background-color: #1e1e1e !important; color: #f8f9fa !important; border-color: #444; }\n        .table { color: #f8f9fa; }\n        a { color: #0d6efd; }\n        a:hover { color: #64a1ff; }\n        .text-dark { color: #e9ecef !important; }\n        .text-secondary { color: #cfd6dc !important; }\n        .text-muted, small, .small { color: #bfc7cd !important; }\n        .border, .border-top, .border-bottom { border-color: #444 !important; }\n        .form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-control::placeholder { color: #9aa0a6; }\n        .list-group-item { background-color: #1f1f1f; color: #e9ecef; border-color: #444; }\n        .pixgo-share-buttons .share-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .pixgo-share-buttons .share-btn:hover { background-color: #e9ecef; color: #121212; }\n        .footer-custom a { color: #9ec1ff; }\n        .footer-custom a:hover { color: #cfe0ff; }\n        .cta-block { box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }\n    }";
+    $css .= "@media (prefers-color-scheme: dark) {\n        body { background-color: #121212; color: #f8f9fa; }\n        .card, .bg-light { background-color: #1e1e1e !important; color: #f8f9fa !important; border-color: #444; }\n        .table { color: #f8f9fa; }\n        a { color: #0d6efd; }\n        a:hover { color: #64a1ff; }\n        .text-dark { color: #e9ecef !important; }\n        .text-secondary { color: #cfd6dc !important; }\n        .text-muted, small, .small { color: #bfc7cd !important; }\n        .border, .border-top, .border-bottom { border-color: #444 !important; }\n        .form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-control:focus { background-color: #2a2a2a; color: #f8f9fa; border-color: #6c757d; box-shadow: 0 0 0 .2rem rgba(108,117,125,.25); }\n        .form-select, textarea.form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-select:focus, textarea.form-control:focus { background-color: #2a2a2a; color: #f8f9fa; border-color: #6c757d; box-shadow: 0 0 0 .2rem rgba(108,117,125,.25); }\n        .form-control::placeholder { color: #9aa0a6; }\n        .form-control:-webkit-autofill, .form-control:-webkit-autofill:hover, .form-control:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0px 1000px #2a2a2a inset; -webkit-text-fill-color: #f8f9fa; caret-color: #f8f9fa; }\n        .list-group-item { background-color: #1f1f1f; color: #e9ecef; border-color: #444; }\n        .pixgo-share-buttons .share-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .pixgo-share-buttons .share-btn:hover { background-color: #e9ecef; color: #121212; }\n        .author-box .author-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .author-box .author-btn:hover { background-color: #e9ecef; color: #121212; }\n        .footer-custom a { color: {$footer_link_color}; }\n        .footer-custom a:hover { color: {$footer_link_color}; text-decoration: underline; }\n        .footer-custom .footer-columns h5, .footer-custom p, .footer-custom li { color: var(--footer-text); }\n        .footer-custom small { opacity: .95; }\n        .cta-block { box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }\n    }";
 
     if ( ! empty( $css ) ) {
         echo '<style type="text/css">' . $css . '</style>';
@@ -762,12 +766,12 @@ function pixgo_author_box($author_id = null) {
                 <div class="d-flex flex-wrap gap-2 author-buttons">
 
                     <!-- Sempre mostrar "Mais posts" -->
-                    <a href="<?php echo esc_url($author_url); ?>" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
+                    <a href="<?php echo esc_url($author_url); ?>" class="btn btn-sm author-btn d-flex align-items-center gap-1">
                         <i class="fas fa-user"></i> Mais posts
                     </a>
 
                     <?php if ($author_website) : ?>
-                        <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1">
+                        <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-sm author-btn d-flex align-items-center gap-1">
                             <i class="fas fa-globe"></i> Site pessoal
                         </a>
                     <?php endif; ?>
@@ -787,7 +791,7 @@ function pixgo_author_box($author_id = null) {
                             if ($key === 'wikipedia') $url = esc_url($link); // Espera link completo
                             if ($key === 'youtube') $url = "https://youtube.com/" . esc_attr($link);
                             ?>
-                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="btn btn-sm author-btn d-flex align-items-center gap-1">
                                 <i class="<?php echo esc_attr($icons[$key]); ?>"></i> <?php echo ucfirst($key); ?>
                             </a>
                             <?php

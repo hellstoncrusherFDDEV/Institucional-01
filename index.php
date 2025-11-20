@@ -16,15 +16,6 @@ get_header();
 
         <div class="col-lg-8">
             
-            <?php if ( !is_single() ) : ?>
-
-            <header class="mb-4">
-                <h1 class="display-5">Conteúdo Principal</h1>
-                <p class="lead">Página padrão do tema. Para conteúdos específicos (Home, Preços, Contato), utilize os Modelos de Página.</p>
-            </header>
-
-            <?php endif; ?>
-            
             <?php
             // 2. O Loop do WordPress
             if ( have_posts() ) :
@@ -44,12 +35,18 @@ get_header();
             else :
                 // 3. Conteúdo não encontrado (fallback para páginas 404 genéricas, se o 404.php não existir)
                 ?>
-                <section class="mt-5">
-                    <div class="alert alert-secondary" role="alert">
-                        <h4 class="alert-heading">Conteúdo Não Encontrado</h4>
-                        <p>Lamentamos, mas não foi encontrado nenhum conteúdo para exibir nesta área.</p>
-                        <hr>
-                        <p class="mb-0">Verifique a <a href="<?php echo esc_url( home_url( '/' ) ); ?>page=como_funciona">Documentação da API</a> ou a <a href="<?php echo esc_url( home_url( '/' ) ); ?>page=precos">Tabela de Preços</a>, que são o foco institucional do PixGo.</p>
+                <section class="mt-0">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h4 class="card-title mb-2">Conteúdo Não Encontrado</h4>
+                            <p class="mb-3">Lamentamos, mas não foi encontrado nenhum conteúdo para exibir nesta área.</p>
+                            <div class="cta-block p-3 rounded">
+                                <h4 class="mb-2"><?php echo esc_html( get_theme_mod( 'cta_footer_title', 'Pronto para Integrar?' ) ); ?></h4>
+                                <p class="mb-2"><?php echo wp_kses_post( get_theme_mod( 'cta_footer_text', 'A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.' ) ); ?></p>
+                                <a href="<?php echo esc_url( get_theme_mod( 'cta_footer_primary_url', '/register' ) ); ?>" class="btn btn-success me-2 mb-2"><?php echo esc_html( get_theme_mod( 'cta_footer_primary_text', 'Começar Grátis' ) ); ?></a>
+                                <a href="<?php echo esc_url( get_theme_mod( 'cta_footer_secondary_url', '/como-funciona' ) ); ?>" class="btn btn-primary mb-2"><?php echo esc_html( get_theme_mod( 'cta_footer_secondary_text', 'Ver Documentação da API' ) ); ?></a>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <?php
