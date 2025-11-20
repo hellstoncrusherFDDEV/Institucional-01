@@ -73,13 +73,13 @@ $post_type = get_post_type();
 	
 	<?php pixgo_share_buttons(); ?>
 
-    <footer class="entry-footer mt-4 p-4 bg-light border-top">
-        <div class="alert alert-info mb-0" role="alert">
-            <h4 class="alert-heading">Pronto para Integrar?</h4>
-            <p>A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.</p>
+    <footer class="entry-footer mt-4 p-4 border-top cta-block">
+        <div class="mb-0" role="region">
+            <h4 class="alert-heading"><?php echo esc_html( get_theme_mod( 'cta_footer_title', 'Pronto para Integrar?' ) ); ?></h4>
+            <p><?php echo wp_kses_post( get_theme_mod( 'cta_footer_text', 'A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.' ) ); ?></p>
             <hr>
-            <a href="/register" class="btn btn-success me-2 mb-2">Começar Grátis</a>
-            <a href="/como-funciona" class="btn btn-primary mb-2">Ver Documentação da API</a>
+            <a href="<?php echo esc_url( get_theme_mod( 'cta_footer_primary_url', '/register' ) ); ?>" class="btn btn-success me-2 mb-2"><?php echo esc_html( get_theme_mod( 'cta_footer_primary_text', 'Começar Grátis' ) ); ?></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'cta_footer_secondary_url', '/como-funciona' ) ); ?>" class="btn btn-primary mb-2"><?php echo esc_html( get_theme_mod( 'cta_footer_secondary_text', 'Ver Documentação da API' ) ); ?></a>
         </div>
     </footer>
 

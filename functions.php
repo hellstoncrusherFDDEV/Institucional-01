@@ -175,25 +175,6 @@ function pixgo_customize_register( $wp_customize ) {
         'settings' => 'footer_bg_color',
     ) ) );
 
-    // --- Seção de Modo Dark ---
-    $wp_customize->add_section( 'pixgo_dark_mode_settings', array(
-        'title' => __( 'Modo Dark', 'pixgo-theme' ),
-        'panel' => 'pixgo_theme_settings',
-    ) );
-
-    // Opção para Ativar/Desativar Dark Mode
-    $wp_customize->add_setting( 'enable_dark_mode', array(
-        'default' => false,
-        'transport' => 'refresh',
-        'sanitize_callback' => 'wp_validate_boolean',
-    ) );
-    $wp_customize->add_control( 'enable_dark_mode_control', array(
-        'label' => __( 'Ativar Tema Escuro (Dark Mode)', 'pixgo-theme' ),
-        'section' => 'pixgo_dark_mode_settings',
-        'type' => 'checkbox',
-        'settings' => 'enable_dark_mode',
-    ) );
-
     // --- Seção de Informações da Empresa ---
     $wp_customize->add_section( 'pixgo_company_settings', array(
         'title' => __( 'Informações da Empresa', 'pixgo-theme' ),
@@ -232,6 +213,199 @@ function pixgo_customize_register( $wp_customize ) {
         'type' => 'url',
         'settings' => 'company_website',
     ) );
+
+    // --- Seção de CTA do Conteúdo ---
+    $wp_customize->add_section( 'pixgo_cta_settings', array(
+        'title' => __( 'CTA de Conteúdo', 'pixgo-theme' ),
+        'panel' => 'pixgo_theme_settings',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_title', array(
+        'default' => 'Pronto para Integrar?',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'cta_footer_title_control', array(
+        'label' => __( 'Título do CTA', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'text',
+        'settings' => 'cta_footer_title',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_text', array(
+        'default' => 'A PixGo oferece facilidade de integração e preço justo por requisição. Nosso modelo de créditos pré-pagos garante que você pague somente pelo uso.',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+    $wp_customize->add_control( 'cta_footer_text_control', array(
+        'label' => __( 'Texto do CTA', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'textarea',
+        'settings' => 'cta_footer_text',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_primary_text', array(
+        'default' => 'Começar Grátis',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'cta_footer_primary_text_control', array(
+        'label' => __( 'Texto do Botão Primário', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'text',
+        'settings' => 'cta_footer_primary_text',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_primary_url', array(
+        'default' => '/register',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'cta_footer_primary_url_control', array(
+        'label' => __( 'URL do Botão Primário', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'url',
+        'settings' => 'cta_footer_primary_url',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_secondary_text', array(
+        'default' => 'Ver Documentação da API',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'cta_footer_secondary_text_control', array(
+        'label' => __( 'Texto do Botão Secundário', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'text',
+        'settings' => 'cta_footer_secondary_text',
+    ) );
+    $wp_customize->add_setting( 'cta_footer_secondary_url', array(
+        'default' => '/como-funciona',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'cta_footer_secondary_url_control', array(
+        'label' => __( 'URL do Botão Secundário', 'pixgo-theme' ),
+        'section' => 'pixgo_cta_settings',
+        'type' => 'url',
+        'settings' => 'cta_footer_secondary_url',
+    ) );
+
+    $wp_customize->add_section( 'pixgo_footer_settings', array(
+        'title' => __( 'Rodapé', 'pixgo-theme' ),
+        'panel' => 'pixgo_theme_settings',
+    ) );
+    $wp_customize->add_setting( 'footer_about_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+    $wp_customize->add_control( 'footer_about_text_control', array(
+        'label' => __( 'Texto Sobre a Empresa', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'textarea',
+        'settings' => 'footer_about_text',
+    ) );
+    $wp_customize->add_setting( 'footer_links_title', array(
+        'default' => 'Links',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_links_title_control', array(
+        'label' => __( 'Título da Coluna de Links', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'text',
+        'settings' => 'footer_links_title',
+    ) );
+    $link_fields = array(1,2,3,4);
+    foreach ($link_fields as $i) {
+        $wp_customize->add_setting( "footer_link{$i}_label", array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        ) );
+        $wp_customize->add_control( "footer_link{$i}_label_control", array(
+            'label' => sprintf( __( 'Link %d - Texto', 'pixgo-theme' ), $i ),
+            'section' => 'pixgo_footer_settings',
+            'type' => 'text',
+            'settings' => "footer_link{$i}_label",
+        ) );
+        $wp_customize->add_setting( "footer_link{$i}_url", array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+        $wp_customize->add_control( "footer_link{$i}_url_control", array(
+            'label' => sprintf( __( 'Link %d - URL', 'pixgo-theme' ), $i ),
+            'section' => 'pixgo_footer_settings',
+            'type' => 'url',
+            'settings' => "footer_link{$i}_url",
+        ) );
+    }
+    $wp_customize->add_setting( 'footer_contact_title', array(
+        'default' => 'Contato',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_contact_title_control', array(
+        'label' => __( 'Título da Coluna de Contato', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'text',
+        'settings' => 'footer_contact_title',
+    ) );
+    $wp_customize->add_setting( 'footer_contact_email', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_email',
+    ) );
+    $wp_customize->add_control( 'footer_contact_email_control', array(
+        'label' => __( 'E-mail', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'text',
+        'settings' => 'footer_contact_email',
+    ) );
+    $wp_customize->add_setting( 'footer_contact_phone', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_contact_phone_control', array(
+        'label' => __( 'Telefone/WhatsApp', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'text',
+        'settings' => 'footer_contact_phone',
+    ) );
+    $wp_customize->add_setting( 'footer_contact_address', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_contact_address_control', array(
+        'label' => __( 'Endereço', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'textarea',
+        'settings' => 'footer_contact_address',
+    ) );
+    $wp_customize->add_setting( 'footer_social_title', array(
+        'default' => 'Siga-nos',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'footer_social_title_control', array(
+        'label' => __( 'Título da Coluna Social', 'pixgo-theme' ),
+        'section' => 'pixgo_footer_settings',
+        'type' => 'text',
+        'settings' => 'footer_social_title',
+    ) );
+    $socials = array('facebook','instagram','linkedin','youtube','twitter','whatsapp');
+    foreach ($socials as $s) {
+        $wp_customize->add_setting( "footer_social_{$s}", array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+        $wp_customize->add_control( "footer_social_{$s}_control", array(
+            'label' => ucfirst($s),
+            'section' => 'pixgo_footer_settings',
+            'type' => 'url',
+            'settings' => "footer_social_{$s}",
+        ) );
+    }
 
     // --- Seção do Google AdSense ---
     $wp_customize->add_section( 'pixgo_adsense_settings', array(
@@ -332,30 +506,69 @@ function pixgo_add_adsense_meta_tag() {
 }
 add_action( 'wp_head', 'pixgo_add_adsense_meta_tag' );
 
-// 5. Gera CSS Dinâmico para as Cores
+// 5. Gera CSS Dinâmico para as Cores com contraste automático
+function pixgo_hex_to_rgb($hex) {
+    $hex = ltrim($hex, '#');
+    if (strlen($hex) === 3) {
+        $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
+    }
+    $int = hexdec($hex);
+    return [($int >> 16) & 255, ($int >> 8) & 255, $int & 255];
+}
+function pixgo_contrast_color($hex, $dark = '#000000', $light = '#ffffff') {
+    list($r,$g,$b) = pixgo_hex_to_rgb($hex);
+    $yiq = (($r*299)+($g*587)+($b*114))/1000;
+    return ($yiq >= 128) ? $dark : $light;
+}
 function pixgo_customizer_css() {
     $header_bg_color = get_theme_mod( 'header_bg_color', '#007bff' );
     $footer_bg_color = get_theme_mod( 'footer_bg_color', '#343a40' );
-    $dark_mode_enabled = get_theme_mod( 'enable_dark_mode', false );
+    /* Modo escuro automático (prefers-color-scheme) */
+
+    $header_text_color = pixgo_contrast_color($header_bg_color);
+    $footer_text_color = pixgo_contrast_color($footer_bg_color);
+    $footer_link_color = ($footer_text_color === '#000000') ? '#0d6efd' : '#cccccc';
+    $footer_border_color = ($footer_text_color === '#000000') ? 'rgba(0,0,0,.1)' : 'rgba(255,255,255,.15)';
 
     $css = '';
 
-    // Cores dinâmicas do Bootstrap Navbar (Header)
+    // Header
     $css .= ".navbar-custom { background-color: {$header_bg_color} !important; }";
-    $css .= ".navbar-custom .nav-link, .navbar-custom .navbar-brand { color: #fff; }";
-
-    // Cores dinâmicas do Footer
-    $css .= ".footer-custom { background-color: {$footer_bg_color} !important; color: #f8f9fa; padding: 20px 0; }";
-    $css .= ".footer-custom a { color: #ccc; }";
-
-    // Dark Mode
-    if ( $dark_mode_enabled ) {
-        $css .= "
-        body { background-color: #121212; color: #f8f9fa; }
-        .card, .bg-light { background-color: #1e1e1e !important; color: #f8f9fa !important; border-color: #444; }
-        .table { color: #f8f9fa; }
-        ";
+    $css .= ".navbar-custom .nav-link, .navbar-custom .navbar-brand { color: {$header_text_color}; }";
+    if ($header_text_color === '#000000') {
+        $css .= ".navbar-custom .navbar-toggler-icon{ filter: invert(1); }";
+    } else {
+        $css .= ".navbar-custom .navbar-toggler-icon{ filter: none; }";
     }
+
+    // Footer
+    $footer_inset_shadow = ($footer_text_color === '#000000') ? 'inset 0 1px 0 rgba(0,0,0,.08)' : 'inset 0 1px 0 rgba(255,255,255,.06)';
+    $footer_overlay = ($footer_text_color === '#000000') ? 'linear-gradient(rgba(0,0,0,.03), rgba(0,0,0,.03))' : 'linear-gradient(rgba(255,255,255,.04), rgba(255,255,255,.04))';
+    $footer_icon_color = $footer_text_color;
+    $footer_hover_bg = ($footer_text_color === '#000000') ? 'rgba(0,0,0,.08)' : 'rgba(255,255,255,.15)';
+    $css .= ".footer-custom { background-color: {$footer_bg_color} !important; color: {$footer_text_color}; padding: 32px 0; box-shadow: {$footer_inset_shadow}; background-image: {$footer_overlay}; }";
+    $css .= ".footer-custom a { color: {$footer_link_color}; }";
+    $css .= ".footer-custom a:hover { text-decoration: underline; }";
+    $css .= ".footer-custom small { opacity: .9; }";
+    $css .= ".footer-custom .footer-columns h5 { font-weight: 600; margin-bottom: .75rem; }";
+    $css .= ".footer-custom .footer-links li { margin-bottom: .35rem; }";
+    $css .= ".footer-custom .footer-social .social-btn { width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border:1px solid {$footer_icon_color}; color: {$footer_icon_color}; border-radius:50%; margin-right:.4rem; background: transparent; }";
+    $css .= ".footer-custom .footer-social .social-btn:hover { background: {$footer_hover_bg}; }";
+    $css .= ".footer-custom .footer-bottom { border-top: 1px solid {$footer_hover_bg}; margin-top: 24px; padding-top: 12px; font-size: .9rem; }";
+
+    // Share buttons (light mode)
+    $css .= ".pixgo-share-buttons .share-btn { border-color: #212529; color: #212529; background-color: transparent; }";
+    $css .= ".pixgo-share-buttons .share-btn:hover { background-color: #212529; color: #fff; }";
+
+    $cta_bg_color = $header_bg_color;
+    $cta_text_color = pixgo_contrast_color($cta_bg_color);
+    $cta_hr_color = ($cta_text_color === '#000000') ? 'rgba(0,0,0,.15)' : 'rgba(255,255,255,.3)';
+    $css .= ".cta-block { background-color: {$cta_bg_color} !important; color: {$cta_text_color}; }";
+    $css .= ".cta-block .alert-heading, .cta-block p { color: {$cta_text_color}; }";
+    $css .= ".cta-block hr { border-color: {$cta_hr_color}; }";
+
+    // Dark Mode automático
+    $css .= "@media (prefers-color-scheme: dark) {\n        body { background-color: #121212; color: #f8f9fa; }\n        .card, .bg-light { background-color: #1e1e1e !important; color: #f8f9fa !important; border-color: #444; }\n        .table { color: #f8f9fa; }\n        a { color: #0d6efd; }\n        a:hover { color: #64a1ff; }\n        .text-dark { color: #e9ecef !important; }\n        .text-secondary { color: #cfd6dc !important; }\n        .text-muted, small, .small { color: #bfc7cd !important; }\n        .border, .border-top, .border-bottom { border-color: #444 !important; }\n        .form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-control::placeholder { color: #9aa0a6; }\n        .list-group-item { background-color: #1f1f1f; color: #e9ecef; border-color: #444; }\n        .pixgo-share-buttons .share-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .pixgo-share-buttons .share-btn:hover { background-color: #e9ecef; color: #121212; }\n        .footer-custom a { color: #9ec1ff; }\n        .footer-custom a:hover { color: #cfe0ff; }\n        .cta-block { box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }\n    }";
 
     if ( ! empty( $css ) ) {
         echo '<style type="text/css">' . $css . '</style>';
@@ -628,7 +841,7 @@ function pixgo_share_buttons($post_id = null) {
 
     echo '<div class="pixgo-share-buttons d-flex flex-wrap justify-content-center gap-2 mt-3 ps-2 pe-2">';
     foreach ($social_sites as $key => $link) {
-        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">';
+        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-sm share-btn d-flex align-items-center gap-1">';
         echo '<i class="' . esc_attr($icons[$key]) . '"></i> ' . ucfirst($key);
         echo '</a>';
     }

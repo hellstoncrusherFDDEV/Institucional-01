@@ -1,7 +1,4 @@
-<?php
-// Define a classe do body para suportar Dark Mode via JS/CSS
-$body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
-?>
+<?php ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -10,7 +7,7 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
     <?php wp_head(); ?>
 
 </head>
-<body <?php body_class( $body_class ); ?>>
+<body <?php body_class(); ?>>
 
 <header>
     <!-- Menu Bootstrap 5 Fixo e Responsivo -->
