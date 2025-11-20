@@ -84,6 +84,29 @@ $navwalker_file = get_template_directory() . '/inc/class-wp-bootstrap-navwalker.
 if ( file_exists( $navwalker_file ) ) {
     require_once $navwalker_file;
 }
+function pixgo_nav_link_attrs( $atts, $item, $args, $depth ) {
+    if ( isset($args->theme_location) && $args->theme_location === 'primary' ) {
+        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' fw-bold' : 'fw-bold';
+    }
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'pixgo_nav_link_attrs', 10, 4 );
+function pixgo_nav_item_icon( $item_output, $item, $depth, $args ) {
+    if ( isset($args->theme_location) && $args->theme_location === 'primary' && !empty($item->classes) ) {
+        $icons = array();
+        foreach ( (array) $item->classes as $class ) {
+            if ( strpos($class, 'fa-') !== false || $class === 'fas' || $class === 'far' || $class === 'fab' ) {
+                $icons[] = $class;
+            }
+        }
+        if ( !empty($icons) ) {
+            $icon_html = '<i class="' . esc_attr( implode(' ', $icons) ) . ' me-1"></i> ';
+            $item_output = preg_replace( '/(<a[^>]*>)/', '$1' . $icon_html, $item_output, 1 );
+        }
+    }
+    return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'pixgo_nav_item_icon', 10, 4 );
 
 // 3. Registro dos Modelos de Página Personalizados
 // Inclui modelos para as páginas institucionais existentes e as novas solicitadas.

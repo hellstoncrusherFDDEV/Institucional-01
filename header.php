@@ -49,7 +49,7 @@ $body_class = get_theme_mod( 'enable_dark_mode', false ) ? 'dark-mode' : '';
                         'theme_location' => 'primary',
                         'depth'          => 2,
                         'container'      => false,
-                        'menu_class'     => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                        'menu_class'     => 'navbar-nav nav-pills ms-auto mb-2 mb-lg-0',
                         'fallback_cb'    => false,
                     );
 
