@@ -86,11 +86,26 @@ if ( file_exists( $navwalker_file ) ) {
 }
 function pixgo_nav_link_attrs( $atts, $item, $args, $depth ) {
     if ( isset($args->theme_location) && $args->theme_location === 'primary' ) {
-        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' fw-bold' : 'fw-bold';
+        $classes = isset($atts['class']) ? $atts['class'] : '';
+        $classes .= ( $classes ? ' ' : '' ) . 'nav-link fw-bold';
+        if ( !empty($item->current) || !empty($item->current_item_ancestor) ) {
+            $classes .= ' active';
+        }
+        $atts['class'] = $classes;
     }
     return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'pixgo_nav_link_attrs', 10, 4 );
+function pixgo_nav_item_classes( $classes, $item, $args, $depth ) {
+    if ( isset($args->theme_location) && $args->theme_location === 'primary' ) {
+        $classes[] = 'nav-item';
+        if ( !empty($item->current) || in_array('current-menu-item', (array)$classes, true) ) {
+            $classes[] = 'active';
+        }
+    }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'pixgo_nav_item_classes', 10, 4 );
 function pixgo_nav_item_icon( $item_output, $item, $depth, $args ) {
     if ( isset($args->theme_location) && $args->theme_location === 'primary' && !empty($item->classes) ) {
         $icons = array();
@@ -178,8 +193,47 @@ function pixgo_customize_register( $wp_customize ) {
         'type' => 'checkbox',
         'settings' => 'enable_dark_mode',
     ) );
-	
-	// --- Seção do Google AdSense ---
+
+    // --- Seção de Informações da Empresa ---
+    $wp_customize->add_section( 'pixgo_company_settings', array(
+        'title' => __( 'Informações da Empresa', 'pixgo-theme' ),
+        'panel' => 'pixgo_theme_settings',
+    ) );
+    $wp_customize->add_setting( 'company_name', array(
+        'default' => 'PixGo',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'company_name_control', array(
+        'label' => __( 'Nome da Empresa', 'pixgo-theme' ),
+        'section' => 'pixgo_company_settings',
+        'type' => 'text',
+        'settings' => 'company_name',
+    ) );
+    $wp_customize->add_setting( 'company_tagline', array(
+        'default' => 'API simples e econômica de pagamentos Pix via Mercado Pago.',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'company_tagline_control', array(
+        'label' => __( 'Slogan / Descrição Curta', 'pixgo-theme' ),
+        'section' => 'pixgo_company_settings',
+        'type' => 'text',
+        'settings' => 'company_tagline',
+    ) );
+    $wp_customize->add_setting( 'company_website', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+    $wp_customize->add_control( 'company_website_control', array(
+        'label' => __( 'Website da Empresa (opcional)', 'pixgo-theme' ),
+        'section' => 'pixgo_company_settings',
+        'type' => 'url',
+        'settings' => 'company_website',
+    ) );
+
+    // --- Seção do Google AdSense ---
     $wp_customize->add_section( 'pixgo_adsense_settings', array(
         'title' => __( 'Google AdSense', 'pixgo-theme' ),
         'panel' => 'pixgo_theme_settings',
