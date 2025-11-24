@@ -1,13 +1,17 @@
 /*
-Theme Name: Institucional 01
+Theme Name: Institucional-01
 Theme URI: https://fddev.com.br/
 Author: Hellston Linhares
-Author URI: https://fddev.com.br
+Author URI: https://fddev.com.br/
 Description: Tema institucional 01, focado na proposta de valor para empresas diversas, utilizando Bootstrap 5, Dark Mode e opções de personalização de cores.
 Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 7.4
 Text Domain: institucional-01
+Tags: blog, custom-logo, featured-images, footer-widgets, right-sidebar, two-columns, custom-menu, theme-options, threaded-comments, translation-ready, rtl-language-support
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /* Reset e importações, se necessário. O Bootstrap cuidará da maior parte. */
