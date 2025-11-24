@@ -1,14 +1,3 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    var url = (typeof pixgoTheme !== 'undefined' && pixgoTheme.swUrl) ? pixgoTheme.swUrl : '/service-worker.js';
-    navigator.serviceWorker.register(url).then(function(registration) {
-      console.log('ServiceWorker registrado:', registration.scope);
-    }, function(err) {
-      console.log('ServiceWorker erro:', err);
-    });
-  });
-}
-
 // Modal da imagens nos Posts
 document.addEventListener('DOMContentLoaded', function () {
     const imageModal = document.getElementById('imageModal');

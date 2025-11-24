@@ -32,11 +32,11 @@ add_action( 'after_setup_theme', 'pixgo_theme_setup' );
 
 // 2. Enqueue do Bootstrap e Arquivos Customizados
 function pixgo_scripts() {
-    // Bootstrap 5 CSS (Via CDN para simplicidade)
-    wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3' );
+    
+    wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '5.3.3' );
 
     //Font Awesome Free
-    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/fontawesome.min.css', array(), '6.5.1' );
 
     // CSS do Tema
     //wp_enqueue_style( 'pixgo-style', get_stylesheet_uri(), array( 'bootstrap-css' ), '1.0' );
@@ -46,14 +46,14 @@ function pixgo_scripts() {
 
 
     // Bootstrap 5 JS Bundle
-    wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '5.3.3', true );
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), '5.3.3', true );
 
     // Script principal do tema
     //wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
     // sem cache - força atualizar a cada edição
-    wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), time(), true );
+    wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), filemtime( get_template_directory() . '/js/main.js' ), true );
 
-    wp_localize_script( 'pixgo-main', 'pixgoTheme', array( 'swUrl' => get_template_directory_uri() . '/service-worker.js' ) );
+    
 
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
