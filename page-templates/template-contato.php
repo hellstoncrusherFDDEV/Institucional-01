@@ -27,18 +27,18 @@ get_header();
       <!-- Coluna de Informações -->
       <div class="col-md-4 mb-4">
         <h2 class="h4 fw-bold mb-3 text-primary">
-          <i class="fas fa-info-circle me-2"></i> Informações de Contato
+          <i class="fas fa-info-circle me-2"></i> <?php echo esc_html( get_theme_mod('contato_info_title', __( 'Informações de Contato', 'institucional-01' ) ) ); ?>
         </h2>
         <ul class="list-unstyled">
           <li class="mb-3">
             <i class="fas fa-envelope text-danger me-2"></i>
-            <strong>E-mail de Suporte:</strong>
+            <strong><?php echo esc_html( get_theme_mod('contato_email_label', __( 'E-mail de Suporte:', 'institucional-01' ) ) ); ?></strong>
             <?php $email = get_theme_mod('contato_email','contato@fddev.com.br'); ?>
             <a href="mailto:<?php echo esc_attr($email); ?>" class="text-decoration-none"><?php echo esc_html($email); ?></a>
           </li>
           <li class="mb-3">
             <i class="fas fa-headset text-success me-2"></i>
-            <strong>Atendimento:</strong> Segunda a Sexta, 9h às 18h
+            <strong><?php echo esc_html( get_theme_mod('contato_support_label', __( 'Atendimento:', 'institucional-01' ) ) ); ?></strong> <?php echo esc_html( get_theme_mod('contato_support_text', __( 'Segunda a Sexta, 9h às 18h', 'institucional-01' ) ) ); ?>
           </li>
         </ul>
       </div>
@@ -47,7 +47,7 @@ get_header();
       <div class="col-md-8">
 
         <h2 class="h4 fw-bold mb-3 text-primary">
-          <i class="fas fa-paper-plane me-2"></i> Envie sua Mensagem
+          <i class="fas fa-paper-plane me-2"></i> <?php echo esc_html( get_theme_mod('contato_form_title', __( 'Envie sua Mensagem', 'institucional-01' ) ) ); ?>
         </h2>
 
         <div class="row justify-content-center">

@@ -24,7 +24,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Nossa Proposta de Valor -->
     <section class="mb-5">
-        <h2 class="card-title text-success"><i class="fas fa-award me-2"></i>Nossa Proposta de Valor</h2>
+        <h2 class="card-title text-success"><i class="fas fa-award me-2"></i><?php echo esc_html( get_theme_mod('sobre_value_prop_title', __( 'Nossa Proposta de Valor', 'institucional-01' ) ) ); ?></h2>
 
         <p class="mb-4">
             A PixGo oferece uma API simples, rápida e barata para gerar QR Codes Pix e links de pagamento.
@@ -35,24 +35,24 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <!-- Facilidade de Integração -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-primary">
-                    <h4 class="text-primary"><i class="fas fa-plug me-2"></i> Facilidade de Integração</h4>
-                    <p>Oferecemos uma API simples, com boa documentação e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas.</p>
+                    <h4 class="text-primary"><i class="fas fa-plug me-2"></i> <?php echo esc_html( get_theme_mod('sobre_value_prop_1_title', __( 'Facilidade de Integração', 'institucional-01' ) ) ); ?></h4>
+                    <p><?php echo wp_kses_post( get_theme_mod('sobre_value_prop_1_desc', __( 'Oferecemos uma API simples, com boa documentação e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas.', 'institucional-01' ) ) ); ?></p>
                 </div>
             </div>
 
             <!-- Preço Justo -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-success">
-                    <h4 class="text-success"><i class="fas fa-tags me-2"></i>Preço Justo</h4>
-                    <p>Adotamos um modelo de créditos pré-pagos, onde você paga por requisição (ex: R$ 0,02 ou R$ 0,05), eliminando assinaturas mensais caras.</p>
+                    <h4 class="text-success"><i class="fas fa-tags me-2"></i><?php echo esc_html( get_theme_mod('sobre_value_prop_2_title', __( 'Preço Justo', 'institucional-01' ) ) ); ?></h4>
+                    <p><?php echo wp_kses_post( get_theme_mod('sobre_value_prop_2_desc', __( 'Adotamos um modelo de créditos pré-pagos, onde você paga por requisição, eliminando assinaturas mensais caras.', 'institucional-01' ) ) ); ?></p>
                 </div>
             </div>
 
             <!-- Foco no Mercado Pago e Escalabilidade -->
             <div class="col-md-4 mb-4">
                 <div class="card p-4 h-100 shadow-sm border-info">
-                    <h4 class="text-info"><i class="fas fa-chart-line me-2"></i>Escalabilidade</h4>
-                    <p>Utilizamos a infraestrutura confiável do Mercado Pago para gerar os Pix. O sistema é ideal para pequenos sites e aplicativos que não querem manter um servidor próprio para a geração de QR Code Pix.</p>
+                    <h4 class="text-info"><i class="fas fa-chart-line me-2"></i><?php echo esc_html( get_theme_mod('sobre_value_prop_3_title', __( 'Escalabilidade', 'institucional-01' ) ) ); ?></h4>
+                    <p><?php echo wp_kses_post( get_theme_mod('sobre_value_prop_3_desc', __( 'Utilizamos a infraestrutura confiável do Mercado Pago para gerar os Pix. Ideal para pequenos sites e aplicativos.', 'institucional-01' ) ) ); ?></p>
                 </div>
             </div>
         </div>
@@ -60,28 +60,28 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Para Quem é o PixGo? -->
     <section class="mb-5">
-        <h2 class="card-title text-success mb-3"><i class="fas fa-users me-2"></i>Para Quem é o PixGo?</h2>
+        <h2 class="card-title text-success mb-3"><i class="fas fa-users me-2"></i><?php echo esc_html( get_theme_mod('sobre_target_title', __( 'Para Quem é o PixGo?', 'institucional-01' ) ) ); ?></h2>
 
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light">
-                <strong><i class="fas fa-laptop-code me-2 text-info"></i> Desenvolvedores Freelancers:</strong> Que precisam integrar Pix em projetos em poucas horas, sem a complexidade da documentação oficial do Mercado Pago.
+                <strong><i class="fas fa-laptop-code me-2 text-info"></i> <?php echo esc_html( get_theme_mod('sobre_target_1_title', __( 'Desenvolvedores Freelancers', 'institucional-01' ) ) ); ?>:</strong> <?php echo esc_html( get_theme_mod('sobre_target_1_desc', __( 'Precisam integrar Pix em projetos em poucas horas, sem complexidade.', 'institucional-01' ) ) ); ?>
             </li>
             <li class="list-group-item">
-                <strong><i class="fas fa-shopping-cart me-2 text-info"></i> Pequenos E-commerces:</strong> Que buscam automatizar pagamentos Pix sem plugins pesados ou mensalidades altas de gateways.
+                <strong><i class="fas fa-shopping-cart me-2 text-info"></i> <?php echo esc_html( get_theme_mod('sobre_target_2_title', __( 'Pequenos E-commerces', 'institucional-01' ) ) ); ?>:</strong> <?php echo esc_html( get_theme_mod('sobre_target_2_desc', __( 'Buscam automatizar pagamentos Pix sem plugins pesados ou mensalidades altas.', 'institucional-01' ) ) ); ?>
             </li>
             <li class="list-group-item bg-light">
-                <strong><i class="fas fa-user-tie me-2 text-info"></i> Prestadores de Serviço Autônomos:</strong> Que precisam gerar cobranças avulsas de forma rápida e automatizada, como consultores ou criadores de conteúdo.
+                <strong><i class="fas fa-user-tie me-2 text-info"></i> <?php echo esc_html( get_theme_mod('sobre_target_3_title', __( 'Prestadores de Serviço Autônomos', 'institucional-01' ) ) ); ?>:</strong> <?php echo esc_html( get_theme_mod('sobre_target_3_desc', __( 'Precisam gerar cobranças avulsas de forma rápida e automatizada.', 'institucional-01' ) ) ); ?>
             </li>
             <li class="list-group-item">
-                <strong><i class="fas fa-user-tie me-2 text-info"></i> Startups e MVPs:</strong> Que precisam validar o produto rapidamente e integrar pagamentos de forma confiável e barata, com foco na escalabilidade futura.
+                <strong><i class="fas fa-user-tie me-2 text-info"></i> <?php echo esc_html( get_theme_mod('sobre_target_4_title', __( 'Startups e MVPs', 'institucional-01' ) ) ); ?>:</strong> <?php echo esc_html( get_theme_mod('sobre_target_4_desc', __( 'Precisam validar o produto rapidamente e integrar pagamentos de forma confiável e barata.', 'institucional-01' ) ) ); ?>
             </li>
         </ul>
     </section>
 
     <!-- CTA Final -->
     <section class="text-center mt-5">
-        <a href="<?php echo esc_url( get_theme_mod('sobre_cta_url','/register') ); ?>" class="btn btn-success btn-lg">
-            <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('sobre_cta_text','Comece a Integrar Agora!') ); ?>
+        <a href="<?php echo esc_url( get_theme_mod('sobre_cta_url', home_url('/register') ) ); ?>" class="btn btn-success btn-lg">
+            <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('sobre_cta_text', __( 'Comece a Integrar Agora!', 'institucional-01' ) ) ); ?>
         </a>
     </section>
 

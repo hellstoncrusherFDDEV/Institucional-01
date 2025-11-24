@@ -1,12 +1,10 @@
-﻿// Registro do Service Worker (para PWA)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('https://pixgo.api.br/wp-content/themes/Institucional-01/service-worker.js').then(function(registration) {
-      // Registro bem-sucedido
-      console.log('ServiceWorker registrado com sucesso. Escopo:', registration.scope);
+    var url = (typeof pixgoTheme !== 'undefined' && pixgoTheme.swUrl) ? pixgoTheme.swUrl : '/service-worker.js';
+    navigator.serviceWorker.register(url).then(function(registration) {
+      console.log('ServiceWorker registrado:', registration.scope);
     }, function(err) {
-      // Falha no registro
-      console.log('Falha no registro do ServiceWorker:', err);
+      console.log('ServiceWorker erro:', err);
     });
   });
 }
@@ -43,5 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
       container.appendChild(iframe);
     });
   });
+  var toggle = document.getElementById('darkModeToggle');
+  if (toggle) {
+    var saved = localStorage.getItem('pixgoDark') === '1';
+    if (saved) { document.body.classList.add('dark-mode'); }
+    toggle.setAttribute('aria-pressed', saved ? 'true' : 'false');
+    toggle.addEventListener('click', function () {
+      var isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('pixgoDark', isDark ? '1' : '0');
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    });
+  }
 });
 

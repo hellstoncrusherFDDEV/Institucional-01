@@ -46,7 +46,7 @@ $post_type = get_post_type();
 
         // Paginação dentro do post
         wp_link_pages(array(
-            'before' => '<div class="page-links">' . esc_html__('Páginas:', 'pixgo-theme'),
+            'before' => '<div class="page-links">' . esc_html__('Páginas:', 'institucional-01'),
             'after'  => '</div>',
         ));
         ?>

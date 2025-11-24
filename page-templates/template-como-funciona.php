@@ -22,13 +22,13 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h3 class="card-title text-primary"><i class="fas fa-key me-2"></i>1. Configure Suas Chaves</h3>
+                    <h3 class="card-title text-primary"><i class="fas fa-key me-2"></i><?php echo esc_html( get_theme_mod('como_step1_title', __( '1. Configure Suas Chaves', 'institucional-01' ) ) ); ?></h3>
                     <p>Após o registro, acesse "Minha Chave API" para duas configurações essenciais:</p>
                     <ul>
                         <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Sua API Key PixGo:</strong> Chave de 64 caracteres gerada automaticamente no registro e usada para autenticar suas chamadas.</li>
                         <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Sua Chave do Mercado Pago:</strong> Você armazena sua `AccessToken` de produção, que é mantida de forma <strong>criptografada</strong> em nosso banco de dados.</li>
                     </ul>
-                    <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i>Gerenciar Chaves</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i><?php echo esc_html( get_theme_mod('como_step1_btn', __( 'Gerenciar Chaves', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
         </div>
@@ -37,10 +37,10 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h3 class="card-title text-primary"><i class="fas fa-wallet me-2"></i>2. Recarregue Seus Créditos</h3>
+                    <h3 class="card-title text-primary"><i class="fas fa-wallet me-2"></i><?php echo esc_html( get_theme_mod('como_step2_title', __( '2. Recarregue Seus Crédititos', 'institucional-01' ) ) ); ?></h3>
                     <p>Nosso sistema opera com créditos pré-pagos. Você recarrega um valor (mínimo R$ 10,00) e esse valor é convertido em requisições à API, conforme a tabela de preços.</p>
                     <p>O processo de recarga gera um Pix para pagamento, e seus créditos são adicionados apenas quando o pagamento é <strong>confirmado</strong> (via webhook, em um sistema real).</p>
-                    <a href="<?php echo esc_url( get_theme_mod('como_link_topup','/topup_credits') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-coins me-1"></i>Recarregar</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_topup','/topup_credits') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-coins me-1"></i><?php echo esc_html( get_theme_mod('como_step2_btn', __( 'Recarregar', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
         </div>
@@ -49,18 +49,18 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h3 class="card-title text-primary"><i class="fas fa-code me-2"></i>3. Chame o Endpoint</h3>
+                    <h3 class="card-title text-primary"><i class="fas fa-code me-2"></i><?php echo esc_html( get_theme_mod('como_step3_title', __( '3. Chame o Endpoint', 'institucional-01' ) ) ); ?></h3>
                     <p>Para gerar um Pix, você fará uma chamada simples ao nosso Endpoint único: `/gerar-pix`.</p>
                     <p>O <strong>Input</strong> requer: <code>valor</code>, <code>descrição</code> e sua chave do Mercado Pago (implícita, pois já está cadastrada).</p>
                     <p>O <strong>Output</strong> retorna: O QR Code em `base64` e o link de pagamento.</p>
                     <p class="mt-2 text-success"><i class="fas fa-check-circle me-1"></i> Cada chamada bem-sucedida deduz o custo da requisição do seu saldo.</p>
-                    <a href="<?php echo esc_url( get_theme_mod('como_link_generate','/generate_pix') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-qrcode me-1"></i>Ver Geração Pix</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_generate','/generate_pix') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-qrcode me-1"></i><?php echo esc_html( get_theme_mod('como_step3_btn', __( 'Ver Geração Pix', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
         </div>
     </div>
 
-	<h2 class="mt-2 mb-4">Documentação Técnica da API PixGo</h2>
+    <h2 class="mt-2 mb-4"><?php echo esc_html( get_theme_mod('como_doc_title', __( 'Documentação Técnica da API PixGo', 'institucional-01' ) ) ); ?></h2>
 
   <?php echo lazy_youtube_video( get_theme_mod('como_video_url','https://www.youtube.com/watch?v=ogpV6boXtXs') ); ?>
 

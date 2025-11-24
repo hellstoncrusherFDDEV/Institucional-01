@@ -61,43 +61,40 @@
                     // Fallback manual (caso não haja menu configurado no WP)
                     ?>
                     <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_front_page() ) echo 'active'; ?>" href="/"><i class="fas fa-home me-1"></i> Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-sobre.php') ) echo 'active'; ?>" href="/sobre"><i class="fas fa-info-circle me-1"></i> Sobre</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-precos.php') ) echo 'active'; ?>" href="/precos"><i class="fas fa-tag me-1"></i> Preços</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-como-funciona.php') ) echo 'active'; ?>" href="/como-funciona"><i class="fas fa-question-circle me-1"></i> Docs API</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-afiliados.php') ) echo 'active'; ?>" href="/afiliados"><i class="fas fa-handshake me-1"></i> Afiliados</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="/contato"><i class="fas fa-envelope me-1"></i> Contato</a>
-						</li>
                         <li class="nav-item">
-							<a class="nav-link fw-bold <?php if( is_category('blog') ) echo 'active'; ?>" href="<?php echo esc_url(get_category_link(get_category_by_slug('blog')->term_id)); ?>">
-								<i class="fas fa-book me-1"></i> BLOG
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="btn btn-warning ms-lg-3 text-bold" href="/register"><i class="fas fa-rocket me-1"></i> Começar Grátis</a>
-						</li>
-					</ul>
+                            <a class="nav-link fw-bold <?php if( is_front_page() ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home me-1"></i> <?php esc_html_e( 'Home', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-sobre.php') ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/sobre' ) ); ?>"><i class="fas fa-info-circle me-1"></i> <?php esc_html_e( 'Sobre', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-precos.php') ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/precos' ) ); ?>"><i class="fas fa-tag me-1"></i> <?php esc_html_e( 'Preços', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-como-funciona.php') ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/como-funciona' ) ); ?>"><i class="fas fa-question-circle me-1"></i> <?php esc_html_e( 'Docs API', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-afiliados.php') ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/afiliados' ) ); ?>"><i class="fas fa-handshake me-1"></i> <?php esc_html_e( 'Afiliados', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_page_template('page-templates/template-contato.php') ) echo 'active'; ?>" href="<?php echo esc_url( home_url( '/contato' ) ); ?>"><i class="fas fa-envelope me-1"></i> <?php esc_html_e( 'Contato', 'institucional-01' ); ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold <?php if( is_category('blog') ) echo 'active'; ?>" href="<?php echo esc_url(get_category_link(get_category_by_slug('blog')->term_id)); ?>">
+                                <i class="fas fa-book me-1"></i> <?php esc_html_e( 'Blog', 'institucional-01' ); ?>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-warning ms-lg-3 text-bold" href="<?php echo esc_url( home_url( '/register' ) ); ?>"><i class="fas fa-rocket me-1"></i> <?php esc_html_e( 'Começar Grátis', 'institucional-01' ); ?></a>
+                        </li>
+                    </ul>
                     <?php
                 }
                 ?>
 
-                <!-- Botão de Toggle Dark Mode --> 
-				<!--
-                <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3" title="Alternar Modo Escuro">
-                    <span class="visually-hidden">Modo Dark</span> 🌙
+                <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3" title="<?php esc_attr_e( 'Alternar Modo Escuro', 'institucional-01' ); ?>" aria-pressed="false">
+                    <span class="visually-hidden"><?php esc_html_e( 'Modo Dark', 'institucional-01' ); ?></span> 🌙
                 </button>
-				-->
 
             </div>
         </div>

@@ -25,20 +25,20 @@ get_header();
       <!-- Coluna 1: Benefícios -->
       <div class="col-md-6 mb-4">
         <h2 class="fw-semibold mb-3">
-          <i class="fas fa-star text-warning me-2"></i> Por que ser um Afiliado?
+          <i class="fas fa-star text-warning me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_why_title', __( 'Por que ser um Afiliado?', 'institucional-01' ) ) ); ?>
         </h2>
         <ul class="list-unstyled">
           <li class="mb-3">
             <i class="fas fa-coins text-success me-2"></i>
-            <strong>Comissões Competitivas:</strong> Ganhe porcentagem de até 30% em todas as requisições da API feitas pelos seus indicados.
+            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_1', __( 'Comissões Competitivas: Ganhe porcentagem de até 30% em todas as requisições da API feitas pelos seus indicados.', 'institucional-01' ) ) ); ?>
           </li>
           <li class="mb-3">
             <i class="fas fa-bolt text-danger me-2"></i>
-            <strong>Fácil de Promover:</strong> A PixGo simplifica a burocracia da API oficial do Mercado Pago, e outros gateways de pagamento.
+            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_2', __( 'Fácil de Promover: A PixGo simplifica a burocracia da API oficial do Mercado Pago, e outros gateways de pagamento.', 'institucional-01' ) ) ); ?>
           </li>
           <li>
             <i class="fas fa-users text-info me-2"></i>
-            <strong>Público-Alvo Definido:</strong> Ideal para quem tem audiência em comunidades dev e e-commerces.
+            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_3', __( 'Público-Alvo Definido: Ideal para quem tem audiência em comunidades dev e e-commerces.', 'institucional-01' ) ) ); ?>
           </li>
         </ul>
       </div>
@@ -46,14 +46,14 @@ get_header();
       <!-- Coluna 2: Como funciona -->
       <div class="col-md-6 mb-4">
         <h2 class="fw-semibold mb-3">
-          <i class="fas fa-cogs text-secondary me-2"></i> Como Funciona?
+          <i class="fas fa-cogs text-secondary me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_how_title', __( 'Como Funciona?', 'institucional-01' ) ) ); ?>
         </h2>
         <ol class="ps-3 list-unstyled">
-          <li><i class="fas fa-user-plus text-success me-1"></i> Cadastre-se no Programa.</li>
-          <li><i class="fas fa-link text-primary me-1"></i> Receba seu link e materiais de divulgação.</li>
-          <li><i class="fas fa-key text-warning me-1"></i> Seus indicados recebem a API Key inicial.</li>
-          <li><i class="fas fa-wallet text-danger me-1"></i> Eles recarregam créditos para usar a API.</li>
-          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> Você ganha comissão sobre cada consumo efetivado na API.</li>
+          <li><i class="fas fa-user-plus text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_1', __( 'Cadastre-se no Programa.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-link text-primary me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_2', __( 'Receba seu link e materiais de divulgação.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-key text.warning me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_3', __( 'Seus indicados recebem a API Key inicial.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-wallet text-danger me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_4', __( 'Eles recarregam créditos para usar a API.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_5', __( 'Você ganha comissão sobre cada consumo efetivado na API.', 'institucional-01' ) ) ); ?></li>
         </ol>
         <p class="text-muted mt-3">
           <i class="fas fa-briefcase me-2"></i> Parcerias com freelancers e agências digitais são parte da estratégia da PixGo.
@@ -63,7 +63,7 @@ get_header();
 
     <div class="container my-2">
     <h2 class="text-center mb-4">
-      <i class="fas fa-info-circle text-success me-2"></i> Dúvidas Frequentes - Programa de Afiliados
+      <i class="fas fa-info-circle text-success me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_faq_title', __( 'Dúvidas Frequentes - Programa de Afiliados', 'institucional-01' ) ) ); ?>
     </h2>
 
     <div class="accordion" id="accordionAfiliados">
@@ -72,7 +72,7 @@ get_header();
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <i class="fas fa-star text-warning me-2"></i> Quais são os benefícios de ser afiliado?
+            <i class="fas fa-star text-warning me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_faq_q1', __( 'Quais são os benefícios de ser afiliado?', 'institucional-01' ) ) ); ?>
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAfiliados">
@@ -90,7 +90,7 @@ get_header();
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingTwo">
           <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <i class="fas fa-play-circle text-danger me-2"></i> Vídeo: Como funciona o programa?
+            <i class="fas fa-play-circle text-danger me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_faq_q2', __( 'Vídeo: Como funciona o programa?', 'institucional-01' ) ) ); ?>
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAfiliados">
@@ -106,8 +106,8 @@ get_header();
       <!-- Item 3 -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <i class="fas fa-question-circle text-primary me-2"></i> Como recebo minhas comissões?
+          <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="#collapseThree">
+            <i class="fas fa-question-circle text-primary me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_faq_q3', __( 'Como recebo minhas comissões?', 'institucional-01' ) ) ); ?>
           </button>
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAfiliados">
@@ -125,7 +125,7 @@ get_header();
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingFour">
           <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            <i class="fas fa-bullhorn text-success me-2"></i> Dicas para divulgar melhor
+            <i class="fas fa-bullhorn text-success me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_faq_q4', __( 'Dicas para divulgar melhor', 'institucional-01' ) ) ); ?>
           </button>
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionAfiliados">
@@ -141,8 +141,8 @@ get_header();
 
       <!-- CTA central -->
       <div class="text-center mt-4">
-        <a href="<?php echo esc_url( get_theme_mod('afiliados_cta_url','/register') ); ?>" class="btn btn-success btn-lg px-4 shadow">
-          <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_cta_text','Quero me Cadastrar como Afiliado') ); ?>
+        <a href="<?php echo esc_url( get_theme_mod('afiliados_cta_url', home_url('/register') ) ); ?>" class="btn btn-success btn-lg px-4 shadow">
+          <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_cta_text', __( 'Quero me Cadastrar como Afiliado', 'institucional-01' ) ) ); ?>
         </a>
       </div>
     </div>

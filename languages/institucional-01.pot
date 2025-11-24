@@ -1,0 +1,687 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: institucional-01 1.0\n"
+"POT-Creation-Date: 2025-11-24 00:00+0000\n"
+"X-Domain: institucional-01\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: header.php:65
+msgid "Home"
+msgstr ""
+
+#: header.php:68
+msgid "Sobre"
+msgstr ""
+
+#: header.php:71
+msgid "Preços"
+msgstr ""
+
+#: header.php:74
+msgid "Docs API"
+msgstr ""
+
+#: header.php:77
+msgid "Afiliados"
+msgstr ""
+
+#: header.php:80
+msgid "Contato"
+msgstr ""
+
+#: header.php:84
+msgid "Blog"
+msgstr ""
+
+#: header.php:88
+msgid "Começar Grátis"
+msgstr ""
+
+#: header.php:95
+msgid "Alternar Modo Escuro"
+msgstr ""
+
+#: header.php:96
+msgid "Modo Dark"
+msgstr ""
+
+#: page-templates/template-home.php:51
+#: page-templates/template-home.php:51
+msgid "Por Que Escolher a PixGo?"
+msgstr ""
+
+#: page-templates/template-home.php:58
+msgid "Facilidade de Integração"
+msgstr ""
+
+#: page-templates/template-home.php:62
+msgid "Ver Documentação"
+msgstr ""
+
+#: page-templates/template-home.php:70
+msgid "Preço Justo por Requisição"
+msgstr ""
+
+#: page-templates/template-home.php:74
+msgid "Ver Tabela de Preços"
+msgstr ""
+
+#: page-templates/template-home.php:82
+msgid "Escalabilidade e Confiabilidade"
+msgstr ""
+
+#: page-templates/template-home.php:86
+msgid "Saiba Mais"
+msgstr ""
+
+#: page-templates/template-home.php:97
+msgid "Quem se Beneficia com PixGo?"
+msgstr ""
+
+#: page-templates/template-home.php:104
+msgid "Desenvolvedores Freelancers e Pequenos Times"
+msgstr ""
+
+#: page-templates/template-home.php:117
+msgid "Pequenos E-commerces e Lojas Virtuais"
+msgstr ""
+
+#: page-templates/template-home.php:130
+msgid "Serviços Autônomos e Startups"
+msgstr ""
+
+#: page-templates/template-home.php:148
+msgid "Como Funciona?"
+msgstr ""
+
+#: page-templates/template-home.php:155
+msgid "Modelo de Créditos Pré-Pagos"
+msgstr ""
+
+#: page-templates/template-home.php:163
+msgid "Quero Começar Agora!"
+msgstr ""
+
+#: page-templates/template-sobre.php:27
+msgid "Nossa Proposta de Valor"
+msgstr ""
+
+#: page-templates/template-sobre.php:38
+msgid "Facilidade de Integração"
+msgstr ""
+
+#: page-templates/template-sobre.php:46
+msgid "Preço Justo"
+msgstr ""
+
+#: page-templates/template-sobre.php:54
+msgid "Escalabilidade"
+msgstr ""
+
+#: page-templates/template-sobre.php:63
+msgid "Para Quem é o PixGo?"
+msgstr ""
+
+#: page-templates/template-precos.php:26
+msgid "Tabela de Recarga e Custo por Requisição"
+msgstr ""
+
+#: page-templates/template-precos.php:27
+msgid "Quanto maior a recarga, menor o custo por requisição."
+msgstr ""
+
+#: page-templates/template-precos.php:33
+msgid "Valor da Recarga"
+msgstr ""
+
+#: page-templates/template-precos.php:34
+msgid "Custo por Requisição à API"
+msgstr ""
+
+#: page-templates/template-precos.php:35
+msgid "Requisições Obtidas"
+msgstr ""
+
+#: page-templates/template-precos.php:47
+msgid "chamadas"
+msgstr ""
+
+#: page-templates/template-precos.php:54
+msgid "Nota: O valor mínimo de recarga é de R$ 10,00. O controle de uso garante que requisições sejam bloqueadas quando os créditos chegarem a zero."
+msgstr ""
+
+#: page-templates/template-precos.php:60
+msgid "Por Que Créditos Pré-Pagos?"
+msgstr ""
+
+#: page-templates/template-precos.php:61
+msgid "Este modelo é similar ao de APIs de SMS, garantindo que você pague somente quando vender ou usar a funcionalidade."
+msgstr ""
+
+#: page-templates/template-como-funciona.php:25
+msgid "1. Configure Suas Chaves"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:31
+msgid "Gerenciar Chaves"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:40
+msgid "2. Recarregue Seus Créditos"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:43
+msgid "Recarregar"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:52
+msgid "3. Chame o Endpoint"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:57
+msgid "Ver Geração Pix"
+msgstr ""
+
+#: page-templates/template-como-funciona.php:63
+msgid "Documentação Técnica da API PixGo"
+msgstr ""
+
+#: page-templates/template-servicos.php:11
+msgid "Serviços PixGo"
+msgstr ""
+
+#: page-templates/template-servicos.php:12
+msgid "Soluções para integrar Pix em sites, apps e lojas."
+msgstr ""
+
+#: page-templates/template-servicos.php:19
+msgid "Serviço %d"
+msgstr ""
+
+#: page-templates/template-servicos.php:20
+msgid "Descrição breve do serviço."
+msgstr ""
+
+#: page-templates/template-servicos.php:28
+msgid "Quero Integrar Agora"
+msgstr ""
+
+#: page-templates/template-afiliados.php:28
+msgid "Por que ser um Afiliado?"
+msgstr ""
+
+#: page-templates/template-afiliados.php:49
+msgid "Como Funciona?"
+msgstr ""
+
+#: page-templates/template-afiliados.php:66
+msgid "Dúvidas Frequentes - Programa de Afiliados"
+msgstr ""
+
+#: page-templates/template-afiliados.php:75
+msgid "Quais são os benefícios de ser afiliado?"
+msgstr ""
+
+#: page-templates/template-afiliados.php:93
+msgid "Vídeo: Como funciona o programa?"
+msgstr ""
+
+#: page-templates/template-afiliados.php:110
+msgid "Como recebo minhas comissões?"
+msgstr ""
+
+#: page-templates/template-afiliados.php:128
+msgid "Dicas para divulgar melhor"
+msgstr ""
+
+#: page-templates/template-afiliados.php:145
+msgid "Quero me Cadastrar como Afiliado"
+msgstr ""
+
+#: page-templates/template-contato.php:30
+msgid "Informações de Contato"
+msgstr ""
+
+#: page-templates/template-contato.php:35
+msgid "E-mail de Suporte:"
+msgstr ""
+
+#: page-templates/template-contato.php:41
+msgid "Atendimento:"
+msgstr ""
+
+#: page-templates/template-contato.php:41
+msgid "Segunda a Sexta, 9h às 18h"
+msgstr ""
+
+#: page-templates/template-contato.php:50
+msgid "Envie sua Mensagem"
+msgstr ""
+
+#: functions.php:936
+msgid "Autor deste artigo no blog PixGo."
+msgstr ""
+
+#: functions.php:944
+msgid "Mais posts"
+msgstr ""
+
+#: functions.php:949
+msgid "Site pessoal"
+msgstr ""
+#: functions.php
+msgid "Título Por Que Escolher"
+msgstr ""
+
+#: functions.php
+msgid "Card 1 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Nossa API é simples, com documentação clara e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas, sem dor de cabeça."
+msgstr ""
+
+#: functions.php
+msgid "Card 1 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Ver Documentação"
+msgstr ""
+
+#: functions.php
+msgid "Card 1 - Texto Botão"
+msgstr ""
+
+#: functions.php
+msgid "Preço Justo por Requisição"
+msgstr ""
+
+#: functions.php
+msgid "Card 2 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Você paga apenas R$ 0,02 ou R$ 0,05 por requisição, como um modelo de créditos pré-pagos, eliminando assinaturas mensais caras."
+msgstr ""
+
+#: functions.php
+msgid "Card 2 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Ver Tabela de Preços"
+msgstr ""
+
+#: functions.php
+msgid "Card 2 - Texto Botão"
+msgstr ""
+
+#: functions.php
+msgid "Escalabilidade e Confiabilidade"
+msgstr ""
+
+#: functions.php
+msgid "Card 3 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Construído com PHP 8 e MySQL, ideal para pequenos apps e e-commerces que precisam escalar sem manter um servidor próprio."
+msgstr ""
+
+#: functions.php
+msgid "Card 3 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Saiba Mais"
+msgstr ""
+
+#: functions.php
+msgid "Card 3 - Texto Botão"
+msgstr ""
+
+#: functions.php
+msgid "Quem se Beneficia com PixGo?"
+msgstr ""
+
+#: functions.php
+msgid "Título Personas"
+msgstr ""
+
+#: functions.php
+msgid "Desenvolvedores Freelancers e Pequenos Times"
+msgstr ""
+
+#: functions.php
+msgid "Persona 1 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Use esta API e gere QR Codes Pix com 3 linhas de código. Sem complicação."
+msgstr ""
+
+#: functions.php
+msgid "Persona 1 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Ideal para integrar Pix em projetos em poucas horas, evitando a complexidade da documentação oficial do Mercado Pago."
+msgstr ""
+
+#: functions.php
+msgid "Persona 1 - Complemento"
+msgstr ""
+
+#: functions.php
+msgid "Pequenos E-commerces e Lojas Virtuais"
+msgstr ""
+
+#: functions.php
+msgid "Persona 2 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Transforme pedidos em pagamentos Pix em segundos e pague só pelo que usar."
+msgstr ""
+
+#: functions.php
+msgid "Persona 2 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Automação de pagamentos Pix sem plugins pesados ou mensalidades altas de gateways."
+msgstr ""
+
+#: functions.php
+msgid "Persona 2 - Complemento"
+msgstr ""
+
+#: functions.php
+msgid "Serviços Autônomos e Startups"
+msgstr ""
+
+#: functions.php
+msgid "Persona 3 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Pare de gerar Pix manualmente. / Integre Pix em minutos e foque no crescimento."
+msgstr ""
+
+#: functions.php
+msgid "Persona 3 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Gere cobranças avulsas rapidamente ou valide seu MVP integrando pagamentos de forma confiável e barata."
+msgstr ""
+
+#: functions.php
+msgid "Persona 3 - Complemento"
+msgstr ""
+
+#: functions.php
+msgid "Como Funciona?"
+msgstr ""
+
+#: functions.php
+msgid "Título Como Funciona"
+msgstr ""
+
+#: functions.php
+msgid "Com a PixGo, você cadastra sua chave do Mercado Pago na plataforma e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio."
+msgstr ""
+
+#: functions.php
+msgid "Como Funciona - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Modelo de Créditos Pré-Pagos"
+msgstr ""
+
+#: functions.php
+msgid "Como Funciona - Modelo Créditos"
+msgstr ""
+
+#: functions.php
+msgid "Quero Começar Agora!"
+msgstr ""
+
+#: functions.php
+msgid "Botão Final - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Botão Final - URL"
+msgstr ""
+#: functions.php
+msgid "Título Proposta de Valor"
+msgstr ""
+
+#: functions.php
+msgid "Bloco 1 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Oferecemos uma API simples, com boa documentação e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas."
+msgstr ""
+
+#: functions.php
+msgid "Bloco 1 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Bloco 2 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Adotamos um modelo de créditos pré-pagos, onde você paga por requisição, eliminando assinaturas mensais caras."
+msgstr ""
+
+#: functions.php
+msgid "Bloco 2 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Bloco 3 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Utilizamos a infraestrutura confiável do Mercado Pago para gerar os Pix. Ideal para pequenos sites e aplicativos."
+msgstr ""
+
+#: functions.php
+msgid "Bloco 3 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Título Personas"
+msgstr ""
+
+#: functions.php
+msgid "Desenvolvedores Freelancers"
+msgstr ""
+
+#: functions.php
+msgid "Persona 1 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Pequenos E-commerces"
+msgstr ""
+
+#: functions.php
+msgid "Persona 2 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Prestadores de Serviço Autônomos"
+msgstr ""
+
+#: functions.php
+msgid "Persona 3 - Texto"
+msgstr ""
+
+#: functions.php
+msgid "Startups e MVPs"
+msgstr ""
+
+#: functions.php
+msgid "Persona 4 - Texto"
+msgstr ""
+#: functions.php
+msgid "Tabela - Título"
+msgstr ""
+
+#: functions.php
+msgid "Tabela - Subtítulo"
+msgstr ""
+
+#: functions.php
+msgid "Coluna 1"
+msgstr ""
+
+#: functions.php
+msgid "Coluna 2"
+msgstr ""
+
+#: functions.php
+msgid "Coluna 3"
+msgstr ""
+
+#: functions.php
+msgid "Sufixo Requisições"
+msgstr ""
+
+#: functions.php
+msgid "Texto Nota"
+msgstr ""
+
+#: functions.php
+msgid "Título Por Que Créditos"
+msgstr ""
+
+#: functions.php
+msgid "Texto Por Que Créditos"
+msgstr ""
+#: functions.php
+msgid "Passo 1 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Gerenciar Chaves"
+msgstr ""
+
+#: functions.php
+msgid "Passo 1 - Botão"
+msgstr ""
+
+#: functions.php
+msgid "Passo 2 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Recarregar"
+msgstr ""
+
+#: functions.php
+msgid "Passo 2 - Botão"
+msgstr ""
+
+#: functions.php
+msgid "Passo 3 - Título"
+msgstr ""
+
+#: functions.php
+msgid "Ver Geração Pix"
+msgstr ""
+
+#: functions.php
+msgid "Passo 3 - Botão"
+msgstr ""
+
+#: functions.php
+msgid "Título Documentação Técnica"
+msgstr ""
+#: functions.php
+msgid "Por que ser um Afiliado - Título"
+msgstr ""
+
+#: functions.php
+msgid "Benefício 1"
+msgstr ""
+
+#: functions.php
+msgid "Benefício 2"
+msgstr ""
+
+#: functions.php
+msgid "Benefício 3"
+msgstr ""
+
+#: functions.php
+msgid "Como Funciona - Título"
+msgstr ""
+
+#: functions.php
+msgid "Passo 1"
+msgstr ""
+
+#: functions.php
+msgid "Passo 2"
+msgstr ""
+
+#: functions.php
+msgid "Passo 3"
+msgstr ""
+
+#: functions.php
+msgid "Passo 4"
+msgstr ""
+
+#: functions.php
+msgid "Passo 5"
+msgstr ""
+
+#: functions.php
+msgid "FAQ - Título"
+msgstr ""
+
+#: functions.php
+msgid "FAQ - Pergunta 1"
+msgstr ""
+
+#: functions.php
+msgid "FAQ - Pergunta 2"
+msgstr ""
+
+#: functions.php
+msgid "FAQ - Pergunta 3"
+msgstr ""
+
+#: functions.php
+msgid "FAQ - Pergunta 4"
+msgstr ""
+#: functions.php
+msgid "Título Informações"
+msgstr ""
+
+#: functions.php
+msgid "Rótulo E-mail"
+msgstr ""
+
+#: functions.php
+msgid "Rótulo Atendimento"
+msgstr ""
+
+#: functions.php
+msgid "Texto Atendimento"
+msgstr ""
+
+#: functions.php
+msgid "Título Formulário"
+msgstr ""
