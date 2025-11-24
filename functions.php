@@ -1,11 +1,5 @@
 <?php
 
-/*********************************************************************************************************
-TO DO LIST
---------------------
-
-**********************************************************************************************************/
-
 // 1. Configuração do Tema e Enqueue de Scripts
 function pixgo_theme_setup() {
     // Suporte a Título Dinâmico
@@ -470,6 +464,18 @@ function pixgo_customize_register( $wp_customize ) {
         'section' => 'title_tagline',
         'type' => 'text',
     ));
+
+    // Link do botão
+    $wp_customize->add_setting('pixgo_focus_button_url', array(
+        'default' => '/register',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    $wp_customize->add_control('pixgo_focus_button_url', array(
+        'label' => 'URL do Botão',
+        'section' => 'title_tagline',
+        'type' => 'url',
+    ));
 	// FIM BARRA LATERAL CHAMADA PRA AÇÃO
 
 	// Scripts Personalizados
@@ -897,7 +903,7 @@ function pixgo_share_buttons($post_id = null) {
 // Função para exibir o card "Foco do PixGo"
 function pixgo_sidebar_focus_card($register_url = null) {
     if (!$register_url) {
-        $register_url = esc_url(home_url('/register'));
+        $register_url = esc_url( get_theme_mod('pixgo_focus_button_url', home_url('/register')) );
     }
 
     ?>
