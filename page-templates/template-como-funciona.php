@@ -14,8 +14,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
 <div class="container my-2">
-    <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i>Como Funciona o PixGo?</h1>
-    <p class="lead text-center mb-5">Integre Pix em 3 passos e gere QR Codes em tempo real.</p>
+    <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i><?php echo esc_html( get_theme_mod('como_title','Como Funciona o PixGo?') ); ?></h1>
+    <p class="lead text-center mb-5"><?php echo esc_html( get_theme_mod('como_lead','Integre Pix em 3 passos e gere QR Codes em tempo real.') ); ?></p>
 
     <div class="row">
         <!-- Passo 1: Configuração -->
@@ -28,7 +28,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                         <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Sua API Key PixGo:</strong> Chave de 64 caracteres gerada automaticamente no registro e usada para autenticar suas chamadas.</li>
                         <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Sua Chave do Mercado Pago:</strong> Você armazena sua `AccessToken` de produção, que é mantida de forma <strong>criptografada</strong> em nosso banco de dados.</li>
                     </ul>
-                    <a href="/api_key" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i>Gerenciar Chaves</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i>Gerenciar Chaves</a>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                     <h3 class="card-title text-primary"><i class="fas fa-wallet me-2"></i>2. Recarregue Seus Créditos</h3>
                     <p>Nosso sistema opera com créditos pré-pagos. Você recarrega um valor (mínimo R$ 10,00) e esse valor é convertido em requisições à API, conforme a tabela de preços.</p>
                     <p>O processo de recarga gera um Pix para pagamento, e seus créditos são adicionados apenas quando o pagamento é <strong>confirmado</strong> (via webhook, em um sistema real).</p>
-                    <a href="/topup_credits" class="btn btn-sm btn-outline-primary"><i class="fas fa-coins me-1"></i>Recarregar</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_topup','/topup_credits') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-coins me-1"></i>Recarregar</a>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                     <p>O <strong>Input</strong> requer: <code>valor</code>, <code>descrição</code> e sua chave do Mercado Pago (implícita, pois já está cadastrada).</p>
                     <p>O <strong>Output</strong> retorna: O QR Code em `base64` e o link de pagamento.</p>
                     <p class="mt-2 text-success"><i class="fas fa-check-circle me-1"></i> Cada chamada bem-sucedida deduz o custo da requisição do seu saldo.</p>
-                    <a href="/generate_pix" class="btn btn-sm btn-outline-primary"><i class="fas fa-qrcode me-1"></i>Ver Geração Pix</a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_generate','/generate_pix') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-qrcode me-1"></i>Ver Geração Pix</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
 	<h2 class="mt-2 mb-4">Documentação Técnica da API PixGo</h2>
 
-  <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=ogpV6boXtXs'); ?>
+  <?php echo lazy_youtube_video( get_theme_mod('como_video_url','https://www.youtube.com/watch?v=ogpV6boXtXs') ); ?>
 
 	<p class="lead">Nossa API foi desenhada para ser RESTful, segura (requer API Key no cabeçalho Authorization) e extremamente simples. Utilize os seguintes endpoints para integrar o Pix ao seu sistema.</p>
 

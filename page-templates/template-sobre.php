@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Sobre a Empresa
  * Template Post Type: page
@@ -14,11 +14,11 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
 <div class="py-2">
-    <h1 class="display-4 text-primary"><i class="fas fa-info-circle me-2"></i>API Pix Simples e Econômica</h1>
+    <h1 class="display-4 text-primary"><i class="fas fa-info-circle me-2"></i><?php echo esc_html( get_theme_mod('sobre_title','API Pix Simples e Econômica') ); ?></h1>
 
     <section class="mb-5">
         <p class="lead">
-            Nascemos para simplificar a integração de pagamentos Pix para desenvolvedores e pequenos negócios.
+            <?php echo esc_html( get_theme_mod('sobre_intro_lead','Nascemos para simplificar a integração de pagamentos Pix para desenvolvedores e pequenos negócios.') ); ?>
         </p>
     </section>
 
@@ -80,8 +80,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- CTA Final -->
     <section class="text-center mt-5">
-        <a href="/register" class="btn btn-success btn-lg">
-            <i class="fas fa-rocket me-2"></i> Comece a Integrar Agora!
+        <a href="<?php echo esc_url( get_theme_mod('sobre_cta_url','/register') ); ?>" class="btn btn-success btn-lg">
+            <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('sobre_cta_text','Comece a Integrar Agora!') ); ?>
         </a>
     </section>
 

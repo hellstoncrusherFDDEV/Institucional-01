@@ -15,27 +15,27 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <section class="hero-section py-2 text-center bg-light-subtle rounded-3 shadow-sm">
     <div class="container">
         <!-- Título principal baseado no conteúdo institucional -->
-        <h1 class="display-4 fw-bold text-primary"><i class="fas fa-qrcode me-2"></i>PixGo: Sua API Pix Simples e Econômica</h1>
+        <h1 class="display-4 fw-bold text-primary"><i class="fas fa-qrcode me-2"></i><?php echo esc_html( get_theme_mod('home_hero_title','PixGo: Sua API Pix Simples e Econômica') ); ?></h1>
 
         <!-- Proposta de valor principal -->
         <p class="lead mt-3 mb-4">
-            Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.
+            <?php echo wp_kses_post( get_theme_mod('home_hero_lead','Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.') ); ?>
         </p>
 
         <hr class="my-4">
 
-        <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=S86zAxbwa3k'); ?>
+        <?php echo lazy_youtube_video( get_theme_mod('home_hero_video_url','https://www.youtube.com/watch?v=S86zAxbwa3k') ); ?>
 
         <p>
             Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.
         </p>
 
         <!-- CTAs - Usamos os slugs definidos no sistema original, assumindo que as páginas foram criadas no WP -->
-        <a href="/register" class="btn btn-primary btn-lg me-3 mb-2">
-            Comece Grátis Agora!
+        <a href="<?php echo esc_url( get_theme_mod('home_cta_primary_url','/register') ); ?>" class="btn btn-primary btn-lg me-3 mb-2">
+            <?php echo esc_html( get_theme_mod('home_cta_primary_text','Comece Grátis Agora!') ); ?>
         </a>
-        <a href="/login" class="btn btn-outline-secondary btn-lg mb-2">
-            Já sou Cliente
+        <a href="<?php echo esc_url( get_theme_mod('home_cta_secondary_url','/login') ); ?>" class="btn btn-outline-secondary btn-lg mb-2">
+            <?php echo esc_html( get_theme_mod('home_cta_secondary_text','Já sou Cliente') ); ?>
         </a>
 
     </div>

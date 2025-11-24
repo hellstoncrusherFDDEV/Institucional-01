@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Template Name: Tabela de Preços
 Template Post Type: page
@@ -16,8 +16,8 @@ $pricingTiers = [
 ?>
 
 <div class="container my-2">
-    <h1 class="display-4 text-primary text-center"><i class="fas fa-tags me-2"></i>Pague Apenas Pelo Uso</h1>
-    <p class="lead text-center mb-5">Nosso modelo é de <strong>créditos pré-pagos</strong>, permitindo total controle de custos sem mensalidades fixas.</p>
+    <h1 class="display-4 text-primary text-center"><i class="fas fa-tags me-2"></i><?php echo esc_html( get_theme_mod('precos_title','Pague Apenas Pelo Uso') ); ?></h1>
+    <p class="lead text-center mb-5"><?php echo wp_kses_post( get_theme_mod('precos_lead','Nosso modelo é de <strong>créditos pré-pagos</strong>, permitindo total controle de custos sem mensalidades fixas.') ); ?></p>
 
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -59,7 +59,7 @@ $pricingTiers = [
         <div class="col-md-12 text-center">
             <h2><i class="fas fa-question-circle me-2"></i>Por Que Créditos Pré-Pagos?</h2>
             <p>Este modelo é similar ao de APIs de SMS, garantindo que você pague <strong>somente quando vender ou usar</strong> a funcionalidade.</p>
-            <a href="/topup_credits" class="btn btn-lg btn-success"><i class="fas fa-wallet me-2"></i>Recarregar Créditos Agora</a>
+            <a href="<?php echo esc_url( get_theme_mod('precos_cta_url','/topup_credits') ); ?>" class="btn btn-lg btn-success"><i class="fas fa-wallet me-2"></i><?php echo esc_html( get_theme_mod('precos_cta_text','Recarregar Créditos Agora') ); ?></a>
         </div>
     </div>
 </div>

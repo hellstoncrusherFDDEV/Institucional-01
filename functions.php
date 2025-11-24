@@ -141,6 +141,11 @@ function pixgo_customize_register( $wp_customize ) {
         'priority' => 160,
     ) );
 
+    $wp_customize->add_panel( 'pixgo_pages_content', array(
+        'title' => __( 'Conteúdo das Páginas', 'pixgo-theme' ),
+        'priority' => 165,
+    ) );
+
     // --- Seção de Cores ---
     $wp_customize->add_section( 'pixgo_color_settings', array(
         'title' => __( 'Cores do Header e Footer', 'pixgo-theme' ),
@@ -476,7 +481,7 @@ function pixgo_customize_register( $wp_customize ) {
         'section' => 'title_tagline',
         'type' => 'url',
     ));
-	// FIM BARRA LATERAL CHAMADA PRA AÇÃO
+    // FIM BARRA LATERAL CHAMADA PRA AÇÃO
 
 	// Scripts Personalizados
 	$wp_customize->add_section( 'pixgo_custom_code_settings', array(
@@ -921,6 +926,137 @@ function pixgo_sidebar_focus_card($register_url = null) {
     </aside>
     <?php
 }
+
+
+
+    // Conteúdo: Home
+    $wp_customize->add_section('pixgo_home_section', array(
+        'title' => 'Página: Home',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 10,
+    ));
+    $wp_customize->add_setting('home_hero_title', array('default' => 'PixGo: Sua API Pix Simples e Econômica', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_hero_title', array('label' => 'Título do Hero', 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_hero_lead', array('default' => 'Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('home_hero_lead', array('label' => 'Descrição do Hero', 'section' => 'pixgo_home_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('home_hero_video_url', array('default' => 'https://www.youtube.com/watch?v=S86zAxbwa3k', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('home_hero_video_url', array('label' => 'URL do Vídeo do Hero', 'section' => 'pixgo_home_section', 'type' => 'url'));
+    $wp_customize->add_setting('home_cta_primary_text', array('default' => 'Comece Grátis Agora!', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_cta_primary_text', array('label' => 'Texto CTA Primário', 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_cta_primary_url', array('default' => '/register', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('home_cta_primary_url', array('label' => 'Link CTA Primário', 'section' => 'pixgo_home_section', 'type' => 'url'));
+    $wp_customize->add_setting('home_cta_secondary_text', array('default' => 'Já sou Cliente', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_cta_secondary_text', array('label' => 'Texto CTA Secundário', 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_cta_secondary_url', array('default' => '/login', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('home_cta_secondary_url', array('label' => 'Link CTA Secundário', 'section' => 'pixgo_home_section', 'type' => 'url'));
+
+    // Conteúdo: Afiliados
+    $wp_customize->add_section('pixgo_afiliados_section', array(
+        'title' => 'Página: Afiliados',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 60,
+    ));
+    $wp_customize->add_setting('afiliados_title', array('default' => 'Programa de Afiliados PixGo', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('afiliados_title', array('label' => 'Título', 'section' => 'pixgo_afiliados_section', 'type' => 'text'));
+    $wp_customize->add_setting('afiliados_lead', array('default' => 'Ajude a promover a API Pix mais simples do mercado e <strong>ganhe comissões recorrentes</strong>!', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('afiliados_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_afiliados_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('afiliados_video_main', array('default' => 'https://www.youtube.com/watch?v=JS9IETTXC1Q', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('afiliados_video_main', array('label' => 'URL Vídeo Principal', 'section' => 'pixgo_afiliados_section', 'type' => 'url'));
+    $wp_customize->add_setting('afiliados_video_beneficios', array('default' => 'https://www.youtube.com/watch?v=BXEJ_diYqRc', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('afiliados_video_beneficios', array('label' => 'URL Vídeo Benefícios', 'section' => 'pixgo_afiliados_section', 'type' => 'url'));
+    $wp_customize->add_setting('afiliados_video_como', array('default' => 'https://www.youtube.com/watch?v=S86zAxbwa3k', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('afiliados_video_como', array('label' => 'URL Vídeo Como Funciona', 'section' => 'pixgo_afiliados_section', 'type' => 'url'));
+    $wp_customize->add_setting('afiliados_cta_text', array('default' => 'Quero me Cadastrar como Afiliado', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('afiliados_cta_text', array('label' => 'Texto CTA', 'section' => 'pixgo_afiliados_section', 'type' => 'text'));
+    $wp_customize->add_setting('afiliados_cta_url', array('default' => '/register', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('afiliados_cta_url', array('label' => 'Link CTA', 'section' => 'pixgo_afiliados_section', 'type' => 'url'));
+
+    // Conteúdo: Como Funciona
+    $wp_customize->add_section('pixgo_como_section', array(
+        'title' => 'Página: Como Funciona',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 50,
+    ));
+    $wp_customize->add_setting('como_title', array('default' => 'Como Funciona o PixGo?', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_title', array('label' => 'Título', 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_lead', array('default' => 'Integre Pix em 3 passos e gere QR Codes em tempo real.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_video_url', array('default' => 'https://www.youtube.com/watch?v=ogpV6boXtXs', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('como_video_url', array('label' => 'URL Vídeo', 'section' => 'pixgo_como_section', 'type' => 'url'));
+    $wp_customize->add_setting('como_link_keys', array('default' => '/api_key', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('como_link_keys', array('label' => 'Link Gerenciar Chaves', 'section' => 'pixgo_como_section', 'type' => 'url'));
+    $wp_customize->add_setting('como_link_topup', array('default' => '/topup_credits', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('como_link_topup', array('label' => 'Link Recarregar Créditos', 'section' => 'pixgo_como_section', 'type' => 'url'));
+    $wp_customize->add_setting('como_link_generate', array('default' => '/generate_pix', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('como_link_generate', array('label' => 'Link Ver Geração Pix', 'section' => 'pixgo_como_section', 'type' => 'url'));
+
+    // Conteúdo: Contato
+    $wp_customize->add_section('pixgo_contato_section', array(
+        'title' => 'Página: Contato',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 70,
+    ));
+    $wp_customize->add_setting('contato_title', array('default' => 'Entre em Contato com a PixGo', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('contato_title', array('label' => 'Título', 'section' => 'pixgo_contato_section', 'type' => 'text'));
+    $wp_customize->add_setting('contato_lead', array('default' => 'Tem dúvidas sobre integração, preços ou precisa de suporte? Fale conosco agora mesmo.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('contato_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_contato_section', 'type' => 'text'));
+    $wp_customize->add_setting('contato_email', array('default' => 'contato@fddev.com.br', 'sanitize_callback' => 'sanitize_email'));
+    $wp_customize->add_control('contato_email', array('label' => 'E-mail de Suporte', 'section' => 'pixgo_contato_section', 'type' => 'text'));
+    $wp_customize->add_setting('contato_form_shortcode', array('default' => '[contact-form-7 id="2184b1f" title="Formulário de contato"]', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('contato_form_shortcode', array('label' => 'Shortcode do Formulário', 'section' => 'pixgo_contato_section', 'type' => 'text'));
+
+    // Conteúdo: Preços
+    $wp_customize->add_section('pixgo_precos_section', array(
+        'title' => 'Página: Preços',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 40,
+    ));
+    $wp_customize->add_setting('precos_title', array('default' => 'Pague Apenas Pelo Uso', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('precos_title', array('label' => 'Título', 'section' => 'pixgo_precos_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_lead', array('default' => 'Nosso modelo é de <strong>créditos pré-pagos</strong>, permitindo total controle de custos sem mensalidades fixas.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_precos_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('precos_cta_text', array('default' => 'Recarregar Créditos Agora', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('precos_cta_text', array('label' => 'Texto CTA', 'section' => 'pixgo_precos_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_cta_url', array('default' => '/topup_credits', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('precos_cta_url', array('label' => 'Link CTA', 'section' => 'pixgo_precos_section', 'type' => 'url'));
+
+    // Conteúdo: Sobre
+    $wp_customize->add_section('pixgo_sobre_section', array(
+        'title' => 'Página: Sobre',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 20,
+    ));
+    $wp_customize->add_setting('sobre_title', array('default' => 'API Pix Simples e Econômica', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('sobre_title', array('label' => 'Título', 'section' => 'pixgo_sobre_section', 'type' => 'text'));
+    $wp_customize->add_setting('sobre_intro_lead', array('default' => 'Nascemos para simplificar a integração de pagamentos Pix para desenvolvedores e pequenos negócios.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('sobre_intro_lead', array('label' => 'Introdução/Lead', 'section' => 'pixgo_sobre_section', 'type' => 'text'));
+    $wp_customize->add_setting('sobre_cta_text', array('default' => 'Comece a Integrar Agora!', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('sobre_cta_text', array('label' => 'Texto CTA', 'section' => 'pixgo_sobre_section', 'type' => 'text'));
+    $wp_customize->add_setting('sobre_cta_url', array('default' => '/register', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('sobre_cta_url', array('label' => 'Link CTA', 'section' => 'pixgo_sobre_section', 'type' => 'url'));
+
+    // Conteúdo: Serviços
+    $wp_customize->add_section('pixgo_servicos_section', array(
+        'title' => 'Página: Serviços',
+        'panel' => 'pixgo_pages_content',
+        'priority' => 30,
+    ));
+    $wp_customize->add_setting('servicos_title', array('default' => 'Serviços PixGo', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('servicos_title', array('label' => 'Título', 'section' => 'pixgo_servicos_section', 'type' => 'text'));
+    $wp_customize->add_setting('servicos_lead', array('default' => 'Soluções para integrar Pix em sites, apps e lojas.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('servicos_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_servicos_section', 'type' => 'text'));
+    for ($i=1; $i<=3; $i++) {
+        $wp_customize->add_setting("servico{$i}_icon", array('default' => 'fas fa-cog', 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control("servico{$i}_icon", array('label' => "Serviço {$i} - Ícone (classe)", 'section' => 'pixgo_servicos_section', 'type' => 'text'));
+        $wp_customize->add_setting("servico{$i}_title", array('default' => "Serviço {$i}", 'sanitize_callback' => 'sanitize_text_field'));
+        $wp_customize->add_control("servico{$i}_title", array('label' => "Serviço {$i} - Título", 'section' => 'pixgo_servicos_section', 'type' => 'text'));
+        $wp_customize->add_setting("servico{$i}_desc", array('default' => 'Descrição breve do serviço.', 'sanitize_callback' => 'wp_kses_post'));
+        $wp_customize->add_control("servico{$i}_desc", array('label' => "Serviço {$i} - Descrição", 'section' => 'pixgo_servicos_section', 'type' => 'textarea'));
+    }
+    $wp_customize->add_setting('servicos_cta_text', array('default' => 'Quero Integrar Agora', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('servicos_cta_text', array('label' => 'Texto CTA', 'section' => 'pixgo_servicos_section', 'type' => 'text'));
+    $wp_customize->add_setting('servicos_cta_url', array('default' => '/register', 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('servicos_cta_url', array('label' => 'Link CTA', 'section' => 'pixgo_servicos_section', 'type' => 'url'));
 
 
 

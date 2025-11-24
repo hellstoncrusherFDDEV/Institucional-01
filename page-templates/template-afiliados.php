@@ -10,15 +10,15 @@ get_header();
 <div class="py-2 bg-light">
   <div class="container">
     <h1 class="display-4 fw-bold mb-4 text-center text-primary">
-      <i class="fas fa-handshake me-2"></i> Programa de Afiliados PixGo
+      <i class="fas fa-handshake me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_title','Programa de Afiliados PixGo') ); ?>
     </h1>
     <div class="container my-4">
 
-    <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=JS9IETTXC1Q'); ?>
+    <?php echo lazy_youtube_video( get_theme_mod('afiliados_video_main','https://www.youtube.com/watch?v=JS9IETTXC1Q') ); ?>
 
     </div>
     <p class="lead text-center">
-      <i class="fas fa-bullhorn me-2 text-primary"></i> Ajude a promover a API Pix mais simples do mercado e <strong>ganhe comissões recorrentes</strong>!
+      <i class="fas fa-bullhorn me-2 text-primary"></i> <?php echo wp_kses_post( get_theme_mod('afiliados_lead','Ajude a promover a API Pix mais simples do mercado e <strong>ganhe comissões recorrentes</strong>!') ); ?>
     </p>
 
     <div class="row mt-5">
@@ -80,7 +80,7 @@ get_header();
             <p>Você recebe <strong>comissões recorrentes</strong> a cada requisição feita na API pelos seus indicados.
             Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados com valores entre R$10,00 e R$30,00.</p>
 
-            <?php echo lazy_youtube_video('https://www.youtube.com/watch?v=BXEJ_diYqRc'); ?>
+            <?php echo lazy_youtube_video( get_theme_mod('afiliados_video_beneficios','https://www.youtube.com/watch?v=BXEJ_diYqRc') ); ?>
             
           </div>
         </div>
@@ -97,7 +97,7 @@ get_header();
           <div class="accordion-body">
             <p class="mt-2">Nesse vídeo mostramos como o programa de afiliados PixGo funciona passo a passo.</p>
 
-            <?php echo lazy_youtube_video('-https://www.youtube.com/watch?v=S86zAxbwa3k'); ?>
+            <?php echo lazy_youtube_video( get_theme_mod('afiliados_video_como','https://www.youtube.com/watch?v=S86zAxbwa3k') ); ?>
             
           </div>
         </div>
@@ -141,8 +141,8 @@ get_header();
 
       <!-- CTA central -->
       <div class="text-center mt-4">
-        <a href="/register" class="btn btn-success btn-lg px-4 shadow">
-          <i class="fas fa-rocket me-2"></i> Quero me Cadastrar como Afiliado
+        <a href="<?php echo esc_url( get_theme_mod('afiliados_cta_url','/register') ); ?>" class="btn btn-success btn-lg px-4 shadow">
+          <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_cta_text','Quero me Cadastrar como Afiliado') ); ?>
         </a>
       </div>
     </div>
