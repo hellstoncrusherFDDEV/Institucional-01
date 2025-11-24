@@ -92,10 +92,6 @@
                 }
                 ?>
 
-                <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3" title="<?php esc_attr_e( 'Alternar Modo Escuro', 'institucional-01' ); ?>" aria-pressed="false">
-                    <span class="visually-hidden"><?php esc_html_e( 'Modo Dark', 'institucional-01' ); ?></span> 🌙
-                </button>
-
             </div>
         </div>
     </nav>
