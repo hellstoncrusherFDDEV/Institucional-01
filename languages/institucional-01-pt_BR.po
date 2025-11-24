@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: institucional-01 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-24 00:00+0000\n"
+"PO-Revision-Date: 2025-11-24 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Trae IDE\n"
+"X-Domain: institucional-01\n"
+
+# As strings do tema já estão em português; mantemos traduções idênticas.
+# Você pode completar este arquivo com entradas específicas via Poedit/WP-CLI.
