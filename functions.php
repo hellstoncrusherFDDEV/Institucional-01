@@ -190,6 +190,8 @@ function pixgo_customize_register( $wp_customize ) {
     ));
     $wp_customize->add_setting('home_hero_title', array('default' => 'PixGo: Sua API Pix Simples e Econômica', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_hero_title', array('label' => 'Título do Hero', 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_hero_icon', array('default' => 'fas fa-qrcode me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_hero_icon', array('label' => 'Ícone do Hero (classes)', 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_hero_lead', array('default' => 'Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.', 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_hero_lead', array('label' => 'Descrição do Hero', 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_hero_video_url', array('default' => 'https://www.youtube.com/watch?v=S86zAxbwa3k', 'sanitize_callback' => 'esc_url_raw'));
@@ -205,16 +207,22 @@ function pixgo_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting('home_value_prop_title', array('default' => __('Por Que Escolher a PixGo?', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_value_prop_title', array('label' => __('Título Por Que Escolher', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_value_prop_1_icon', array('default' => 'fas fa-code fa-3x text-success mb-3', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_value_prop_1_icon', array('label' => __('Ícone Card 1 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_1_title', array('default' => __('Facilidade de Integração', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_value_prop_1_title', array('label' => __('Card 1 - Título', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_1_desc', array('default' => __('Nossa API é simples, com documentação clara e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas, sem dor de cabeça.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_value_prop_1_desc', array('label' => __('Card 1 - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_value_prop_1_btn', array('default' => __('Ver Documentação', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_value_prop_1_btn', array('label' => __('Card 1 - Texto Botão', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_value_prop_2_icon', array('default' => 'fas fa-coins fa-3x text-info mb-3', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_value_prop_2_icon', array('label' => __('Ícone Card 2 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_2_title', array('default' => __('Preço Justo por Requisição', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_value_prop_2_title', array('label' => __('Card 2 - Título', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_2_desc', array('default' => __('Você paga apenas R$ 0,02 ou R$ 0,05 por requisição, como um modelo de créditos pré-pagos, eliminando assinaturas mensais caras.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_value_prop_2_desc', array('label' => __('Card 2 - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('home_value_prop_3_icon', array('default' => 'fas fa-rocket fa-3x text-warning mb-3', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_value_prop_3_icon', array('label' => __('Ícone Card 3 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_2_btn', array('default' => __('Ver Tabela de Preços', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_value_prop_2_btn', array('label' => __('Card 2 - Texto Botão', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_value_prop_3_title', array('default' => __('Escalabilidade e Confiabilidade', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
@@ -226,31 +234,45 @@ function pixgo_customize_register( $wp_customize ) {
     $wp_customize->add_setting('home_target_title', array('default' => __('Quem se Beneficia com PixGo?', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('home_target_title', array('label' => __('Título Personas', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_target_1_title', array('default' => __('Desenvolvedores Freelancers e Pequenos Times', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('home_target_1_icon', array('default' => 'fas fa-laptop-code me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_target_1_icon', array('label' => __('Ícone Persona 1 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_control('home_target_1_title', array('label' => __('Persona 1 - Título', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_target_1_quote', array('default' => __('Use esta API e gere QR Codes Pix com 3 linhas de código. Sem complicação.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_1_quote', array('label' => __('Persona 1 - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_target_1_small', array('default' => __('Ideal para integrar Pix em projetos em poucas horas, evitando a complexidade da documentação oficial do Mercado Pago.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_1_small', array('label' => __('Persona 1 - Complemento', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_target_2_title', array('default' => __('Pequenos E-commerces e Lojas Virtuais', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('home_target_2_icon', array('default' => 'fas fa-store me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_target_2_icon', array('label' => __('Ícone Persona 2 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_control('home_target_2_title', array('label' => __('Persona 2 - Título', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_target_2_quote', array('default' => __('Transforme pedidos em pagamentos Pix em segundos e pague só pelo que usar.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_2_quote', array('label' => __('Persona 2 - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_target_2_small', array('default' => __('Automação de pagamentos Pix sem plugins pesados ou mensalidades altas de gateways.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_2_small', array('label' => __('Persona 2 - Complemento', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_target_3_title', array('default' => __('Serviços Autônomos e Startups', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('home_target_3_icon', array('default' => 'fas fa-briefcase me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_target_3_icon', array('label' => __('Ícone Persona 3 (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_control('home_target_3_title', array('label' => __('Persona 3 - Título', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_target_3_quote', array('default' => __('Pare de gerar Pix manualmente. / Integre Pix em minutos e foque no crescimento.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_3_quote', array('label' => __('Persona 3 - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_target_3_small', array('default' => __('Gere cobranças avulsas rapidamente ou valide seu MVP integrando pagamentos de forma confiável e barata.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_target_3_small', array('label' => __('Persona 3 - Complemento', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_how_title', array('default' => __('Como Funciona?', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('home_how_icon', array('default' => 'fas fa-cogs me-2 text-success', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_how_icon', array('label' => __('Ícone Seção Como Funciona (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_control('home_how_title', array('label' => __('Título Como Funciona', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_how_desc', array('default' => __('Com a PixGo, você cadastra sua chave do Mercado Pago na plataforma e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_how_desc', array('label' => __('Como Funciona - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_model_title', array('default' => __('Modelo de Créditos Pré-Pagos', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('home_model_icon', array('default' => 'fas fa-coins me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_model_icon', array('label' => __('Ícone do Modelo de Créditos (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_model_text', array('default' => 'Você carrega um valor (ex: <strong>R$ 10,00</strong>) e recebe um número correspondente de chamadas à API (ex: <strong>500 chamadas</strong> a R$ 0,02 cada).', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('home_model_text', array('label' => __('Texto do Modelo de Créditos', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_control('home_model_title', array('label' => __('Como Funciona - Modelo Créditos', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_bottom_cta_text', array('default' => __('Quero Começar Agora!', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
-    $wp_customize->add_control('home_bottom_cta_text', array('label' => __('Botão Final - Texto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_control('home_bottom_cta_text', array('label' => __('Texto CTA Fundo', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
+    $wp_customize->add_setting('home_bottom_cta_icon', array('default' => 'fas fa-rocket me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('home_bottom_cta_icon', array('label' => __('Ícone CTA Fundo (classes)', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_bottom_cta_url', array('default' => home_url('/register'), 'sanitize_callback' => 'esc_url_raw'));
     $wp_customize->add_control('home_bottom_cta_url', array('label' => __('Botão Final - URL', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'url'));
 
@@ -953,6 +975,8 @@ function pixgo_customizer_css() {
 
     // Dark Mode automático
     $css .= "@media (prefers-color-scheme: dark) {\n        body { background-color: #121212; color: #f8f9fa; }\n        .card, .bg-light { background-color: #1e1e1e !important; color: #f8f9fa !important; border-color: #444; }\n        .table { color: #f8f9fa; }\n        a { color: #0d6efd; }\n        a:hover { color: #64a1ff; }\n        .text-dark { color: #e9ecef !important; }\n        .text-secondary { color: #cfd6dc !important; }\n        .text-muted, small, .small { color: #bfc7cd !important; }\n        .border, .border-top, .border-bottom { border-color: #444 !important; }\n        .form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-control:focus { background-color: #2a2a2a; color: #f8f9fa; border-color: #6c757d; box-shadow: 0 0 0 .2rem rgba(108,117,125,.25); }\n        .form-select, textarea.form-control { background-color: #2a2a2a; color: #f8f9fa; border-color: #444; }\n        .form-select:focus, textarea.form-control:focus { background-color: #2a2a2a; color: #f8f9fa; border-color: #6c757d; box-shadow: 0 0 0 .2rem rgba(108,117,125,.25); }\n        .form-control::placeholder { color: #9aa0a6; }\n        .form-control:-webkit-autofill, .form-control:-webkit-autofill:hover, .form-control:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0px 1000px #2a2a2a inset; -webkit-text-fill-color: #f8f9fa; caret-color: #f8f9fa; }\n        .list-group-item { background-color: #1f1f1f; color: #e9ecef; border-color: #444; }\n        .pixgo-share-buttons .share-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .pixgo-share-buttons .share-btn:hover { background-color: #e9ecef; color: #121212; }\n        .author-box .author-btn { border-color: #e9ecef; color: #e9ecef; background-color: transparent; }\n        .author-box .author-btn:hover { background-color: #e9ecef; color: #121212; }\n        .footer-custom a { color: {$footer_link_color}; }\n        .footer-custom a:hover { color: {$footer_link_color}; text-decoration: underline; }\n        .footer-custom .footer-columns h5, .footer-custom p, .footer-custom li { color: var(--footer-text); }\n        .footer-custom small { opacity: .95; }\n        .cta-block { box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }\n    }";
+    // Ajustes adicionais para dark mode (blocos claros)
+    $css .= "@media (prefers-color-scheme: dark) { .bg-light-subtle { background-color: #1e1e1e !important; color: #f8f9fa !important; } .alert { background-color: #202020 !important; color: #f8f9fa !important; border-color: #444 !important; } .alert-warning { background-color: #2a2818 !important; color: #f8f9fa !important; border-color: #665b00 !important; } }";
 
     if ( ! empty( $css ) ) {
         echo '<style type="text/css">' . $css . '</style>';
