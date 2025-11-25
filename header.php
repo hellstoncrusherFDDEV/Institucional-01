@@ -42,20 +42,14 @@
                 // Se tiver menu registrado no WP
                 if ( has_nav_menu( 'primary' ) ) {
 
-                    $args = array(
+                    wp_nav_menu( array(
                         'theme_location' => 'primary',
                         'depth'          => 2,
                         'container'      => false,
                         'menu_class'     => 'navbar-nav nav-pills ms-auto mb-2 mb-lg-0',
                         'fallback_cb'    => false,
-                    );
-
-                    // Usa o Navwalker se ele estiver disponível
-                    if ( class_exists( 'WP_Bootstrap_Navwalker' ) ) {
-                        $args['walker'] = new WP_Bootstrap_Navwalker();
-                    }
-
-                    wp_nav_menu( $args );
+                        'walker'         => class_exists( 'WP_Bootstrap_Navwalker' ) ? new WP_Bootstrap_Navwalker() : null,
+                    ) );
 
                 } else {
                     // Fallback manual (caso não haja menu configurado no WP)

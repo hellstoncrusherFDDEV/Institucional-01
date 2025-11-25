@@ -118,36 +118,36 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
 					<!-- PHP Example -->
 					<div class="card card-body bg-light mb-2">
-						<h6>PHP (cURL)</h6>
-						<pre><code>
-	$api_key = 'SUA_API_KEY_PIXGO';
-	$endpoint = 'https://pixgo.api.br/gerar-pix';
+                        <h6>PHP (WP HTTP API)</h6>
+                        <pre><code>
+    $api_key = 'SUA_API_KEY_PIXGO';
+    $endpoint = 'https://pixgo.api.br/gerar-pix';
 
-	$payload = json_encode([
-		'valor' => 50.00,
-		'descricao' => 'Compra de Ebook XYZ'
-	]);
+    $payload = [
+        'valor' => 50.00,
+        'descricao' => 'Compra de Ebook XYZ'
+    ];
 
-	$ch = curl_init($endpoint);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_POST, true);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, [
-		'Authorization: Bearer ' . $api_key,
-		'Content-Type: application/json'
-	]);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-	$response = curl_exec($ch);
-	curl_close($ch);
+    $response = wp_safe_remote_post( $endpoint, [
+        'headers' => [
+            'Authorization' => 'Bearer ' . $api_key,
+            'Content-Type'  => 'application/json',
+        ],
+        'body'    => wp_json_encode( $payload ),
+        'timeout' => 15,
+    ] );
 
-	$data = json_decode($response, true);
-
-	if ($data['success']) {
-		// Exibe o código Copia e Cola
-		echo "PIX COPIA E COLA: " . $data['pix_copia_cola'];
-	} else {
-		echo "Erro: " . $data['message'];
-	}
-						</code></pre>
+    if ( is_wp_error( $response ) ) {
+        echo 'Erro: ' . esc_html( $response->get_error_message() );
+    } else {
+        $data = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( ! empty( $data['success'] ) ) {
+            echo 'PIX COPIA E COLA: ' . esc_html( $data['pix_copia_cola'] );
+        } else {
+            echo 'Erro: ' . esc_html( $data['message'] ?? 'Erro desconhecido' );
+        }
+    }
+                        </code></pre>
 					</div>
 
 					<!-- Javascript Example -->
@@ -272,28 +272,28 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
 					<!-- PHP Example -->
 					<div class="card card-body bg-light mb-2">
-						<h6>PHP (cURL)</h6>
-						<pre><code>
-	$api_key = 'SUA_API_KEY_PIXGO';
-	$external_reference = 'PEDIDO_101';
-	$endpoint = 'https://pixgo.api.br/consultar-pix?reference=' . $external_reference;
+                        <h6>PHP (WP HTTP API)</h6>
+                        <pre><code>
+    $api_key = 'SUA_API_KEY_PIXGO';
+    $external_reference = 'PEDIDO_101';
+    $endpoint = add_query_arg( [ 'reference' => $external_reference ], 'https://pixgo.api.br/consultar-pix' );
 
-	$ch = curl_init($endpoint);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, [
-		'Authorization: Bearer ' . $api_key
-	]);
-	$response = curl_exec($ch);
-	curl_close($ch);
+    $response = wp_safe_remote_get( $endpoint, [
+        'headers' => [ 'Authorization' => 'Bearer ' . $api_key ],
+        'timeout' => 15,
+    ] );
 
-	$data = json_decode($response, true);
-
-	if ($data['success']) {
-		echo "Status da Cobrança ({$external_reference}): " . strtoupper($data['status']);
-	} else {
-		echo "Erro ao consultar: " . $data['message'];
-	}
-						</code></pre>
+    if ( is_wp_error( $response ) ) {
+        echo 'Erro: ' . esc_html( $response->get_error_message() );
+    } else {
+        $data = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( ! empty( $data['success'] ) ) {
+            echo 'Status da Cobrança (' . esc_html( $external_reference ) . '): ' . strtoupper( $data['status'] );
+        } else {
+            echo 'Erro ao consultar: ' . esc_html( $data['message'] ?? 'Erro desconhecido' );
+        }
+    }
+                        </code></pre>
 					</div>
 
 					<!-- Javascript Example -->

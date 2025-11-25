@@ -12,6 +12,7 @@ Text Domain: institucional-01
 Tags: blog, custom-logo, featured-images, footer-widgets, right-sidebar, two-columns, custom-menu, theme-options, threaded-comments, translation-ready, rtl-language-support
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Copyright: © 2025 Hellston Linhares
 */
 
 /* Reset e importações, se necessário. O Bootstrap cuidará da maior parte. */
@@ -265,3 +266,12 @@ body.dark-mode {
     text-align: center;
   }
 }
+
+.alignleft { float: left; margin: 0 1rem 1rem 0; }
+.alignright { float: right; margin: 0 0 1rem 1rem; }
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.wp-caption { max-width: 100%; text-align: center; margin: 1rem 0; }
+.wp-caption img { display: inline-block; margin-bottom: .5rem; }
+.wp-caption-text { font-size: .875rem; color: #6c757d; }
+.gallery-caption { font-size: .875rem; color: #6c757d; }
+.bypostauthor { border-left: 3px solid var(--bs-primary); padding-left: .5rem; }

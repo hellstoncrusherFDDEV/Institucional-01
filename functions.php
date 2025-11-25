@@ -27,8 +27,47 @@ function pixgo_theme_setup() {
     register_nav_menus( array(
         'primary' => __( 'Menu Principal', 'institucional-01' ),
     ) );
+
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style' ) );
+    add_theme_support( 'custom-header', array( 'width' => 1920, 'height' => 300, 'flex-height' => true, 'uploads' => true ) );
+    add_theme_support( 'custom-background', array( 'default-color' => 'ffffff' ) );
+    add_theme_support( 'align-wide' );
+    add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', 'pixgo_theme_setup' );
+
+function pixgo_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Primary Sidebar', 'institucional-01' ),
+        'id'            => 'primary-sidebar',
+        'description'   => __( 'Área de widgets principal.', 'institucional-01' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s card p-4 shadow-sm mb-4">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h5 class="mb-3">',
+        'after_title'   => '</h5>',
+    ) );
+}
+add_action( 'widgets_init', 'pixgo_widgets_init' );
+
+function pixgo_register_block_assets() {
+    if ( function_exists( 'register_block_style' ) ) {
+        register_block_style( 'core/button', array( 'name' => 'btn-outline-primary', 'label' => __( 'Botão Outline Primário', 'institucional-01' ), 'style_handle' => 'theme-style' ) );
+        register_block_style( 'core/image', array( 'name' => 'image-shadow', 'label' => __( 'Imagem com Sombra', 'institucional-01' ), 'style_handle' => 'theme-style' ) );
+    }
+    if ( function_exists( 'register_block_pattern_category' ) ) {
+        register_block_pattern_category( 'pixgo', array( 'label' => __( 'PixGo', 'institucional-01' ) ) );
+    }
+    if ( function_exists( 'register_block_pattern' ) ) {
+        register_block_pattern( 'pixgo/cta-primary', array(
+            'title'       => __( 'CTA Primário', 'institucional-01' ),
+            'description' => __( 'Chamada para ação com botão centralizado.', 'institucional-01' ),
+            'content'     => '<!-- wp:group --><div class="wp-block-group"><!-- wp:heading {"textAlign":"center"} --><h2 class="has-text-align-center">' . esc_html__( 'Pronto para começar?', 'institucional-01' ) . '</h2><!-- /wp:heading --><!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="/register">' . esc_html__( 'Começar Grátis', 'institucional-01' ) . '</a></div><!-- /wp:button --></div><!-- /wp:buttons --></div><!-- /wp:group -->',
+        ) );
+    }
+}
+add_action( 'init', 'pixgo_register_block_assets' );
 
 // 2. Enqueue do Bootstrap e Arquivos Customizados
 function pixgo_scripts() {

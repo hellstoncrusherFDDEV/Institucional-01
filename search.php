@@ -108,13 +108,7 @@ get_header();
                         <p>Não encontramos resultados para sua pesquisa. Tente usar outras palavras-chave ou refine os termos buscados.</p>
                     </div>
 
-                    <!-- Campo de pesquisa dentro do alerta -->
-                    <form role="search" method="get" class="d-flex mt-3" action="<?php echo esc_url(home_url('/')); ?>">
-                        <input type="search" class="form-control me-2" placeholder="Pesquisar novamente..." value="<?php echo esc_attr(get_search_query()); ?>" name="s">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
+                    <?php get_search_form(); ?>
                 <?php endif; ?>
             </article>
         </div>
