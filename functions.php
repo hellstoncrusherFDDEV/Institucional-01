@@ -20,6 +20,7 @@ function pixgo_theme_setup() {
 
     // Suporte ao Site Icon (Favicon)
     add_theme_support( 'site-icon' );
+    add_theme_support( 'automatic-feed-links' );
 
     load_theme_textdomain( 'institucional-01', get_template_directory() . '/languages' );
 
@@ -91,9 +92,9 @@ function pixgo_scripts() {
     //wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), '1.0', true );
     // sem cache - força atualizar a cada edição
     wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), filemtime( get_template_directory() . '/js/main.js' ), true );
-
-    
-
+    wp_enqueue_script( 'jquery-mask', get_template_directory_uri() . '/assets/js/jquery.mask.min.js', array( 'jquery' ), '1.0.0', true );
+    wp_add_inline_script( 'jquery-mask', "jQuery(function($){$('input[name=\"tel-105\"]').mask('(00) 00000-0000');});" );
+   
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
 
@@ -478,8 +479,9 @@ function pixgo_customize_register( $wp_customize ) {
 
     // Configuração da Cor da Barra Superior (Header)
     $wp_customize->add_setting( 'header_bg_color', array(
-        'default' => '#007bff', // Cor primária do Bootstrap como default
+        'default' => '#007bff',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_bg_color_control', array(
         'label' => __( 'Cor de Fundo da Barra Superior', 'institucional-01' ),
@@ -489,8 +491,9 @@ function pixgo_customize_register( $wp_customize ) {
 
     // Configuração da Cor do Rodapé (Footer)
     $wp_customize->add_setting( 'footer_bg_color', array(
-        'default' => '#343a40', // Cor escura do Bootstrap (dark) como default
+        'default' => '#343a40',
         'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color_control', array(
         'label' => __( 'Cor de Fundo do Rodapé', 'institucional-01' ),
@@ -1016,16 +1019,7 @@ add_filter('the_content', function($content) {
     return $content;
 }, 12);
 
-// Máscaras para o Contact Form 7
-function cf7_enqueue_mask_script() {
-    wp_enqueue_script('jquery-mask', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js', ['jquery'], '1.14.16', true);
-    wp_add_inline_script('jquery-mask', "
-        jQuery(function($){
-            $('input[name=\"tel-105\"]').mask('(00) 00000-0000');
-        });
-    ");
-}
-add_action('wp_enqueue_scripts', 'cf7_enqueue_mask_script');
+ 
 
 // ============================================================================
 // Função para exibir vídeos do YouTube com lazy loading e thumbnail
@@ -1056,21 +1050,7 @@ function lazy_youtube_video($url) {
     return ob_get_clean();
 }
 
-// ============================================================================
-// Shortcode: [youtube_lazy url="https://youtu.be/abc123XYZ"]
-// ============================================================================
-function shortcode_lazy_youtube($atts) {
-    $atts = shortcode_atts(
-        array(
-            'url' => '',
-        ),
-        $atts,
-        'youtube_lazy'
-    );
-
-    return lazy_youtube_video($atts['url']);
-}
-add_shortcode('youtube_lazy', 'shortcode_lazy_youtube');
+ 
 
 // Função para exibir o perfil do autor
 function pixgo_author_box($author_id = null) {

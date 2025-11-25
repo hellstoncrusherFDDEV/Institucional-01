@@ -8,6 +8,7 @@
 
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <header>
     <!-- Menu Bootstrap 5 Fixo e Responsivo -->
@@ -22,8 +23,8 @@
 				} else {
 					// Fallback caso não tenha logo definida
 					?>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/Logo-PixGo.png" 
-						 alt="<?php bloginfo( 'name' ); ?>">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/img/Logo-PixGo.png' ); ?>" 
+						 alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 					<span class="ms-2"><?php bloginfo( 'name' ); ?></span>
 					<?php
 				}
