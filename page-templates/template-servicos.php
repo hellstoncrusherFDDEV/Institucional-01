@@ -30,4 +30,12 @@ get_header();
   </div>
 </div>
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+    $raw = get_the_content();
+    if ( has_blocks( get_the_ID() ) || strlen( trim( wp_strip_all_tags( $raw ) ) ) ) : ?>
+    <section class="container my-5">
+        <?php the_content(); ?>
+    </section>
+    <?php endif; endwhile; endif; ?>
+
 <?php get_footer(); ?>

@@ -145,7 +145,15 @@ get_header();
           <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_cta_text', __( 'Quero me Cadastrar como Afiliado', 'institucional-01' ) ) ); ?>
         </a>
       </div>
-    </div>
+</div>
   </div>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+    $raw = get_the_content();
+    if ( has_blocks( get_the_ID() ) || strlen( trim( wp_strip_all_tags( $raw ) ) ) ) : ?>
+    <section class="container my-5">
+        <?php the_content(); ?>
+    </section>
+    <?php endif; endwhile; endif; ?>
 
 <?php get_footer(); ?>
