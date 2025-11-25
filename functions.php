@@ -93,7 +93,7 @@ function pixgo_scripts() {
     // sem cache - força atualizar a cada edição
     wp_enqueue_script( 'pixgo-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'bootstrap-js' ), filemtime( get_template_directory() . '/js/main.js' ), true );
     wp_enqueue_script( 'jquery-mask', get_template_directory_uri() . '/assets/js/jquery.mask.min.js', array( 'jquery' ), '1.0.0', true );
-    wp_add_inline_script( 'jquery-mask', "jQuery(function($){$('input[name=\"tel-105\"]').mask('(00) 00000-0000');});" );
+    wp_add_inline_script( 'jquery-mask', 'jQuery(function($){$("input[name=\"tel-105\"]").mask("(00) 00000-0000");});' );
    
 }
 add_action( 'wp_enqueue_scripts', 'pixgo_scripts' );
@@ -975,8 +975,6 @@ add_filter('wpcf7_form_elements', function($content) {
 // 🔧 Filtro global para imagens modernas e shortcodes em posts e páginas
 // ============================================================================
 add_filter('the_content', function($content) {
-    // --- Executa shortcodes primeiro ---
-    $content = do_shortcode($content);
 
     // --- Melhora todas as imagens dentro do conteúdo ---
     $content = preg_replace_callback(
@@ -1128,7 +1126,7 @@ function pixgo_author_box($author_id = null) {
                     </a>
 
                     <?php if ($author_website) : ?>
-                        <a href="<?php echo esc_url($author_website); ?>" target="_blank" class="btn btn-sm author-btn d-flex align-items-center gap-1">
+            <a href="<?php echo esc_url($author_website); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-sm author-btn d-flex align-items-center gap-1">
                             <i class="fas fa-globe"></i> <?php esc_html_e( 'Site pessoal', 'institucional-01' ); ?>
                         </a>
                     <?php endif; ?>
@@ -1148,7 +1146,7 @@ function pixgo_author_box($author_id = null) {
                             if ($key === 'wikipedia') $url = esc_url($link); // Espera link completo
                             if ($key === 'youtube') $url = "https://youtube.com/" . esc_attr($link);
                             ?>
-                            <a href="<?php echo esc_url($url); ?>" target="_blank" class="btn btn-sm author-btn d-flex align-items-center gap-1">
+                            <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" class="btn btn-sm author-btn d-flex align-items-center gap-1">
                                 <i class="<?php echo esc_attr($icons[$key]); ?>"></i> <?php echo ucfirst($key); ?>
                             </a>
                             <?php
@@ -1202,7 +1200,7 @@ function pixgo_share_buttons($post_id = null) {
 
     echo '<div class="pixgo-share-buttons d-flex flex-wrap justify-content-center gap-2 mt-3 ps-2 pe-2">';
     foreach ($social_sites as $key => $link) {
-        echo '<a href="' . esc_url($link) . '" target="_blank" class="btn btn-sm share-btn d-flex align-items-center gap-1">';
+        echo '<a href="' . esc_url($link) . '" target="_blank" rel="noopener noreferrer" class="btn btn-sm share-btn d-flex align-items-center gap-1">';
         echo '<i class="' . esc_attr($icons[$key]) . '"></i> ' . ucfirst($key);
         echo '</a>';
     }
