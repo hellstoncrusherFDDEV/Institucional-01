@@ -27,7 +27,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <?php echo lazy_youtube_video( get_theme_mod('home_hero_video_url','https://www.youtube.com/watch?v=S86zAxbwa3k') ); ?>
 
         <p>
-            Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.
+            <?php echo wp_kses_post( get_theme_mod('home_hero_subtext', __( 'Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.', 'institucional-01' ) ) ); ?>
         </p>
 
         <!-- CTAs - Usamos os slugs definidos no sistema original, assumindo que as páginas foram criadas no WP -->
@@ -125,7 +125,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                         <p class="card-text text-muted">
                             <?php echo wp_kses_post( get_theme_mod('home_target_3_quote', __( 'Pare de gerar Pix manualmente. / Integre Pix em minutos e foque no crescimento.', 'institucional-01' ) ) ); ?>
                         </p>
-                        <small>Gere cobranças avulsas rapidamente ou valide seu MVP integrando pagamentos de forma confiável e barata.</small>
+                        <small><?php echo wp_kses_post( get_theme_mod('home_target_3_small', __( 'Gere cobranças avulsas rapidamente ou valide seu MVP integrando pagamentos de forma confiável e barata.', 'institucional-01' ) ) ); ?></small>
                     </div>
                 </div>
             </div>

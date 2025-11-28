@@ -194,6 +194,8 @@ function pixgo_customize_register( $wp_customize ) {
     $wp_customize->add_control('home_hero_icon', array('label' => 'Ícone do Hero (classes)', 'section' => 'pixgo_home_section', 'type' => 'text'));
     $wp_customize->add_setting('home_hero_lead', array('default' => 'Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.', 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('home_hero_lead', array('label' => 'Descrição do Hero', 'section' => 'pixgo_home_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('home_hero_subtext', array('default' => __('Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('home_hero_subtext', array('label' => __('Hero - Subtexto', 'institucional-01'), 'section' => 'pixgo_home_section', 'type' => 'textarea'));
     $wp_customize->add_setting('home_hero_video_url', array('default' => 'https://www.youtube.com/watch?v=S86zAxbwa3k', 'sanitize_callback' => 'esc_url_raw'));
     $wp_customize->add_control('home_hero_video_url', array('label' => 'URL do Vídeo do Hero', 'section' => 'pixgo_home_section', 'type' => 'url'));
     $wp_customize->add_setting('home_cta_primary_text', array('default' => 'Comece Grátis Agora!', 'sanitize_callback' => 'sanitize_text_field'));
