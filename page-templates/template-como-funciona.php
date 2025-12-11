@@ -3,10 +3,9 @@
  * Template Name: Como Funciona / Documentação
  * Template Post Type: page
  *
- * Esta página detalha o processo de integração e uso da API PixGo,
- * conforme o conteúdo de pages/como_funciona.php.
+ * Esta página detalha o processo de integração e uso da API de pagamentos.
  *
- * Tema: PixGo Institutional Theme
+ * Tema: Institucional 01
  *
  */
 
@@ -14,7 +13,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
 <div class="container my-2">
-    <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i><?php echo esc_html( get_theme_mod('como_title','Como Funciona o PixGo?') ); ?></h1>
+    <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i><?php echo esc_html( get_theme_mod('como_title','Como Funciona?') ); ?></h1>
     <p class="lead text-center mb-5"><?php echo esc_html( get_theme_mod('como_lead','Integre Pix em 3 passos e gere QR Codes em tempo real.') ); ?></p>
 
     <div class="row">
@@ -25,8 +24,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                     <h3 class="card-title text-primary"><i class="fas fa-key me-2"></i><?php echo esc_html( get_theme_mod('como_step1_title', __( '1. Configure Suas Chaves', 'institucional-01' ) ) ); ?></h3>
                     <p>Após o registro, acesse "Minha Chave API" para duas configurações essenciais:</p>
                     <ul>
-                        <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Sua API Key PixGo:</strong> Chave de 64 caracteres gerada automaticamente no registro e usada para autenticar suas chamadas.</li>
-                        <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Sua Chave do Mercado Pago:</strong> Você armazena sua `AccessToken` de produção, que é mantida de forma <strong>criptografada</strong> em nosso banco de dados.</li>
+                        <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Sua API Key da plataforma:</strong> Chave gerada automaticamente no registro e usada para autenticar suas chamadas.</li>
+                        <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Sua chave do provedor de pagamentos (ex: Mercado Pago):</strong> É armazenada de forma <strong>criptografada</strong> em nosso banco de dados.</li>
                     </ul>
                     <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i><?php echo esc_html( get_theme_mod('como_step1_btn', __( 'Gerenciar Chaves', 'institucional-01' ) ) ); ?></a>
                 </div>
@@ -60,7 +59,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         </div>
     </div>
 
-    <h2 class="mt-2 mb-4"><?php echo esc_html( get_theme_mod('como_doc_title', __( 'Documentação Técnica da API PixGo', 'institucional-01' ) ) ); ?></h2>
+    <h2 class="mt-2 mb-4"><?php echo esc_html( get_theme_mod('como_doc_title', __( 'Documentação Técnica da API', 'institucional-01' ) ) ); ?></h2>
 
   <?php echo lazy_youtube_video( get_theme_mod('como_video_url','https://www.youtube.com/watch?v=ogpV6boXtXs') ); ?>
 
@@ -81,12 +80,12 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<h5 class="mb-3">Detalhes do Endpoint</h5>
 					<p>Este endpoint é responsável por deduzir os créditos do seu saldo e acionar a API do Mercado Pago (usando sua chave cadastrada) para gerar o QR Code Pix e o link de pagamento.</p>
 
-					<h6>URL</h6>
-					<pre class="bg-light p-2 rounded">POST https://pixgo.api.br/gerar-pix</pre>
+                    <h6>URL</h6>
+                    <pre class="bg-light p-2 rounded">POST https://api.exemplo.com/gerar-pix</pre>
 
 					<h6>Autenticação (Obrigatória)</h6>
 					<p>Deve ser fornecida no cabeçalho HTTP:</p>
-					<pre class="bg-light p-2 rounded">Authorization: Bearer SUA_API_KEY_PIXGO</pre>
+                    <pre class="bg-light p-2 rounded">Authorization: Bearer SUA_API_KEY</pre>
 
 					<h6>Corpo da Requisição (JSON)</h6>
 					<table class="table table-sm">
@@ -120,8 +119,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<div class="card card-body bg-light mb-2">
                         <h6>PHP (WP HTTP API)</h6>
                         <pre><code>
-    $api_key = 'SUA_API_KEY_PIXGO';
-    $endpoint = 'https://pixgo.api.br/gerar-pix';
+    $api_key = 'SUA_API_KEY';
+    $endpoint = 'https://api.exemplo.com/gerar-pix';
 
     $payload = [
         'valor' => 50.00,
@@ -154,8 +153,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<div class="card card-body bg-light mb-2">
 						<h6>Javascript (Fetch API)</h6>
 						<pre><code>
-	const apiKey = 'SUA_API_KEY_PIXGO';
-	const endpoint = 'https://pixgo.api.br/gerar-pix';
+    const apiKey = 'SUA_API_KEY';
+    const endpoint = 'https://api.exemplo.com/gerar-pix';
 
 	const payload = {
 		valor: 15.50,
@@ -193,8 +192,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 	import requests
 	import json
 
-	api_key = 'SUA_API_KEY_PIXGO'
-	endpoint = 'https://pixgo.api.br/gerar-pix'
+    api_key = 'SUA_API_KEY'
+    endpoint = 'https://api.exemplo.com/gerar-pix'
 
 	headers = {
 		'Authorization': f'Bearer {api_key}',
@@ -239,12 +238,12 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<h5 class="mb-3">Detalhes do Endpoint</h5>
 					<p>Utilize este endpoint para verificar o status de uma cobrança Pix específica (registrada na tabela <code>transactions</code> do PixGo [6]).</p>
 
-					<h6>URL</h6>
-					<pre class="bg-light p-2 rounded">GET https://pixgo.api.br/consultar-pix?reference=PEDIDO_XXX</pre>
+                    <h6>URL</h6>
+                    <pre class="bg-light p-2 rounded">GET https://api.exemplo.com/consultar-pix?reference=PEDIDO_XXX</pre>
 
 					<h6>Autenticação (Obrigatória)</h6>
 					<p>Deve ser fornecida no cabeçalho HTTP:</p>
-					<pre class="bg-light p-2 rounded">Authorization: Bearer SUA_API_KEY_PIXGO</pre>
+                    <pre class="bg-light p-2 rounded">Authorization: Bearer SUA_API_KEY</pre>
 
 					<h6>Parâmetros da Query String</h6>
 					<table class="table table-sm">
@@ -274,9 +273,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<div class="card card-body bg-light mb-2">
                         <h6>PHP (WP HTTP API)</h6>
                         <pre><code>
-    $api_key = 'SUA_API_KEY_PIXGO';
+    $api_key = 'SUA_API_KEY';
     $external_reference = 'PEDIDO_101';
-    $endpoint = add_query_arg( [ 'reference' => $external_reference ], 'https://pixgo.api.br/consultar-pix' );
+    $endpoint = add_query_arg( [ 'reference' => $external_reference ], 'https://api.exemplo.com/consultar-pix' );
 
     $response = wp_safe_remote_get( $endpoint, [
         'headers' => [ 'Authorization' => 'Bearer ' . $api_key ],
@@ -300,9 +299,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 					<div class="card card-body bg-light mb-2">
 						<h6>Javascript (Fetch API)</h6>
 						<pre><code>
-	const apiKey = 'SUA_API_KEY_PIXGO';
+    const apiKey = 'SUA_API_KEY';
 	const externalReference = 'PEDIDO_101';
-	const endpoint = `https://pixgo.api.br/consultar-pix?reference=${externalReference}`;
+    const endpoint = `https://api.exemplo.com/consultar-pix?reference=${externalReference}`;
 
 	fetch(endpoint, {
 		method: 'GET',
@@ -330,9 +329,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 						<pre><code>
 	import requests
 
-	api_key = 'SUA_API_KEY_PIXGO'
+    api_key = 'SUA_API_KEY'
 	external_reference = 'PEDIDO_101'
-	endpoint = 'https://pixgo.api.br/consultar-pix'
+    endpoint = 'https://api.exemplo.com/consultar-pix'
 
 	headers = {
 		'Authorization': f'Bearer {api_key}'
@@ -366,7 +365,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
     <div class="row mt-2">
         <div class="col-lg-12">
             <h2 class="mt-4"><i class="fas fa-server me-2"></i>Tecnologia e Escalabilidade</h2>
-            <p><i class="fas fa-shield-alt me-1 text-muted"></i> O PixGo é desenvolvido usando as tecnologias mais avançadas sem abrir mão da segurança, robustez e confiabilidade para gerenciar clientes e transações. A arquitetura é preparada para futuras integrações (como Stripe e/ou PayPal) e para monitoramento de logs e métricas.</p>
+            <p><i class="fas fa-shield-alt me-1 text-muted"></i> A plataforma é desenvolvida usando tecnologias atuais sem abrir mão da segurança, robustez e confiabilidade para gerenciar clientes e transações. A arquitetura é preparada para futuras integrações (como Stripe e/ou PayPal) e para monitoramento de logs e métricas.</p>
             <p><i class="fas fa-book me-1 text-muted"></i> Nossa documentação é clara e voltada para desenvolvedores, permitindo que você gere QR Codes Pix com apenas algumas linhas de código.</p>
         </div>
     </div>

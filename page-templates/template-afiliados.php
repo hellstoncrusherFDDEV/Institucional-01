@@ -10,7 +10,7 @@ get_header();
 <div class="py-2 bg-light">
   <div class="container">
     <h1 class="display-4 fw-bold mb-4 text-center text-primary">
-      <i class="fas fa-handshake me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_title','Programa de Afiliados PixGo') ); ?>
+      <i class="fas fa-handshake me-2"></i> <?php echo esc_html( get_theme_mod('afiliados_title','Programa de Afiliados') ); ?>
     </h1>
     <div class="container my-4">
 
@@ -34,7 +34,7 @@ get_header();
           </li>
           <li class="mb-3">
             <i class="fas fa-bolt text-danger me-2"></i>
-            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_2', __( 'Fácil de Promover: A PixGo simplifica a burocracia da API oficial do Mercado Pago, e outros gateways de pagamento.', 'institucional-01' ) ) ); ?>
+            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_2', __( 'Fácil de Promover: Nossa solução simplifica a burocracia dos provedores oficiais e outros gateways de pagamento.', 'institucional-01' ) ) ); ?>
           </li>
           <li>
             <i class="fas fa-users text-info me-2"></i>
@@ -56,7 +56,7 @@ get_header();
           <li><i class="fas fa-hand-holding-usd text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_5', __( 'Você ganha comissão sobre cada consumo efetivado na API.', 'institucional-01' ) ) ); ?></li>
         </ol>
         <p class="text-muted mt-3">
-          <i class="fas fa-briefcase me-2"></i> Parcerias com freelancers e agências digitais são parte da estratégia da PixGo.
+          <i class="fas fa-briefcase me-2"></i> Parcerias com freelancers e agências digitais são parte da estratégia da plataforma.
         </p>
       </div>
     </div>
@@ -95,7 +95,7 @@ get_header();
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
-            <p class="mt-2">Nesse vídeo mostramos como o programa de afiliados PixGo funciona passo a passo.</p>
+            <p class="mt-2">Nesse vídeo mostramos como o programa de afiliados funciona passo a passo.</p>
 
             <?php echo lazy_youtube_video( get_theme_mod('afiliados_video_como','https://www.youtube.com/watch?v=S86zAxbwa3k') ); ?>
             

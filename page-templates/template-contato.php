@@ -4,12 +4,6 @@ Template Name: Contato
 Template Post Type: page
 */
 
-/*
-PROMPT para criar video
-Explique como funciona o processo de contato com a PixGo. Utilize 2 apresentadores para não haver alteração de sotaque. Existe a página de
-contato, que terá a resposta por email. E existe o contato por WhatsApp disponível para clientes da plataforma e afiliados, onde a resposta
-será dada em ordem temporal.
-*/
 
 get_header();
 ?>
@@ -17,7 +11,7 @@ get_header();
 <div class="py-2 bg-light">
   <div class="container">
     <h1 class="display-4 mb-4 text-center text-primary fw-bold">
-      <i class="fas fa-envelope-open-text me-2"></i> <?php echo esc_html( get_theme_mod('contato_title','Entre em Contato com a PixGo') ); ?>
+      <i class="fas fa-envelope-open-text me-2"></i> <?php echo esc_html( get_theme_mod('contato_title','Entre em Contato') ); ?>
     </h1>
     <p class="lead mb-5">
       <?php echo esc_html( get_theme_mod('contato_lead','Tem dúvidas sobre integração, preços ou precisa de suporte? Fale conosco agora mesmo.') ); ?>

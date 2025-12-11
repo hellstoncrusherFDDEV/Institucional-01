@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: PixGo: Home (Institucional)
+ * Template Name: Home (Institucional)
  * Template Post Type: page
  *
  * Este modelo exibe o conteúdo da Home Page, focando na Proposta de Valor da PixGo:
@@ -15,7 +15,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <section class="hero-section py-2 text-center bg-light-subtle rounded-3 shadow-sm">
     <div class="container">
         <!-- Título principal baseado no conteúdo institucional -->
-        <h1 class="display-4 fw-bold text-primary"><i class="<?php echo esc_attr( get_theme_mod('home_hero_icon','fas fa-qrcode me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_hero_title','PixGo: Sua API Pix Simples e Econômica') ); ?></h1>
+        <h1 class="display-4 fw-bold text-primary"><i class="<?php echo esc_attr( get_theme_mod('home_hero_icon','fas fa-qrcode me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_hero_title','API de Pagamentos Simples e Econômica') ); ?></h1>
 
         <!-- Proposta de valor principal -->
         <p class="lead mt-3 mb-4">
@@ -48,7 +48,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 2. Por Que Escolher a PixGo? (Proposta de Valor) -->
 <section class="value-prop mt-1 py-4">
     <div class="container">
-        <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i><?php echo esc_html( get_theme_mod('home_value_prop_title', __( 'Por Que Escolher a PixGo?', 'institucional-01' ) ) ); ?></h2>
+        <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i><?php echo esc_html( get_theme_mod('home_value_prop_title', __( 'Por Que Escolher Nossa Solução?', 'institucional-01' ) ) ); ?></h2>
         <div class="row text-center">
 
             <!-- Facilidade de Integração -->
@@ -88,7 +88,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 3. Quem se Beneficia? (Foco nas Personas) -->
 <section class="target-audience bg-light-subtle py-4">
     <div class="container">
-        <h2 class="text-center mb-5 text-primary"><i class="fas fa-users me-2"></i><?php echo esc_html( get_theme_mod('home_target_title', __( 'Quem se Beneficia com PixGo?', 'institucional-01' ) ) ); ?></h2>
+        <h2 class="text-center mb-5 text-primary"><i class="fas fa-users me-2"></i><?php echo esc_html( get_theme_mod('home_target_title', __( 'Quem se Beneficia?', 'institucional-01' ) ) ); ?></h2>
         <div class="row">
 
             <!-- Desenvolvedores Freelancers -->
@@ -141,7 +141,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <h2 class="fw-bold mb-3">
           <i class="<?php echo esc_attr( get_theme_mod('home_how_icon','fas fa-cogs me-2 text-success') ); ?>"></i> <?php echo esc_html( get_theme_mod('home_how_title', __( 'Como Funciona?', 'institucional-01' ) ) ); ?>
         </h2>
-        <p class="lead"><?php echo wp_kses_post( get_theme_mod('home_how_desc', __( 'Com a PixGo, você cadastra sua chave do Mercado Pago na plataforma e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.', 'institucional-01' ) ) ); ?></p>
+        <p class="lead"><?php echo wp_kses_post( get_theme_mod('home_how_desc', __( 'Com a plataforma, você cadastra sua chave do seu provedor de pagamentos e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.', 'institucional-01' ) ) ); ?></p>
         <div class="alert alert-warning shadow-sm mt-4">
           <h5 class="mb-2">
             <i class="<?php echo esc_attr( get_theme_mod('home_model_icon','fas fa-coins me-2') ); ?>"></i> <?php echo esc_html( get_theme_mod('home_model_title', __( 'Modelo de Créditos Pré-Pagos', 'institucional-01' ) ) ); ?>

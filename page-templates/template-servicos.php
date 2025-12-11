@@ -8,8 +8,8 @@ get_header();
 ?>
 
 <div class="container my-2">
-  <h1 class="display-4 text-primary text-center"><i class="fas fa-tools me-2"></i><?php echo esc_html( get_theme_mod('servicos_title', __( 'Serviços PixGo', 'institucional-01' ) ) ); ?></h1>
-  <p class="lead text-center mb-4"><?php echo esc_html( get_theme_mod('servicos_lead', __( 'Soluções para integrar Pix em sites, apps e lojas.', 'institucional-01' ) ) ); ?></p>
+  <h1 class="display-4 text-primary text-center"><i class="fas fa-tools me-2"></i><?php echo esc_html( get_theme_mod('servicos_title', __( 'Serviços', 'institucional-01' ) ) ); ?></h1>
+  <p class="lead text-center mb-4"><?php echo esc_html( get_theme_mod('servicos_lead', __( 'Soluções para integrar pagamentos em sites, apps e lojas.', 'institucional-01' ) ) ); ?></p>
 
   <div class="row">
     <?php for($i=1;$i<=3;$i++): ?>

@@ -14,7 +14,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 ?>
 
 <div class="py-2">
-    <h1 class="display-4 text-primary"><i class="fas fa-info-circle me-2"></i><?php echo esc_html( get_theme_mod('sobre_title','API Pix Simples e Econômica') ); ?></h1>
+    <h1 class="display-4 text-primary"><i class="fas fa-info-circle me-2"></i><?php echo esc_html( get_theme_mod('sobre_title','API de Pagamentos Simples e Econômica') ); ?></h1>
 
     <section class="mb-5">
         <p class="lead">
@@ -27,7 +27,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <h2 class="card-title text-success"><i class="fas fa-award me-2"></i><?php echo esc_html( get_theme_mod('sobre_value_prop_title', __( 'Nossa Proposta de Valor', 'institucional-01' ) ) ); ?></h2>
 
         <p class="mb-4">
-            A PixGo oferece uma API simples, rápida e barata para gerar QR Codes Pix e links de pagamento.
+            Nossa plataforma oferece uma API simples, rápida e acessível para gerar QR Codes Pix e links de pagamento.
         </p>
 
         <div class="row">
@@ -60,7 +60,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
     <!-- Seção: Para Quem é o PixGo? -->
     <section class="mb-5">
-        <h2 class="card-title text-success mb-3"><i class="fas fa-users me-2"></i><?php echo esc_html( get_theme_mod('sobre_target_title', __( 'Para Quem é o PixGo?', 'institucional-01' ) ) ); ?></h2>
+        <h2 class="card-title text-success mb-3"><i class="fas fa-users me-2"></i><?php echo esc_html( get_theme_mod('sobre_target_title', __( 'Para Quem é?', 'institucional-01' ) ) ); ?></h2>
 
         <ul class="list-group list-group-flush">
             <li class="list-group-item bg-light">
