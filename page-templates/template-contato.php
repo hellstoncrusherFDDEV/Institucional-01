@@ -4,7 +4,6 @@ Template Name: Contato
 Template Post Type: page
 */
 
-
 get_header();
 ?>
 
