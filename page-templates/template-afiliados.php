@@ -18,7 +18,7 @@ get_header();
 
     </div>
     <p class="lead text-center">
-      <i class="fas fa-bullhorn me-2 text-primary"></i> <?php echo wp_kses_post( get_theme_mod('afiliados_lead','Ajude a promover a API Pix mais simples do mercado e <strong>ganhe comissões recorrentes</strong>!') ); ?>
+      <i class="fas fa-bullhorn me-2 text-primary"></i> <?php echo wp_kses_post( get_theme_mod('afiliados_lead','Ajude a promover nossa plataforma e <strong>ganhe comissões recorrentes</strong>!') ); ?>
     </p>
 
     <div class="row mt-5">
@@ -30,7 +30,7 @@ get_header();
         <ul class="list-unstyled">
           <li class="mb-3">
             <i class="fas fa-coins text-success me-2"></i>
-            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_1', __( 'Comissões Competitivas: Ganhe porcentagem de até 30% em todas as requisições da API feitas pelos seus indicados.', 'institucional-01' ) ) ); ?>
+            <?php echo wp_kses_post( get_theme_mod('afiliados_beneficio_1', __( 'Comissões Competitivas: Ganhe porcentagem de até 30% em todas as operações realizadas na plataforma pelos seus indicados.', 'institucional-01' ) ) ); ?>
           </li>
           <li class="mb-3">
             <i class="fas fa-bolt text-danger me-2"></i>
@@ -51,9 +51,9 @@ get_header();
         <ol class="ps-3 list-unstyled">
           <li><i class="fas fa-user-plus text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_1', __( 'Cadastre-se no Programa.', 'institucional-01' ) ) ); ?></li>
           <li><i class="fas fa-link text-primary me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_2', __( 'Receba seu link e materiais de divulgação.', 'institucional-01' ) ) ); ?></li>
-          <li><i class="fas fa-key text.warning me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_3', __( 'Seus indicados recebem a API Key inicial.', 'institucional-01' ) ) ); ?></li>
-          <li><i class="fas fa-wallet text-danger me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_4', __( 'Eles recarregam créditos para usar a API.', 'institucional-01' ) ) ); ?></li>
-          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_5', __( 'Você ganha comissão sobre cada consumo efetivado na API.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-key text.warning me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_3', __( 'Seus indicados recebem a chave de acesso inicial.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-wallet text-danger me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_4', __( 'Eles recarregam créditos para usar a plataforma.', 'institucional-01' ) ) ); ?></li>
+          <li><i class="fas fa-hand-holding-usd text-success me-1"></i> <?php echo esc_html( get_theme_mod('afiliados_how_step_5', __( 'Você ganha comissão sobre cada consumo efetivado na plataforma.', 'institucional-01' ) ) ); ?></li>
         </ol>
         <p class="text-muted mt-3">
           <i class="fas fa-briefcase me-2"></i> Parcerias com freelancers e agências digitais são parte da estratégia da plataforma.
@@ -77,7 +77,7 @@ get_header();
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAfiliados">
           <div class="accordion-body">
-            <p>Você recebe <strong>comissões recorrentes</strong> a cada requisição feita na API pelos seus indicados.
+            <p>Você recebe <strong>comissões recorrentes</strong> a cada operação realizada na plataforma pelos seus indicados.
             Além disso, tem acesso ao cupom de afiliado, que presenteia os indicados com valores entre R$10,00 e R$30,00.</p>
 
             <?php echo lazy_youtube_video( get_theme_mod('afiliados_video_beneficios','https://www.youtube.com/watch?v=BXEJ_diYqRc') ); ?>

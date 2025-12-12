@@ -14,7 +14,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 
 <div class="container my-2">
     <h1 class="display-4 text-primary text-center"><i class="fas fa-question-circle me-2"></i><?php echo esc_html( get_theme_mod('como_title','Como Funciona?') ); ?></h1>
-    <p class="lead text-center mb-5"><?php echo esc_html( get_theme_mod('como_lead','Conheça nosso processo em 3 passos.') ); ?></p>
+    <p class="lead text-center mb-5"><?php echo esc_html( get_theme_mod('como_lead','Ideal para micro e pequenas empresas e profissionais liberais.') ); ?></p>
 
     <div class="row">
         <!-- Passo 1: Configuração -->
@@ -22,12 +22,12 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="card h-100 shadow">
                 <div class="card-body">
                     <h3 class="card-title text-primary"><i class="fas fa-key me-2"></i><?php echo esc_html( get_theme_mod('como_step1_title', __( '1. Configure Suas Chaves', 'institucional-01' ) ) ); ?></h3>
-                    <p>Após o registro, acesse "Minha Chave" para duas configurações essenciais:</p>
+                    <p>Após o registro, cadastre sua forma de recebimento e defina acessos:</p>
                     <ul>
-                        <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Sua chave de acesso da plataforma:</strong> Chave gerada automaticamente no registro e usada para autenticar seu acesso.</li>
-                        <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Sua chave do provedor de pagamentos (ex: Mercado Pago):</strong> É armazenada de forma <strong>criptografada</strong> em nosso banco de dados.</li>
+                        <li><i class="fas fa-lock me-1 text-primary"></i> <strong>Chave de acesso da plataforma:</strong> Gerada automaticamente e usada para entrar no painel com segurança.</li>
+                        <li><i class="fas fa-shield-alt me-1 text-primary"></i> <strong>Dados do seu provedor de pagamentos (ex: Mercado Pago):</strong> Armazenados de forma <strong>criptografada</strong> e utilizados apenas nas operações autorizadas.</li>
                     </ul>
-                    <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i><?php echo esc_html( get_theme_mod('como_step1_btn', __( 'Gerenciar Chaves', 'institucional-01' ) ) ); ?></a>
+                    <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i><?php echo esc_html( get_theme_mod('como_step1_btn', __( 'Configurar Recebimentos', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
         </div>
@@ -36,9 +36,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
                 <div class="card-body">
-                    <h3 class="card-title text-primary"><i class="fas fa-wallet me-2"></i><?php echo esc_html( get_theme_mod('como_step2_title', __( '2. Recarregue Seus Crédititos', 'institucional-01' ) ) ); ?></h3>
-                    <p>Nosso sistema opera com créditos pré-pagos. Você recarrega um valor (mínimo R$ 10,00) e esse valor é convertido em uso de recursos, conforme a tabela de preços.</p>
-                    <p>O processo de recarga gera um pedido de pagamento, e seus créditos são adicionados após a <strong>confirmação</strong> do pagamento.</p>
+                    <h3 class="card-title text-primary"><i class="fas fa-wallet me-2"></i><?php echo esc_html( get_theme_mod('como_step2_title', __( '2. Ajuste seu Saldo', 'institucional-01' ) ) ); ?></h3>
+                    <p>Trabalhamos com créditos pré-pagos, garantindo previsibilidade de custos para o seu negócio.</p>
+                    <p>Recarregue a partir de R$ 10,00 e utilize conforme a demanda. Os créditos entram após a <strong>confirmação</strong> do pagamento.</p>
                     <a href="<?php echo esc_url( get_theme_mod('como_link_topup','/topup_credits') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-coins me-1"></i><?php echo esc_html( get_theme_mod('como_step2_btn', __( 'Recarregar', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
@@ -49,10 +49,10 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="card h-100 shadow">
                 <div class="card-body">
                     <h3 class="card-title text-primary"><i class="fas fa-code me-2"></i><?php echo esc_html( get_theme_mod('como_step3_title', __( '3. Utilize os Recursos', 'institucional-01' ) ) ); ?></h3>
-                    <p>Acesse as funcionalidades disponíveis na plataforma conforme sua necessidade.</p>
-                    <p>Defina os parâmetros necessários de acordo com a operação que deseja realizar.</p>
-                    <p>Você recebe o resultado e pode acompanhá-lo no painel.</p>
-                    <p class="mt-2 text-success"><i class="fas fa-check-circle me-1"></i> As operações seguem as regras do seu plano e saldo.</p>
+                    <p>Utilize o painel para realizar ações do dia a dia: emitir cobranças, organizar atendimentos e acompanhar vendas.</p>
+                    <p>Defina apenas o essencial para cada operação e deixe o restante por nossa conta.</p>
+                    <p>Acompanhe resultados em tempo real no painel e exporte relatórios quando precisar.</p>
+                    <p class="mt-2 text-success"><i class="fas fa-check-circle me-1"></i> Tudo respeita as regras do seu plano e saldo.</p>
                     <a href="<?php echo esc_url( get_theme_mod('como_link_generate','/generate_pix') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-qrcode me-1"></i><?php echo esc_html( get_theme_mod('como_step3_btn', __( 'Ver Recursos', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>

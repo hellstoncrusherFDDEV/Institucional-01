@@ -9,7 +9,7 @@ get_header();
 
 <div class="container my-2">
   <h1 class="display-4 text-primary text-center"><i class="fas fa-tools me-2"></i><?php echo esc_html( get_theme_mod('servicos_title', __( 'Serviços', 'institucional-01' ) ) ); ?></h1>
-  <p class="lead text-center mb-4"><?php echo esc_html( get_theme_mod('servicos_lead', __( 'Soluções para integrar pagamentos em sites, apps e lojas.', 'institucional-01' ) ) ); ?></p>
+  <p class="lead text-center mb-4"><?php echo esc_html( get_theme_mod('servicos_lead', __( 'Serviços pensados para micro e pequenas empresas e profissionais liberais.', 'institucional-01' ) ) ); ?></p>
 
   <div class="row">
     <?php for($i=1;$i<=3;$i++): ?>
@@ -25,7 +25,7 @@ get_header();
 
   <div class="text-center mt-3">
     <a href="<?php echo esc_url( get_theme_mod('servicos_cta_url', home_url('/register') ) ); ?>" class="btn btn-success btn-lg">
-      <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('servicos_cta_text', __( 'Quero Integrar Agora', 'institucional-01' ) ) ); ?>
+      <i class="fas fa-rocket me-2"></i> <?php echo esc_html( get_theme_mod('servicos_cta_text', __( 'Quero começar agora', 'institucional-01' ) ) ); ?>
     </a>
   </div>
 </div>

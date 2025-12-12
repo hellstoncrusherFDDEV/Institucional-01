@@ -3,8 +3,7 @@
  * Template Name: Home (Institucional)
  * Template Post Type: page
  *
- * Este modelo exibe o conteúdo da Home Page, focando na Proposta de Valor da PixGo:
- * API Pix Simples, Econômica e Fácil de Integrar.
+ * Este modelo exibe o conteúdo da Home Page com foco em soluções para micro e pequenas empresas e profissionais liberais.
  *
  */
 
@@ -15,11 +14,11 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <section class="hero-section py-2 text-center bg-light-subtle rounded-3 shadow-sm">
     <div class="container">
         <!-- Título principal baseado no conteúdo institucional -->
-        <h1 class="display-4 fw-bold text-primary"><i class="<?php echo esc_attr( get_theme_mod('home_hero_icon','fas fa-qrcode me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_hero_title','API de Pagamentos Simples e Econômica') ); ?></h1>
+        <h1 class="display-4 fw-bold text-primary"><i class="<?php echo esc_attr( get_theme_mod('home_hero_icon','fas fa-briefcase me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_hero_title','Soluções para Micro e Pequenas Empresas') ); ?></h1>
 
         <!-- Proposta de valor principal -->
         <p class="lead mt-3 mb-4">
-            <?php echo wp_kses_post( get_theme_mod('home_hero_lead','Gere QR Codes Pix e links de pagamento em segundos. Integre de forma fácil e pague apenas pelo que usar.') ); ?>
+            <?php echo wp_kses_post( get_theme_mod('home_hero_lead','Organize cobranças, atendimentos e recebimentos com simplicidade. Pague apenas pelo uso.') ); ?>
         </p>
 
         <hr class="my-4">
@@ -27,7 +26,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <?php echo lazy_youtube_video( get_theme_mod('home_hero_video_url','https://www.youtube.com/watch?v=S86zAxbwa3k') ); ?>
 
         <p>
-            <?php echo wp_kses_post( get_theme_mod('home_hero_subtext', __( 'Ideal para desenvolvedores, pequenos e-commerces e empreendedores que buscam uma solução rápida, confiável e com preço justo.', 'institucional-01' ) ) ); ?>
+            <?php echo wp_kses_post( get_theme_mod('home_hero_subtext', __( 'Ideal para micro e pequenas empresas, empreendedores e profissionais liberais que buscam praticidade e preço justo.', 'institucional-01' ) ) ); ?>
         </p>
 
         <!-- CTAs - Usamos os slugs definidos no sistema original, assumindo que as páginas foram criadas no WP -->
@@ -48,16 +47,16 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
 <!-- 2. Por Que Escolher a PixGo? (Proposta de Valor) -->
 <section class="value-prop mt-1 py-4">
     <div class="container">
-        <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i><?php echo esc_html( get_theme_mod('home_value_prop_title', __( 'Por Que Escolher Nossa Solução?', 'institucional-01' ) ) ); ?></h2>
+        <h2 class="text-center mb-5 text-primary"><i class="fas fa-check-circle me-2"></i><?php echo esc_html( get_theme_mod('home_value_prop_title', __( 'Por Que Escolher Nossa Plataforma?', 'institucional-01' ) ) ); ?></h2>
         <div class="row text-center">
 
             <!-- Facilidade de Integração -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
-                    <i class="<?php echo esc_attr( get_theme_mod('home_value_prop_1_icon','fas fa-code fa-3x text-success mb-3') ); ?>"></i>
-                    <h5 class="card-title text-success"><?php echo esc_html( get_theme_mod('home_value_prop_1_title', __( 'Facilidade de Integração', 'institucional-01' ) ) ); ?></h5>
-                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_1_desc', __( 'Nossa API é simples, com documentação clara e exemplos de código prontos. Integre o Pix em seus projetos em poucas horas, sem dor de cabeça.', 'institucional-01' ) ) ); ?></p>
-                    <a href="<?php echo esc_url( home_url( '/como-funciona' ) ); ?>" class="btn btn-sm btn-outline-primary mt-auto"><?php echo esc_html( get_theme_mod('home_value_prop_1_btn', __( 'Ver Documentação', 'institucional-01' ) ) ); ?></a>
+                    <i class="<?php echo esc_attr( get_theme_mod('home_value_prop_1_icon','fas fa-thumbs-up fa-3x text-success mb-3') ); ?>"></i>
+                    <h5 class="card-title text-success"><?php echo esc_html( get_theme_mod('home_value_prop_1_title', __( 'Facilidade de Uso', 'institucional-01' ) ) ); ?></h5>
+                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_1_desc', __( 'Interface simples e fluxos objetivos para o dia a dia. Emita cobranças, organize atendimentos e receba com poucos passos.', 'institucional-01' ) ) ); ?></p>
+                    <a href="<?php echo esc_url( home_url( '/como-funciona' ) ); ?>" class="btn btn-sm btn-outline-primary mt-auto"><?php echo esc_html( get_theme_mod('home_value_prop_1_btn', __( 'Saiba como funciona', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
 
@@ -65,8 +64,8 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm p-4">
                     <i class="<?php echo esc_attr( get_theme_mod('home_value_prop_2_icon','fas fa-coins fa-3x text-info mb-3') ); ?>"></i>
-                    <h5 class="card-title text-info"><?php echo esc_html( get_theme_mod('home_value_prop_2_title', __( 'Preço Justo por Requisição', 'institucional-01' ) ) ); ?></h5>
-                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_2_desc', __( 'Você paga apenas R$ 0,02 ou R$ 0,05 por requisição, como um modelo de créditos pré-pagos, eliminando assinaturas mensais caras.', 'institucional-01' ) ) ); ?></p>
+                    <h5 class="card-title text-info"><?php echo esc_html( get_theme_mod('home_value_prop_2_title', __( 'Preço Justo por Uso', 'institucional-01' ) ) ); ?></h5>
+                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_2_desc', __( 'Pague somente pelo que usar, com créditos pré-pagos. Sem mensalidades altas nem surpresas.', 'institucional-01' ) ) ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/precos' ) ); ?>" class="btn btn-sm btn-outline-success mt-auto"><?php echo esc_html( get_theme_mod('home_value_prop_2_btn', __( 'Ver Tabela de Preços', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
@@ -76,7 +75,7 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                 <div class="card h-100 shadow-sm p-4">
                     <i class="<?php echo esc_attr( get_theme_mod('home_value_prop_3_icon','fas fa-rocket fa-3x text-warning mb-3') ); ?>"></i>
                     <h5 class="card-title text-warning"><?php echo esc_html( get_theme_mod('home_value_prop_3_title', __( 'Escalabilidade e Confiabilidade', 'institucional-01' ) ) ); ?></h5>
-                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_3_desc', __( 'Construído com PHP 8 e MySQL, ideal para pequenos apps e e-commerces que precisam escalar sem manter um servidor próprio.', 'institucional-01' ) ) ); ?></p>
+                    <p class="card-text"><?php echo wp_kses_post( get_theme_mod('home_value_prop_3_desc', __( 'Tecnologia confiável e pronta para crescer com seu negócio, sem exigir equipe técnica dedicada.', 'institucional-01' ) ) ); ?></p>
                     <a href="<?php echo esc_url( home_url( '/sobre' ) ); ?>" class="btn btn-sm btn-outline-info mt-auto"><?php echo esc_html( get_theme_mod('home_value_prop_3_btn', __( 'Saiba Mais', 'institucional-01' ) ) ); ?></a>
                 </div>
             </div>
@@ -95,11 +94,11 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
                     <div class="card-body">
-                        <h3 class="h4 text-secondary"><i class="<?php echo esc_attr( get_theme_mod('home_target_1_icon','fas fa-laptop-code me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_target_1_title', __( 'Desenvolvedores Freelancers e Pequenos Times', 'institucional-01' ) ) ); ?></h3>
+                        <h3 class="h4 text-secondary"><i class="<?php echo esc_attr( get_theme_mod('home_target_1_icon','fas fa-laptop-code me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_target_1_title', __( 'Profissionais e Pequenos Times', 'institucional-01' ) ) ); ?></h3>
                         <p class="card-text text-muted">
-                            <?php echo wp_kses_post( get_theme_mod('home_target_1_quote', __( 'Use esta API e gere QR Codes Pix com 3 linhas de código. Sem complicação.', 'institucional-01' ) ) ); ?>
+                            <?php echo wp_kses_post( get_theme_mod('home_target_1_quote', __( 'Simplifique tarefas do dia a dia e evite soluções complexas. Foque no que importa.', 'institucional-01' ) ) ); ?>
                         </p>
-                            <small><?php echo wp_kses_post( get_theme_mod('home_target_1_small', __( 'Ideal para integrar Pix em projetos em poucas horas, evitando a complexidade da documentação oficial do Mercado Pago.', 'institucional-01' ) ) ); ?></small>
+                            <small><?php echo wp_kses_post( get_theme_mod('home_target_1_small', __( 'Ferramentas práticas para agilizar rotinas sem precisar de conhecimentos técnicos avançados.', 'institucional-01' ) ) ); ?></small>
                     </div>
                 </div>
             </div>
@@ -108,11 +107,11 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 p-3">
                     <div class="card-body">
-                        <h3 class="h4 text-secondary"><i class="<?php echo esc_attr( get_theme_mod('home_target_2_icon','fas fa-store me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_target_2_title', __( 'Pequenos E-commerces e Lojas Virtuais', 'institucional-01' ) ) ); ?></h3>
+                        <h3 class="h4 text-secondary"><i class="<?php echo esc_attr( get_theme_mod('home_target_2_icon','fas fa-store me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_target_2_title', __( 'Pequenos Negócios e Lojas Virtuais', 'institucional-01' ) ) ); ?></h3>
                         <p class="card-text text-muted">
-                            <?php echo wp_kses_post( get_theme_mod('home_target_2_quote', __( 'Transforme pedidos em pagamentos Pix em segundos e pague só pelo que usar.', 'institucional-01' ) ) ); ?>
+                            <?php echo wp_kses_post( get_theme_mod('home_target_2_quote', __( 'Transforme pedidos em vendas com processos simples e previsíveis.', 'institucional-01' ) ) ); ?>
                         </p>
-                            <small><?php echo wp_kses_post( get_theme_mod('home_target_2_small', __( 'Automação de pagamentos Pix sem plugins pesados ou mensalidades altas de gateways.', 'institucional-01' ) ) ); ?></small>
+                            <small><?php echo wp_kses_post( get_theme_mod('home_target_2_small', __( 'Automatize tarefas comerciais sem plugins pesados ou custos fixos elevados.', 'institucional-01' ) ) ); ?></small>
                     </div>
                 </div>
             </div>
@@ -123,9 +122,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                     <div class="card-body">
                         <h3 class="h4 text-secondary"><i class="<?php echo esc_attr( get_theme_mod('home_target_3_icon','fas fa-briefcase me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('home_target_3_title', __( 'Serviços Autônomos e Startups', 'institucional-01' ) ) ); ?></h3>
                         <p class="card-text text-muted">
-                            <?php echo wp_kses_post( get_theme_mod('home_target_3_quote', __( 'Pare de gerar Pix manualmente. / Integre Pix em minutos e foque no crescimento.', 'institucional-01' ) ) ); ?>
+                            <?php echo wp_kses_post( get_theme_mod('home_target_3_quote', __( 'Pare de fazer tudo manualmente. Automatize operações e foque no crescimento.', 'institucional-01' ) ) ); ?>
                         </p>
-                        <small><?php echo wp_kses_post( get_theme_mod('home_target_3_small', __( 'Gere cobranças avulsas rapidamente ou valide seu MVP integrando pagamentos de forma confiável e barata.', 'institucional-01' ) ) ); ?></small>
+                        <small><?php echo wp_kses_post( get_theme_mod('home_target_3_small', __( 'Gere cobranças avulsas rapidamente e valide seu MVP com processos simples e confiáveis.', 'institucional-01' ) ) ); ?></small>
                     </div>
                 </div>
             </div>
@@ -141,13 +140,13 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
         <h2 class="fw-bold mb-3">
           <i class="<?php echo esc_attr( get_theme_mod('home_how_icon','fas fa-cogs me-2 text-success') ); ?>"></i> <?php echo esc_html( get_theme_mod('home_how_title', __( 'Como Funciona?', 'institucional-01' ) ) ); ?>
         </h2>
-        <p class="lead"><?php echo wp_kses_post( get_theme_mod('home_how_desc', __( 'Com a plataforma, você cadastra sua chave do seu provedor de pagamentos e usa nossa API para gerar QR Codes e links de pagamento. Nós cuidamos da complexidade, você foca no seu negócio.', 'institucional-01' ) ) ); ?></p>
+        <p class="lead"><?php echo wp_kses_post( get_theme_mod('home_how_desc', __( 'Cadastre sua forma de recebimento, ajuste o saldo de créditos e utilize os recursos pelo painel. Nós cuidamos da complexidade, você foca no seu negócio.', 'institucional-01' ) ) ); ?></p>
         <div class="alert alert-warning shadow-sm mt-4">
           <h5 class="mb-2">
             <i class="<?php echo esc_attr( get_theme_mod('home_model_icon','fas fa-coins me-2') ); ?>"></i> <?php echo esc_html( get_theme_mod('home_model_title', __( 'Modelo de Créditos Pré-Pagos', 'institucional-01' ) ) ); ?>
           </h5>
           <p class="mb-1">
-            <?php echo wp_kses_post( get_theme_mod('home_model_text', 'Você carrega um valor (ex: <strong>R$ 10,00</strong>) e recebe um número correspondente de chamadas à API (ex: <strong>500 chamadas</strong> a R$ 0,02 cada).') ); ?>
+            <?php echo wp_kses_post( get_theme_mod('home_model_text', 'Você recarrega um valor (ex: <strong>R$ 10,00</strong>) e obtém um número correspondente de usos/operacões (ex: <strong>500 usos</strong> a R$ 0,02 cada).') ); ?>
           </p>
         </div>
         <div class="d-flex justify-content-center">
