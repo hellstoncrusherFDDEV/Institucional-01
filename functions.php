@@ -1219,6 +1219,13 @@ function pixgo_customizer_css() {
     // Ajustes adicionais para dark mode (blocos claros)
     $css .= "@media (prefers-color-scheme: dark) { .bg-light-subtle { background-color: #1e1e1e !important; color: #f8f9fa !important; } .alert { background-color: #202020 !important; color: #f8f9fa !important; border-color: #444 !important; } .alert-warning { background-color: #2a2818 !important; color: #f8f9fa !important; border-color: #665b00 !important; } }";
 
+    // Accordion no modo escuro (prefers-color-scheme e toggle manual)
+    $css .= "@media (prefers-color-scheme: dark) { .accordion-body{ background-color:#1e1e1e !important; color:#f8f9fa !important; } .accordion-item{ border-color:#444 !important; } }";
+    $css .= ".dark-mode .accordion-body{ background-color:#1e1e1e !important; color:#f8f9fa !important; } .dark-mode .accordion-item{ border-color:#444 !important; }";
+
+    $css .= "@media (prefers-color-scheme: dark) { .accordion-button{ background-color:#2a2a2a !important; color:#f8f9fa !important; } .accordion-button:not(.collapsed){ background-color:#1e2430 !important; color:#f8f9fa !important; box-shadow: inset 0 -1px 0 #444 !important; } .accordion-button.collapsed{ background-color:#1e1e1e !important; color:#e9ecef !important; } .accordion-button::after{ filter: invert(1) brightness(1.2); } }";
+    $css .= ".dark-mode .accordion-button{ background-color:#2a2a2a !important; color:#f8f9fa !important; } .dark-mode .accordion-button:not(.collapsed){ background-color:#1e2430 !important; color:#f8f9fa !important; box-shadow: inset 0 -1px 0 #444 !important; } .dark-mode .accordion-button.collapsed{ background-color:#1e1e1e !important; color:#e9ecef !important; } .dark-mode .accordion-button::after{ filter: invert(1) brightness(1.2); }";
+
     if ( ! empty( $css ) ) {
         echo '<style type="text/css">' . $css . '</style>';
     }
