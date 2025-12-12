@@ -23,9 +23,9 @@ get_header(); // Carrega o header.php, incluindo o menu fixo e responsivo
                 <div class="card-body">
                     <h3 class="card-title text-primary"><i class="<?php echo esc_attr( get_theme_mod('como_step1_icon','fas fa-key me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('como_step1_title', __( '1. Configure Suas Chaves', 'institucional-01' ) ) ); ?></h3>
                     <p><?php echo wp_kses_post( get_theme_mod('como_step1_intro', 'Após o registro, cadastre sua forma de recebimento e defina acessos:') ); ?></p>
-                    <ul>
-                        <li><i class="fas fa-lock me-1 text-primary"></i> <?php echo wp_kses_post( get_theme_mod('como_step1_item1', '<strong>Chave de acesso da plataforma:</strong> Gerada automaticamente e usada para entrar no painel com segurança.') ); ?></li>
-                        <li><i class="fas fa-shield-alt me-1 text-primary"></i> <?php echo wp_kses_post( get_theme_mod('como_step1_item2', '<strong>Dados do seu provedor de pagamentos (ex: Mercado Pago):</strong> Armazenados de forma <strong>criptografada</strong> e utilizados apenas nas operações autorizadas.') ); ?></li>
+                    <ul class="list-unstyled">
+                        <li><?php echo wp_kses_post( get_theme_mod('como_step1_item1', '<strong>Chave de acesso da plataforma:</strong> Gerada automaticamente e usada para entrar no painel com segurança.') ); ?></li>
+                        <li><?php echo wp_kses_post( get_theme_mod('como_step1_item2', '<strong>Dados do seu provedor de pagamentos (ex: Mercado Pago):</strong> Armazenados de forma <strong>criptografada</strong> e utilizados apenas nas operações autorizadas.') ); ?></li>
                     </ul>
                     <a href="<?php echo esc_url( get_theme_mod('como_link_keys','/api_key') ); ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-cog me-1"></i><?php echo esc_html( get_theme_mod('como_step1_btn', __( 'Configurar Recebimentos', 'institucional-01' ) ) ); ?></a>
                 </div>
