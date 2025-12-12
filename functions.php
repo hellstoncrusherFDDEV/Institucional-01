@@ -389,9 +389,9 @@ function pixgo_customize_register( $wp_customize ) {
         'panel' => 'pixgo_pages_content',
         'priority' => 50,
     ));
-    $wp_customize->add_setting('como_title', array('default' => 'Como Funciona o PixGo?', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('como_title', array('default' => 'Como Funciona?', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_title', array('label' => 'Título', 'section' => 'pixgo_como_section', 'type' => 'text'));
-    $wp_customize->add_setting('como_lead', array('default' => 'Integre Pix em 3 passos e gere QR Codes em tempo real.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('como_lead', array('default' => 'Ideal para micro e pequenas empresas e profissionais liberais.', 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_lead', array('label' => 'Descrição/Lead', 'section' => 'pixgo_como_section', 'type' => 'text'));
     $wp_customize->add_setting('como_video_url', array('default' => 'https://www.youtube.com/watch?v=ogpV6boXtXs', 'sanitize_callback' => 'esc_url_raw'));
     $wp_customize->add_control('como_video_url', array('label' => 'URL Vídeo', 'section' => 'pixgo_como_section', 'type' => 'url'));
@@ -406,16 +406,79 @@ function pixgo_customize_register( $wp_customize ) {
     $wp_customize->add_control('como_step1_title', array('label' => __('Passo 1 - Título', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
     $wp_customize->add_setting('como_step1_btn', array('default' => __('Gerenciar Chaves', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_step1_btn', array('label' => __('Passo 1 - Botão', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
-    $wp_customize->add_setting('como_step2_title', array('default' => __('2. Recarregue Seus Créditos', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('como_step2_title', array('default' => __('2. Ajuste seu Saldo', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_step2_title', array('label' => __('Passo 2 - Título', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
     $wp_customize->add_setting('como_step2_btn', array('default' => __('Recarregar', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_step2_btn', array('label' => __('Passo 2 - Botão', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
-    $wp_customize->add_setting('como_step3_title', array('default' => __('3. Chame o Endpoint', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('como_step3_title', array('default' => __('3. Utilize os Recursos', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_step3_title', array('label' => __('Passo 3 - Título', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
-    $wp_customize->add_setting('como_step3_btn', array('default' => __('Ver Geração Pix', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_setting('como_step3_btn', array('default' => __('Ver Recursos', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('como_step3_btn', array('label' => __('Passo 3 - Botão', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
-    $wp_customize->add_setting('como_doc_title', array('default' => __('Documentação Técnica da API PixGo', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
-    $wp_customize->add_control('como_doc_title', array('label' => __('Título Documentação Técnica', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_doc_title', array('default' => __('Guia de Uso da Plataforma', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_doc_title', array('label' => __('Título da Seção', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+
+    $wp_customize->add_setting('como_step1_intro', array('default' => 'Após o registro, cadastre sua forma de recebimento e defina acessos:', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step1_intro', array('label' => __('Passo 1 - Intro', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step1_item1', array('default' => '<strong>Chave de acesso da plataforma:</strong> Gerada automaticamente e usada para entrar no painel com segurança.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step1_item1', array('label' => __('Passo 1 - Item 1', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step1_item2', array('default' => '<strong>Dados do seu provedor de pagamentos (ex: Mercado Pago):</strong> Armazenados de forma <strong>criptografada</strong> e utilizados apenas nas operações autorizadas.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step1_item2', array('label' => __('Passo 1 - Item 2', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+
+    $wp_customize->add_setting('como_step2_desc1', array('default' => 'Trabalhamos com créditos pré-pagos, garantindo previsibilidade de custos para o seu negócio.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step2_desc1', array('label' => __('Passo 2 - Texto 1', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step2_desc2', array('default' => 'Recarregue a partir de R$ 10,00 e utilize conforme a demanda. Os créditos entram após a <strong>confirmação</strong> do pagamento.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step2_desc2', array('label' => __('Passo 2 - Texto 2', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+
+    $wp_customize->add_setting('como_step3_desc1', array('default' => 'Utilize o painel para realizar ações do dia a dia: emitir cobranças, organizar atendimentos e acompanhar vendas.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step3_desc1', array('label' => __('Passo 3 - Texto 1', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step3_desc2', array('default' => 'Defina apenas o essencial para cada operação e deixe o restante por nossa conta.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step3_desc2', array('label' => __('Passo 3 - Texto 2', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step3_desc3', array('default' => 'Acompanhe resultados em tempo real no painel e exporte relatórios quando precisar.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_step3_desc3', array('label' => __('Passo 3 - Texto 3', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_step3_note', array('default' => 'Tudo respeita as regras do seu plano e saldo.', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_step3_note', array('label' => __('Passo 3 - Nota', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+
+    $wp_customize->add_setting('como_doc_lead', array('default' => 'Conheça os principais recursos e fluxos operacionais disponíveis na plataforma.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_doc_lead', array('label' => __('Seção Guia - Lead', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+
+    $wp_customize->add_setting('como_res1_title', array('default' => 'Recurso 1 — Operações', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res1_title', array('label' => __('Recurso 1 - Botão', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res1_details_title', array('default' => __('Detalhes do Recurso', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res1_details_title', array('label' => __('Recurso 1 - Título Detalhes', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res1_details_desc', array('default' => 'Este recurso consome créditos conforme o uso e retorna o resultado da operação realizada.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res1_details_desc', array('label' => __('Recurso 1 - Texto Detalhes', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_res1_access_title', array('default' => __('Acesso', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res1_access_title', array('label' => __('Recurso 1 - Título Acesso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res1_access_desc', array('default' => 'Autenticação e permissões são aplicadas conforme seu plano e perfil.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res1_access_desc', array('label' => __('Recurso 1 - Texto Acesso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_res1_use_title', array('default' => __('Como utilizar', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res1_use_title', array('label' => __('Recurso 1 - Título Uso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res1_use_desc', array('default' => 'As operações podem ser executadas diretamente pelo painel e integradas aos seus processos internos.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res1_use_desc', array('label' => __('Recurso 1 - Texto Uso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+
+    $wp_customize->add_setting('como_res2_title', array('default' => 'Recurso 2 — Acompanhamento', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res2_title', array('label' => __('Recurso 2 - Botão', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res2_details_title', array('default' => __('Detalhes do Recurso', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res2_details_title', array('label' => __('Recurso 2 - Título Detalhes', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res2_details_desc', array('default' => 'Utilize este recurso para acompanhar resultados e históricos das operações realizadas na plataforma.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res2_details_desc', array('label' => __('Recurso 2 - Texto Detalhes', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_res2_access_title', array('default' => __('Acesso', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res2_access_title', array('label' => __('Recurso 2 - Título Acesso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res2_access_desc', array('default' => 'Disponível conforme permissões do usuário e plano contratado.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res2_access_desc', array('label' => __('Recurso 2 - Texto Acesso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_res2_note', array('default' => 'Você pode visualizar estados, valores e datas diretamente no painel.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res2_note', array('label' => __('Recurso 2 - Nota', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_res2_use_title', array('default' => __('Como utilizar', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_res2_use_title', array('label' => __('Recurso 2 - Título Uso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_res2_use_desc', array('default' => 'Use o painel para filtrar, consultar e exportar informações conforme sua rotina.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_res2_use_desc', array('label' => __('Recurso 2 - Texto Uso', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+
+    $wp_customize->add_setting('como_tech_title', array('default' => __('Tecnologia e Escalabilidade', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('como_tech_title', array('label' => __('Tecnologia - Título', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'text'));
+    $wp_customize->add_setting('como_tech_desc1', array('default' => 'A plataforma é desenvolvida usando tecnologias atuais sem abrir mão da segurança, robustez e confiabilidade para gerenciar clientes e transações. A arquitetura é preparada para futuras integrações (como Stripe e/ou PayPal) e para monitoramento de logs e métricas.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_tech_desc1', array('label' => __('Tecnologia - Texto 1', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
+    $wp_customize->add_setting('como_tech_desc2', array('default' => 'Nossos materiais de apoio são claros e voltados para quem utiliza a plataforma no dia a dia.', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('como_tech_desc2', array('label' => __('Tecnologia - Texto 2', 'institucional-01'), 'section' => 'pixgo_como_section', 'type' => 'textarea'));
 
     // Conteúdo: Afiliados
     $wp_customize->add_section('pixgo_afiliados_section', array(
