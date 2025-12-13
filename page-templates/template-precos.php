@@ -37,13 +37,25 @@ $pricingTiers = [
                         </thead>
                         <tbody>
                             <?php $i = 0; foreach ($pricingTiers as $tier): $i++;
+                                $enabled = get_theme_mod('precos_row_' . $i . '_enabled', true);
+                                if (!$enabled) { continue; }
                                 $value = $tier[1];
                                 $cost = $tier[3];
                                 $calls = $value / $cost;
                             ?>
                             <tr>
-                                <td class="text-center font-weight-bold">R$ <?php echo number_format($value, 2, ',', '.'); ?></td>
-                                <td class="text-center">R$ <?php echo number_format($cost, 2, ',', '.'); ?></td>
+                                <td class="text-center font-weight-bold">
+                                    <?php
+                                        $col1 = get_theme_mod('precos_row_' . $i . '_col1', '');
+                                        echo esc_html( strlen(trim($col1)) ? $col1 : ('R$ ' . number_format($value, 2, ',', '.')) );
+                                    ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php
+                                        $col2 = get_theme_mod('precos_row_' . $i . '_col2', '');
+                                        echo esc_html( strlen(trim($col2)) ? $col2 : ('R$ ' . number_format($cost, 2, ',', '.')) );
+                                    ?>
+                                </td>
                                 <td class="text-center text-success">
                                     <?php
                                         $prazo = get_theme_mod('precos_row_' . $i . '_prazo', '');
