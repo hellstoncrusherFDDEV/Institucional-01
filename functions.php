@@ -445,6 +445,8 @@ function pixgo_customize_register( $wp_customize ) {
     $wp_customize->add_control('precos_cta_text', array('label' => 'Texto CTA', 'section' => 'pixgo_precos_header_section', 'type' => 'text'));
     $wp_customize->add_setting('precos_cta_url', array('default' => '/topup_credits', 'sanitize_callback' => 'esc_url_raw'));
     $wp_customize->add_control('precos_cta_url', array('label' => 'Link CTA', 'section' => 'pixgo_precos_header_section', 'type' => 'url'));
+    $wp_customize->add_setting('precos_cta_icon', array('default' => 'fas fa-wallet me-2', 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('precos_cta_icon', array('label' => 'Ícone CTA (classe)', 'section' => 'pixgo_precos_header_section', 'type' => 'text'));
 
     $wp_customize->add_setting('precos_table_title', array('default' => __('Tabela de Recarga e Custo por Requisição', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('precos_table_title', array('label' => __('Tabela - Título', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
@@ -460,6 +462,17 @@ function pixgo_customize_register( $wp_customize ) {
     $wp_customize->add_control('precos_calls_suffix', array('label' => __('Sufixo Requisições', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
     $wp_customize->add_setting('precos_note', array('default' => __('Nota: O valor mínimo de recarga é de R$ 10,00. O controle de uso garante que requisições sejam bloqueadas quando os créditos chegarem a zero.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
     $wp_customize->add_control('precos_note', array('label' => __('Texto Nota', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'textarea'));
+    // Prazo por linha (texto livre)
+    $wp_customize->add_setting('precos_row_1_prazo', array('default' => '200 chamadas', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_row_1_prazo', array('label' => __('Prazo linha 1', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_row_2_prazo', array('default' => '2.500 chamadas', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_row_2_prazo', array('label' => __('Prazo linha 2', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_row_3_prazo', array('default' => '8.333 chamadas', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_row_3_prazo', array('label' => __('Prazo linha 3', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_row_4_prazo', array('default' => '25.000 chamadas', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_row_4_prazo', array('label' => __('Prazo linha 4', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
+    $wp_customize->add_setting('precos_row_5_prazo', array('default' => '100.000 chamadas', 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('precos_row_5_prazo', array('label' => __('Prazo linha 5', 'institucional-01'), 'section' => 'pixgo_precos_table_section', 'type' => 'text'));
     $wp_customize->add_setting('precos_why_title', array('default' => __('Por Que Créditos Pré-Pagos?', 'institucional-01'), 'sanitize_callback' => 'sanitize_text_field'));
     $wp_customize->add_control('precos_why_title', array('label' => __('Título Por Que Créditos', 'institucional-01'), 'section' => 'pixgo_precos_why_section', 'type' => 'text'));
     $wp_customize->add_setting('precos_why_desc', array('default' => __('Este modelo é similar ao de APIs de SMS, garantindo que você pague somente quando vender ou usar a funcionalidade.', 'institucional-01'), 'sanitize_callback' => 'wp_kses_post'));
@@ -1225,6 +1238,10 @@ function pixgo_customizer_css() {
 
     $css .= "@media (prefers-color-scheme: dark) { .accordion-button{ background-color:#2a2a2a !important; color:#f8f9fa !important; } .accordion-button:not(.collapsed){ background-color:#1e2430 !important; color:#f8f9fa !important; box-shadow: inset 0 -1px 0 #444 !important; } .accordion-button.collapsed{ background-color:#1e1e1e !important; color:#e9ecef !important; } .accordion-button::after{ filter: invert(1) brightness(1.2); } }";
     $css .= ".dark-mode .accordion-button{ background-color:#2a2a2a !important; color:#f8f9fa !important; } .dark-mode .accordion-button:not(.collapsed){ background-color:#1e2430 !important; color:#f8f9fa !important; box-shadow: inset 0 -1px 0 #444 !important; } .dark-mode .accordion-button.collapsed{ background-color:#1e1e1e !important; color:#e9ecef !important; } .dark-mode .accordion-button::after{ filter: invert(1) brightness(1.2); }";
+
+    // Tabela de preços no modo escuro
+    $css .= "@media (prefers-color-scheme: dark) { .table{ background-color:#1b1b1b !important; color:#e9ecef !important; } .table thead th{ background-color:#222 !important; color:#f8f9fa !important; border-color:#444 !important; } .table tbody td{ border-color:#444 !important; } .table-striped>tbody>tr:nth-of-type(odd){ background-color:#202020 !important; } .table-hover>tbody>tr:hover{ background-color:#242424 !important; } }";
+    $css .= ".dark-mode .table{ background-color:#1b1b1b !important; color:#e9ecef !important; } .dark-mode .table thead th{ background-color:#222 !important; color:#f8f9fa !important; border-color:#444 !important; } .dark-mode .table tbody td{ border-color:#444 !important; } .dark-mode .table-striped>tbody>tr:nth-of-type(odd){ background-color:#202020 !important; } .dark-mode .table-hover>tbody>tr:hover{ background-color:#242424 !important; }";
 
     if ( ! empty( $css ) ) {
         echo '<style type="text/css">' . $css . '</style>';

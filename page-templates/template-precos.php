@@ -36,7 +36,7 @@ $pricingTiers = [
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($pricingTiers as $tier):
+                            <?php $i = 0; foreach ($pricingTiers as $tier): $i++;
                                 $value = $tier[1];
                                 $cost = $tier[3];
                                 $calls = $value / $cost;
@@ -44,7 +44,16 @@ $pricingTiers = [
                             <tr>
                                 <td class="text-center font-weight-bold">R$ <?php echo number_format($value, 2, ',', '.'); ?></td>
                                 <td class="text-center">R$ <?php echo number_format($cost, 2, ',', '.'); ?></td>
-                                <td class="text-center text-success"><?php echo number_format($calls, 0, ',', '.'); ?> <?php echo esc_html( get_theme_mod('precos_calls_suffix', __( 'usos', 'institucional-01' ) ) ); ?></td>
+                                <td class="text-center text-success">
+                                    <?php
+                                        $prazo = get_theme_mod('precos_row_' . $i . '_prazo', '');
+                                        if ( is_string($prazo) && strlen(trim($prazo)) ) {
+                                            echo wp_kses_post( $prazo );
+                                        } else {
+                                            echo number_format($calls, 0, ',', '.') . ' ' . esc_html( get_theme_mod('precos_calls_suffix', __( 'usos', 'institucional-01' ) ) );
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -59,7 +68,7 @@ $pricingTiers = [
         <div class="col-md-12 text-center">
             <h2><i class="fas fa-question-circle me-2"></i><?php echo esc_html( get_theme_mod('precos_why_title', __( 'Por Que Créditos Pré-Pagos?', 'institucional-01' ) ) ); ?></h2>
             <p><?php echo wp_kses_post( get_theme_mod('precos_why_desc', __( 'Este modelo garante que você pague somente quando usar os recursos da plataforma.', 'institucional-01' ) ) ); ?></p>
-            <a href="<?php echo esc_url( get_theme_mod('precos_cta_url', home_url('/topup_credits') ) ); ?>" class="btn btn-lg btn-success"><i class="fas fa-wallet me-2"></i><?php echo esc_html( get_theme_mod('precos_cta_text', __( 'Recarregar Créditos Agora', 'institucional-01' ) ) ); ?></a>
+            <a href="<?php echo esc_url( get_theme_mod('precos_cta_url', home_url('/topup_credits') ) ); ?>" class="btn btn-lg btn-success"><i class="<?php echo esc_attr( get_theme_mod('precos_cta_icon', 'fas fa-wallet me-2') ); ?>"></i><?php echo esc_html( get_theme_mod('precos_cta_text', __( 'Recarregar Créditos Agora', 'institucional-01' ) ) ); ?></a>
         </div>
     </div>
 </div>
