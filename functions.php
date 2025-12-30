@@ -1,4 +1,53 @@
 <?php
+// Função para validar telefone e gerar link (WhatsApp se celular)
+function pixgo_get_contact_link_data( $raw_phone ) {
+    // 1. Remove tudo que não for dígito
+    $clean_phone = preg_replace( '/\D+/', '', $raw_phone );
+    
+    // 2. Valores padrão (assumindo fixo)
+    $data = array(
+        'original' => $raw_phone,
+        'clean'    => $clean_phone,
+        'type'     => 'landline',
+        'url'      => 'tel:' . $clean_phone,
+        'is_mobile'=> false,
+        'icon_class' => 'fas fa-phone'
+    );
+
+    // 3. Validação para Celular Brasil
+    // Celular: 11 dígitos (DDD + 9 + 8 dígitos) -> Ex: 11 91234-5678
+    // Celular com DDI: 13 dígitos (55 + DDD + 9 + 8 dígitos) -> Ex: 55 11 91234-5678
+    
+    $is_mobile = false;
+    
+    // Verifica padrão móvel
+    if ( strlen($clean_phone) === 11 && $clean_phone[2] === '9' ) {
+        $is_mobile = true;
+    } elseif ( strlen($clean_phone) === 13 && substr($clean_phone, 0, 2) === '55' && $clean_phone[4] === '9' ) {
+        $is_mobile = true;
+    }
+    
+    if ( $is_mobile ) {
+        $data['type'] = 'mobile';
+        $data['is_mobile'] = true;
+        $data['icon_class'] = 'fab fa-whatsapp';
+        
+        // Prepara mensagem do WhatsApp
+        $site_name = get_theme_mod( 'company_name', get_bloginfo( 'name' ) );
+        $message = sprintf( 'Olá, estou no site %s e preciso de atendimento.', $site_name );
+        $encoded_message = urlencode( $message );
+        
+        // Garante formato internacional (adiciona 55 se faltar)
+        $wa_phone = $clean_phone;
+        if ( strlen($wa_phone) === 11 ) {
+            $wa_phone = '55' . $wa_phone;
+        }
+        
+        $data['url'] = "https://wa.me/{$wa_phone}?text={$encoded_message}";
+    }
+    
+    return $data;
+}
 
 // 1. Configuração do Tema e Enqueue de Scripts
 function pixgo_theme_setup() {

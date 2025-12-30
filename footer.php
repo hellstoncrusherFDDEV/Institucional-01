@@ -25,8 +25,10 @@
                     <?php if ( $email = get_theme_mod( 'footer_contact_email', '' ) ) : ?>
                         <li><i class="fas fa-envelope me-2"></i><a class="text-decoration-none" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li>
                     <?php endif; ?>
-                    <?php if ( $phone = get_theme_mod( 'footer_contact_phone', '' ) ) : ?>
-                        <li class="mt-1"><i class="fas fa-phone me-2"></i><a class="text-decoration-none" href="tel:<?php echo esc_attr( preg_replace('/\D+/', '', $phone) ); ?>"><?php echo esc_html( $phone ); ?></a></li>
+                    <?php if ( $phone = get_theme_mod( 'footer_contact_phone', '' ) ) : 
+                        $phone_data = pixgo_get_contact_link_data( $phone );
+                    ?>
+                        <li class="mt-1"><i class="<?php echo esc_attr($phone_data['icon_class']); ?> me-2"></i><a class="text-decoration-none" href="<?php echo esc_url( $phone_data['url'] ); ?>" <?php echo $phone_data['is_mobile'] ? 'target="_blank"' : ''; ?>><?php echo esc_html( $phone ); ?></a></li>
                     <?php endif; ?>
                     <?php if ( $addr = get_theme_mod( 'footer_contact_address', '' ) ) : ?>
                         <li class="mt-1"><i class="fas fa-map-marker-alt me-2"></i><span><?php echo esc_html( $addr ); ?></span></li>
