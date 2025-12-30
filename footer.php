@@ -22,8 +22,13 @@
             <div class="col-md-3">
                 <h5><?php echo esc_html( get_theme_mod( 'footer_contact_title', 'Contato' ) ); ?></h5>
                 <ul class="list-unstyled mb-0">
-                    <?php if ( $email = get_theme_mod( 'footer_contact_email', '' ) ) : ?>
-                        <li><i class="fas fa-envelope me-2"></i><a class="text-decoration-none" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a></li>
+                    <?php if ( $email = get_theme_mod( 'footer_contact_email', '' ) ) : 
+                        $display_email = $email;
+                        if ( strlen($email) > 25 ) {
+                            $display_email = substr($email, 0, 25) . '...';
+                        }
+                    ?>
+                        <li><i class="fas fa-envelope me-2"></i><a class="text-decoration-none" href="mailto:<?php echo esc_attr( $email ); ?>" title="<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $display_email ); ?></a></li>
                     <?php endif; ?>
                     <?php if ( $phone = get_theme_mod( 'footer_contact_phone', '' ) ) : 
                         $phone_data = pixgo_get_contact_link_data( $phone );
@@ -38,8 +43,37 @@
             <div class="col-md-3">
                 <h5><?php echo esc_html( get_theme_mod( 'footer_social_title', 'Siga-nos' ) ); ?></h5>
                 <div class="footer-social">
-                    <?php $socials = array('facebook'=>'fab fa-facebook-f','instagram'=>'fab fa-instagram','linkedin'=>'fab fa-linkedin-in','youtube'=>'fab fa-youtube','twitter'=>'fab fa-twitter','whatsapp'=>'fab fa-whatsapp');
-                    foreach ($socials as $key=>$icon) { $url = get_theme_mod( 'footer_social_' . $key, '' ); if ($url) { echo '<a class="social-btn me-1" href="' . esc_url($url) . '" target="_blank" aria-label="' . esc_attr($key) . '"><i class="' . esc_attr($icon) . '"></i></a>'; } } ?>
+                    <?php 
+                    $socials = array('facebook'=>'fab fa-facebook-f','instagram'=>'fab fa-instagram','linkedin'=>'fab fa-linkedin-in','youtube'=>'fab fa-youtube','twitter'=>'fab fa-twitter','whatsapp'=>'fab fa-whatsapp');
+                    foreach ($socials as $key=>$icon) { 
+                        $url = get_theme_mod( 'footer_social_' . $key, '' ); 
+                        if ($url) { 
+                            // Tratamento especial para WhatsApp se for inserido apenas número
+                            if ( $key === 'whatsapp' ) {
+                                // Remove protocolo se houver para verificar se é apenas número
+                                $clean_val = preg_replace( '#^https?://#', '', $url );
+                                $only_digits = preg_replace( '/\D+/', '', $clean_val );
+                                
+                                // Se não tem wa.me/whatsapp.com e parece um número válido
+                                if ( strpos($url, 'wa.me') === false && strpos($url, 'whatsapp.com') === false && !empty($only_digits) && strlen($only_digits) >= 10 ) {
+                                    $phone_data = pixgo_get_contact_link_data( $only_digits );
+                                    if ( $phone_data['is_mobile'] ) {
+                                        $url = $phone_data['url'];
+                                    } else {
+                                        // Fallback: Se não foi detectado como móvel (ex: fixo business), força link wa.me
+                                        // Adiciona 55 se for número brasileiro típico (10 ou 11 dígitos) e não começar com 55
+                                        $wa_num = $only_digits;
+                                        if ( (strlen($wa_num) === 10 || strlen($wa_num) === 11) && substr($wa_num, 0, 2) !== '55' ) {
+                                            $wa_num = '55' . $wa_num;
+                                        }
+                                        $url = "https://wa.me/{$wa_num}";
+                                    }
+                                }
+                            }
+                            echo '<a class="social-btn me-1" href="' . esc_url($url) . '" target="_blank" aria-label="' . esc_attr($key) . '"><i class="' . esc_attr($icon) . '"></i></a>'; 
+                        } 
+                    } 
+                    ?>
                 </div>
             </div>
         </div>
